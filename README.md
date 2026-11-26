@@ -94,3 +94,14 @@ python3 scripts/migrate-from-gitbook.py /tmp/rc-gitbook . --fetch
 ```
 
 Rerun it only while the GitBook site is still being edited. Once this repo is live, edit here.
+
+### Pages not migrated
+
+On the GitBook site, maintainers struck through the titles of these pages (`~Title~`) to mark them as
+dead or placeholders. They contain only internal notes, so the migration script skips them. Each needs
+new content before it comes back:
+
+| Page | Live GitBook URL | Why it was left out |
+| --- | --- | --- |
+| G2P Connect | `/use/connectors/g2p-connect` | Empty; needs to be written by someone who knows the G2P Connect integration |
+| Custom QR Code design | `/use/developer-guide/custom-qr-code-design` | Describes `certificate-api` and `ENABLE_CUSTOM_QR_CODE_CANVAS`, which no longer exist in `sunbird-rc-core` |

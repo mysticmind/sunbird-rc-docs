@@ -44,7 +44,16 @@ for line in (LIVE / "llms_.txt").read_text().splitlines():
     m = re.match(r"- \[(.+?)\]\((https://rc\.sunbird\.org/(.+?)\.md)\)(?::\s*(.*))?$", line)
     if m:
         pages.append(dict(space=space, title=m.group(1), path=m.group(3), desc=(m.group(4) or "").strip()))
-print(len(pages), "pages")
+# GitBook editors strike through a page title (~Title~) to mark a dead or placeholder page.
+# Those pages hold only internal notes, so they are not migrated; they are listed for follow-up.
+skipped = [p for p in pages if re.fullmatch(r"~.+~", p["title"])]
+pages = [p for p in pages if p not in skipped]
+for p in skipped:
+    stale = OUT / (p["path"] + ".md")
+    if stale.exists():
+        stale.unlink()  # from an earlier run
+report["not_migrated"] = [f'{p["title"].strip("~")} ({p["path"]})' for p in skipped]
+print(len(pages), "pages,", len(skipped), "placeholder pages skipped")
 
 
 # ---------------------------------------------------------------- downloads

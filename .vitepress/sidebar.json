@@ -156,10 +156,6 @@
               "link": "/use/developer-guide/custom-keycloak-build"
             },
             {
-              "text": "~Custom QR Code design~",
-              "link": "/use/developer-guide/custom-qr-code-design"
-            },
-            {
               "text": "VC Verification Module",
               "link": "/use/developer-guide/vc-verification-module"
             }
@@ -193,10 +189,6 @@
           "text": "Connectors",
           "link": "/use/connectors",
           "items": [
-            {
-              "text": "~G2P Connect~",
-              "link": "/use/connectors/g2p-connect"
-            },
             {
               "text": "OpenID for Verifiable Credentials (OID4VCI)",
               "link": "/use/connectors/openid-for-verifiable-credentials-oid4vci"
