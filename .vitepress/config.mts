@@ -25,7 +25,11 @@ export default defineConfig({
   lastUpdated: true,
   srcExclude: ['README.md', 'CONTRIBUTING.md'],
   ignoreDeadLinks: 'localhostLinks',
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+  ],
 
   markdown: {
     config(md) {
