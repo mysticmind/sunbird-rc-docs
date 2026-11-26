@@ -5,11 +5,8 @@ titleTemplate: Registries and verifiable credentials
 
 hero:
   name: Sunbird RC
-  text: '<span class="rc-hero-label rc-hero-tilt">Digital Public Good for</span><span class="rc-hero-label">Registry and Verifiable Credentialing</span>'
-  tagline: Open source Registry and Credentialing infrastructure for quickly deploying configurable Registries and for issuing, verifying and managing digital credentials.
-  image:
-    src: /logo-rc.svg
-    alt: Sunbird RC
+  text: Registries and verifiable credentials
+  tagline: Build live, reusable and trustworthy registries and verifiable credentials, with configuration, not code.
   actions:
     - theme: brand
       text: Get started
