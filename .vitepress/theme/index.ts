@@ -5,13 +5,13 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import ApiOperation from './components/ApiOperation.vue'
 import RcBanner from './components/RcBanner.vue'
 import Mermaid from './components/Mermaid.vue'
-import DpgBadge from './components/DpgBadge.vue'
+import CornerBadges from './components/CornerBadges.vue'
 import './custom.css'
 
 export default {
   extends: DefaultTheme,
-  // Digital Public Good badge in the bottom-right corner of every page
-  Layout: () => h(DefaultTheme.Layout, null, { 'layout-bottom': () => h(DpgBadge) }),
+  // COSS and Digital Public Good badges in the bottom-right corner of every page
+  Layout: () => h(DefaultTheme.Layout, null, { 'layout-bottom': () => h(CornerBadges) }),
   enhanceApp({ app }) {
     enhanceAppWithTabs(app)
     app.component('ApiOperation', ApiOperation)
