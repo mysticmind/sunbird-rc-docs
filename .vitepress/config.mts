@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import container from 'markdown-it-container'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import llmstxt from 'vitepress-plugin-llms'
+import llmstxt, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
 import sidebar from './sidebar.json'
 
 // Placeholder until the docs repo exists on GitHub.
@@ -43,6 +43,8 @@ export default defineConfig({
         return fence(tokens, idx, options, env, self)
       }
       md.use(tabsMarkdownPlugin)
+      // "Copy page" button and dropdown (view / download as Markdown, open in an AI assistant) under each page title
+      md.use(copyOrDownloadAsMarkdownButtons)
       for (const [name, cls] of Object.entries(wrappers)) {
         md.use(container, name, {
           render: (tokens: any[], idx: number) =>

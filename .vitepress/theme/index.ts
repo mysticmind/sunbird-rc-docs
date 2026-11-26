@@ -6,6 +6,7 @@ import ApiOperation from './components/ApiOperation.vue'
 import RcBanner from './components/RcBanner.vue'
 import Mermaid from './components/Mermaid.vue'
 import CornerBadges from './components/CornerBadges.vue'
+import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
 import './custom.css'
 
 export default {
@@ -17,5 +18,6 @@ export default {
     app.component('ApiOperation', ApiOperation)
     app.component('RcBanner', RcBanner)
     app.component('Mermaid', Mermaid)
+    app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons)
   },
 } satisfies Theme
