@@ -23,25 +23,25 @@
 :root {
   --vp-home-hero-image-background-image: radial-gradient(
     ellipse at center,
-    rgba(251, 118, 0, 0.55) 0%,
-    rgba(200, 129, 67, 0.4) 35%,
-    rgba(165, 82, 54, 0.15) 60%,
-    transparent 75%
+    rgba(251, 118, 0, 0.1) 0%,
+    rgba(251, 118, 0, 0.32) 42%,
+    rgba(200, 129, 67, 0.2) 58%,
+    transparent 74%
   );
-  --vp-home-hero-image-filter: blur(48px);
+  --vp-home-hero-image-filter: blur(44px);
 }
 .dark {
   --vp-home-hero-image-background-image: radial-gradient(
     ellipse at center,
-    rgba(251, 118, 0, 0.45) 0%,
-    rgba(200, 129, 67, 0.3) 35%,
-    rgba(165, 82, 54, 0.12) 60%,
-    transparent 75%
+    rgba(251, 118, 0, 0.06) 0%,
+    rgba(251, 118, 0, 0.3) 45%,
+    rgba(200, 129, 67, 0.16) 60%,
+    transparent 74%
   );
 }
 .VPHero .image-bg {
-  width: 560px !important;
-  height: 300px !important;
+  width: 640px !important;
+  height: 340px !important;
   border-radius: 50%;
   animation: rc-glow 6s ease-in-out infinite;
 }
@@ -53,7 +53,7 @@
   .VPHero .image-bg { animation: none; }
 }
 @media (max-width: 960px) {
-  .VPHero .image-bg { width: 360px !important; height: 200px !important; }
+  .VPHero .image-bg { width: 400px !important; height: 230px !important; }
 }
 
 /* GitBook stepper -> numbered steps */
