@@ -116,8 +116,6 @@ Supported signature suites: `Ed25519Signature2020`, `Ed25519Signature2018`, `RSA
 | (identity endpoint) | `http://identity-service:3332`                                  |
 | `JWKS_URI`          | JWKS URI of the OAuth2 resource server                          |
 | `ENABLE_AUTH`       | Enable/disable authentication                                   |
-|
-        |                                                                 |
 
 == Credential Issuance Service
 
@@ -128,8 +126,4 @@ Supported signature suites: `Ed25519Signature2020`, `Ed25519Signature2018`, `RSA
 | `JWKS_URI`                    | JWKS URI of the OAuth2 resource server                                                     |
 | `ENABLE_AUTH`                 | Enable/disable authentication                                                              |
 | `QR_TYPE`                     | Set to `W3C_VC` to embed a compressed VC in the QR code instead of a verify-credential URL |
-|
-                  |                                                                                            |
-|
 ::::
-                 |                                                                                            |

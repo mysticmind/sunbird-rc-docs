@@ -22,9 +22,7 @@ Download the latest [docker-compose.yml](https://github.com/Sunbird-RC/sunbird-r
 | ----------------- | --------- | ----------------------------------------------------------------------------------------------- |
 | `RELEASE_VERSION` | `v2.1.0`  | Use the latest [release](https://github.com/Sunbird-RC/sunbird-rc-core/releases) of Sunbird RC. |
 | `SCHEMA_DIR`      | `schemas` | Relative path to the directory where schemas are created.                                       |
-|
 :::
-     |           |                                                                                                 |
 
 :::: step
 ### Add schemas and imports

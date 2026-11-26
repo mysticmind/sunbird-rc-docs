@@ -262,6 +262,8 @@ def convert(raw, page):
     if lines and lines[0].startswith("> For the complete documentation index"):
         lines = lines[1:]
     body = "\n".join(lines).strip() + "\n"
+    # GitBook's export sometimes puts a closing tag inside the last table row: "| {% endtab %} |   |"
+    body = re.sub(r"^\|\s*(\{%\s*end[a-z-]+\s*%\})\s*\|[\s|]*$", r"\n\1", body, flags=re.M)
     body = render(parse(body))
     body = localise_images(body)
     body = outside_code(body, text_fixes)
@@ -286,10 +288,7 @@ for p in pages:
 for f in (LIVE / "openapi").glob("*.yaml"):
     shutil.copy(f, OUT / "openapi" / f.name)
 
-# logo
-logo = "https://rc.sunbird.org/~gitbook/image?url=https%3A%2F%2F2542770855-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fcollections%252FCgGES7MGpwMNJAROuCb0%252Ficon%252FHuFIlZtgePEZVpXerKme%252FPartner%2520Logo%2520-02.png%3Falt%3Dmedia%26token%3D8f581277-3f0c-4f03-93f2-1ee2f7d5967b&width=128&dpr=2&quality=100&sign=b4a49696d1a7e9f36635024b485d3362&sv=3"
-req = urllib.request.Request(logo, headers={"User-Agent": "Mozilla/5.0"})
-(OUT / "public" / "logo.png").write_bytes(urllib.request.urlopen(req, timeout=60).read())
+# public/logo.png is a hand-cropped asset kept in the repo; this script does not touch it.
 
 
 # ---------------------------------------------------------------- sidebar

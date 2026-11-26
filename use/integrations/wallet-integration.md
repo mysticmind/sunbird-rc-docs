@@ -69,8 +69,6 @@ Issuer/verifier-side calls like `POST /oid4vc/offer` and `POST /vp/request` are 
 | `GET /oid4vc/offer/:id`                     | Dereference the offer deep link                             |
 | `POST /oid4vc/token`                        | `pre-authorized_code` grant → access token + `c_nonce`      |
 | `POST /oid4vc/credential`                   | Proof-of-possession JWT → signed credential                 |
-|
-                                |                                                             |
 
 == Presentation (OpenID4VP)
 
@@ -78,11 +76,7 @@ Issuer/verifier-side calls like `POST /oid4vc/offer` and `POST /vp/request` are 
 | ----------------------------------- | -------------------------------------------- |
 | `GET /vp/request-object/:id`        | Fetch the request object (JWS or plain JSON) |
 | `POST /vp/response` (`direct_post`) | Submit the `vp_token`                        |
-|
-                        |                                              |
-|
 ::::
-                       |                                              |
 
 Deep links: `openid-credential-offer://...` (offers), `openid4vp://...` (presentation requests) — both delivered as `qr_data`. Holder binding accepts either a resolvable DID (`kid` in the PoP JWT) or an inline JWK/`did:jwk`, so wallets that don't publish DIDs still work. `oid4vc-service` itself holds no credential keys or storage — only short-lived session state and its own protocol signing key (which lives in Vault via `identity-service`).
 

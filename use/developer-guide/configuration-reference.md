@@ -20,8 +20,6 @@ Edit `config.json` and update the values below for your deployment.
 | `footerText`    | footer label text                                                                                                            |
 | `languages`     | language codes for multilingual support — add translation files under `src/assets/i18n/global/` and `src/assets/i18n/local/` |
 | `default_theme` | theme color / site logo object                                                                                               |
-|
-    |                                                                                                                              |
 
 == Proxy
 

@@ -46,9 +46,7 @@ Base64-encode all passwords/secrets and set them in `values.yaml`:
 | `MINIO_SECRET_KEY`               | No       | Minio secret key                                            |
 | `ELASTIC_SEARCH_PASSWORD`        | No       | ElasticSearch connection password                           |
 | `KEYCLOAK_ADMIN_CLIENT_SECRET`   | No       | Client secret of the Keycloak admin client for the registry |
-|
 :::
-                    |          |                                                             |
 
 :::: step
 ::: info
