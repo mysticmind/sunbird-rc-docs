@@ -7,7 +7,7 @@ defineProps<{ compact?: boolean }>()
 
 <template>
   <section class="rc-banner" :class="{ 'rc-banner--compact': compact }" aria-label="About Sunbird RC">
-    <img class="rc-banner-logo" :src="withBase('/logo.png')" alt="Sunbird" />
+    <img v-if="!compact" class="rc-banner-logo" :src="withBase('/logo.png')" alt="Sunbird" />
     <div class="rc-banner-text">
       <h2 class="rc-banner-title">
         <span class="rc-label rc-label-tilt">Digital Public Good for</span>

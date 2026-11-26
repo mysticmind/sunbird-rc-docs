@@ -5,8 +5,8 @@ titleTemplate: Registries and verifiable credentials
 
 hero:
   name: Sunbird RC
-  text: Registries and verifiable credentials
-  tagline: Build live, reusable and trustworthy registries and verifiable credentials, with configuration, not code.
+  text: Configure, don't code
+  tagline: Define a schema and get a live registry with open APIs, attestation and consent. Issue W3C verifiable credentials that holders keep in their own wallet.
   actions:
     - theme: brand
       text: Get started
