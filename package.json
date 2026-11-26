@@ -1,0 +1,19 @@
+{
+  "name": "sunbird-rc-docs",
+  "private": true,
+  "type": "module",
+  "description": "Sunbird RC documentation site (rc.sunbird.org), built with VitePress",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "sync-openapi": "node scripts/sync-openapi.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "markdown-it-container": "^4.0.0",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-llms": "^1.15.0",
+    "vitepress-plugin-tabs": "^0.9.1"
+  }
+}
