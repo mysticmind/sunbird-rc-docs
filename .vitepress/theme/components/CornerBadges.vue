@@ -14,7 +14,7 @@ import { withBase } from 'vitepress'
       rel="noopener"
       title="Sunbird RC is developed by the Centre for Open Societal Systems (COSS)"
     >
-      <img :src="withBase('/images/coss-mark.svg')" alt="Centre for Open Societal Systems (COSS)" width="44" height="44" />
+      <img :src="withBase('/images/coss-mark.svg')" alt="Centre for Open Societal Systems (COSS)" width="42" height="42" />
     </a>
     <a
       class="badge dpg"
@@ -35,9 +35,8 @@ import { withBase } from 'vitepress'
   bottom: 20px;
   z-index: 30; /* above page content, below the nav bar and search dialog */
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  align-items: center; /* side by side, same height */
+  gap: 10px;
 }
 .badge {
   display: block;
@@ -48,8 +47,8 @@ import { withBase } from 'vitepress'
   transform: translateY(-2px);
 }
 .coss img {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 4px;
 }
 .dpg img {
@@ -57,8 +56,8 @@ import { withBase } from 'vitepress'
   height: auto;
 }
 @media (max-width: 640px) {
-  .corner-badges { right: 12px; bottom: 12px; gap: 6px; }
-  .coss img { width: 36px; height: 36px; }
+  .corner-badges { right: 12px; bottom: 12px; gap: 8px; }
+  .coss img { width: 34px; height: 34px; }
   .dpg img { width: 72px; }
 }
 @media print {
