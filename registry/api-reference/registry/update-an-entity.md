@@ -9,27 +9,27 @@ To update an entity, we need to make the following HTTP request
 
 ## Updating an Entity
 
-<mark style="color:orange;">`PUT`</mark> `/api/v1/{entity-type}/{id}`
+<mark style="color:var(--vp-c-brand-1);">`PUT`</mark> `/api/v1/{entity-type}/{id}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                  |
 | --------------------------------------------- | ------ | ---------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | The type of entity to modify |
-| id<mark style="color:red;">\*</mark>          | String | The ID of entity to modify   |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The type of entity to modify |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark>          | String | The ID of entity to modify   |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                               |
 | ---------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
 | authorization                                  | String | Set to Bearer {access-token} if roles in schema is not anonymous. Else token can be empty |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                 |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                 |
 
 #### Request Body
 
 | Name                                  | Type   | Description       |
 | ------------------------------------- | ------ | ----------------- |
-| ...<mark style="color:red;">\*</mark> | String | The entity's data |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The entity's data |
 
 :::: tabs
 == 200: OK Updated Entity Success Response

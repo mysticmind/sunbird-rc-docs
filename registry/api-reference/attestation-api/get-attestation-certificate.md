@@ -6,22 +6,22 @@ title: "Get Attestation Certificate"
 
 ## Retrieve Attestation Certificate
 
-<mark style="color:blue;">`GET`</mark> `/api/v1/{entity-type}/{entity-id}/attestation/{attestation-name}/{attestation-id}`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/{entity-type}/{entity-id}/attestation/{attestation-name}/{attestation-id}`
 
 #### Path Parameters
 
 | Name                                               | Type   | Description                                     |
 | -------------------------------------------------- | ------ | ----------------------------------------------- |
-| entity-name<mark style="color:red;">\*</mark>      | String | Name of Entity for which attestation was raised |
-| entity-id<mark style="color:red;">\*</mark>        | String | ID of entity for which attestation was raised   |
-| attestation-name<mark style="color:red;">\*</mark> | String | Name of attestation for that entity-type        |
-| attestation-id<mark style="color:red;">\*</mark>   | String | ID of the attestation for that record of entity |
+| entity-name<mark style="color:var(--vp-c-red-1);">\*</mark>      | String | Name of Entity for which attestation was raised |
+| entity-id<mark style="color:var(--vp-c-red-1);">\*</mark>        | String | ID of entity for which attestation was raised   |
+| attestation-name<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Name of attestation for that entity-type        |
+| attestation-id<mark style="color:var(--vp-c-red-1);">\*</mark>   | String | ID of the attestation for that record of entity |
 
 #### Headers
 
 | Name                                     | Type   | Description                                                                                         |
 | ---------------------------------------- | ------ | --------------------------------------------------------------------------------------------------- |
-| accept<mark style="color:red;">\*</mark> | String | Set to `application/pdf, application/json, text/html, image/svg+xml`                                |
+| accept<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/pdf, application/json, text/html, image/svg+xml`                                |
 | template                                 | String | if `enable_external_templates` is set to true, send in a url which has html template                |
 | template-key                             | String | A key pointing to html template which is present in `Schema`                                        |
 | access-token                             | String | Set to `Bearer {access-token}` if roles in schema is not anonymous. Else authorization can be empty |

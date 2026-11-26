@@ -8,26 +8,26 @@ title: "Update Schema"
 
 ## Create a Schema
 
-<mark style="color:orange;">`PUT`</mark> `/api/v1/Schema/{id}`
+<mark style="color:var(--vp-c-brand-1);">`PUT`</mark> `/api/v1/Schema/{id}`
 
 #### Path Parameters
 
 | Name                                 | Type   | Description                            |
 | ------------------------------------ | ------ | -------------------------------------- |
-| id<mark style="color:red;">\*</mark> | String | id of the schema that is to be updated |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark> | String | id of the schema that is to be updated |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                        |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` . The token should be a admin token |
 
 #### Request Body
 
 | Name                                  | Type | Description       |
 | ------------------------------------- | ---- | ----------------- |
-| ...<mark style="color:red;">\*</mark> |      | The entity's data |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> |      | The entity's data |
 
 :::: tabs
 == 200: OK Success Response of Updated Schema

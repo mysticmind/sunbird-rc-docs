@@ -4,19 +4,19 @@ title: "SSO with existing systems"
 
 # SSO with existing systems
 
-<mark style="color:$info;">Standard OAuth-based integration.</mark>
+<mark style="color:var(--vp-c-indigo-1);">Standard OAuth-based integration.</mark>
 
 :::: steps
 ::: step
-### <mark style="color:$info;">Onboard a new API client</mark>
+### <mark style="color:var(--vp-c-indigo-1);">Onboard a new API client</mark>
 :::
 
 ::: step
-### <mark style="color:$info;">Set up the redirect URL and valid origin</mark>
+### <mark style="color:var(--vp-c-indigo-1);">Set up the redirect URL and valid origin</mark>
 :::
 
 ::: step
-### <mark style="color:$info;">Configure scope-field mapping, if required</mark>
+### <mark style="color:var(--vp-c-indigo-1);">Configure scope-field mapping, if required</mark>
 :::
 ::::
 

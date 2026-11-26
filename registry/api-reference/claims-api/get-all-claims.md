@@ -4,13 +4,13 @@ title: "Get All Claims"
 
 # Get All Claims
 
-<mark style="color:blue;">`GET`</mark> `/api/v1/{entity-name}/claims`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/{entity-name}/claims`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                                              |
 | --------------------------------------------- | ------ | -------------------------------------------------------- |
-| entity-name<mark style="color:red;">\*</mark> | String | Name of the entity to which attestation request was sent |
+| entity-name<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Name of the entity to which attestation request was sent |
 
 #### Query Parameters
 
@@ -23,7 +23,7 @@ title: "Get All Claims"
 
 | Name                                           | Type   | Description                                                                                        |
 | ---------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` if `roles` in schema config is not anonymous else this can be empty |
 
 :::: tabs

@@ -4,21 +4,21 @@ title: "Search An Entity"
 
 # Search An Entity
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-name}/search`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-name}/search`
 
-Or <mark style="color:blue;">`GET`</mark> `/api/v1/{entity-name}/search?search=<base64 encoded payload>`
+Or <mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/{entity-name}/search?search=<base64 encoded payload>`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                       |
 | --------------------------------------------- | ------ | --------------------------------- |
-| entity-name<mark style="color:red;">\*</mark> | String | Name of the entity to be searched |
+| entity-name<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Name of the entity to be searched |
 
 #### Headers
 
 | Name                                           | Type   | Description               |
 | ---------------------------------------------- | ------ | ------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json` |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json` |
 
 #### Query Parameters
 
@@ -30,7 +30,7 @@ Or <mark style="color:blue;">`GET`</mark> `/api/v1/{entity-name}/search?search=<
 
 | Name                                  | Type   | Description                                       |
 | ------------------------------------- | ------ | ------------------------------------------------- |
-| ...<mark style="color:red;">\*</mark> | Object | Filters to be sent in order to identify an entity |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | Object | Filters to be sent in order to identify an entity |
 
 :::: tabs
 == 200: OK Success Response of Search

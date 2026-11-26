@@ -8,19 +8,19 @@ title: "Get Schema"
 
 ## Fetch a Schema
 
-<mark style="color:blue;">`GET`</mark> `/api/v1/Schema/{id}`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/Schema/{id}`
 
 #### Path Parameters
 
 | Name                                 | Type   | Description                |
 | ------------------------------------ | ------ | -------------------------- |
-| id<mark style="color:red;">\*</mark> | String | ID of Schema to be fetched |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark> | String | ID of Schema to be fetched |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                        |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` . The token should be a admin token |
 
 :::: tabs

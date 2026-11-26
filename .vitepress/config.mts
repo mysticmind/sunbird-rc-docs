@@ -29,6 +29,15 @@ export default defineConfig({
 
   markdown: {
     config(md) {
+      // ```mermaid blocks become diagrams, rendered in the browser by the Mermaid component
+      const fence = md.renderer.rules.fence!
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        if (token.info.trim() === 'mermaid') {
+          return `<Mermaid code="${encodeURIComponent(token.content)}" />`
+        }
+        return fence(tokens, idx, options, env, self)
+      }
       md.use(tabsMarkdownPlugin)
       for (const [name, cls] of Object.entries(wrappers)) {
         md.use(container, name, {

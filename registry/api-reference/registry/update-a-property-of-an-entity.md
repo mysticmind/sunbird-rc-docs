@@ -9,22 +9,22 @@ To update the property of an existing entity, we need to make the following HTTP
 
 ## Update a property which is already added to entity
 
-<mark style="color:orange;">`PUT`</mark> `/api/v1/{entity-type}/{id}/{entity-property}/{property-id}`
+<mark style="color:var(--vp-c-brand-1);">`PUT`</mark> `/api/v1/{entity-type}/{id}/{entity-property}/{property-id}`
 
 #### Path Parameters
 
 | Name                                              | Type   | Description                                                                        |
 | ------------------------------------------------- | ------ | ---------------------------------------------------------------------------------- |
-| entity-type<mark style="color:red;">\*</mark>     | String | Type of entity to update                                                           |
-| id<mark style="color:red;">\*</mark>              | String | id of the entity to update                                                         |
-| entity-property<mark style="color:red;">\*</mark> | String | entity Property which to be updated in already existing entity                     |
-| property-id<mark style="color:red;">\*</mark>     | String | entity property osid which is to be updated in already existing property in entity |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | Type of entity to update                                                           |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark>              | String | id of the entity to update                                                         |
+| entity-property<mark style="color:var(--vp-c-red-1);">\*</mark> | String | entity Property which to be updated in already existing entity                     |
+| property-id<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | entity property osid which is to be updated in already existing property in entity |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                 |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                   |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                   |
 | authorization                                  | String | Set to `Bearer {access-token}` if roles in Schema is not anonymous. Else token can be empty |
 
 :::: tabs

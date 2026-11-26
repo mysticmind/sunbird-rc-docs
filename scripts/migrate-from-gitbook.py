@@ -248,7 +248,22 @@ def fix_links(t):
     return t
 
 
+# GitBook text colours (named, or GitBook tokens like $info) -> VitePress theme colours that adapt to dark mode
+MARK_COLOURS = {
+    "red": "var(--vp-c-red-1)", "green": "var(--vp-c-green-1)", "blue": "var(--vp-c-indigo-1)",
+    "orange": "var(--vp-c-brand-1)", "yellow": "var(--vp-c-yellow-1)", "purple": "var(--vp-c-purple-1)",
+    "$primary": "var(--vp-c-brand-1)", "$info": "var(--vp-c-indigo-1)", "$success": "var(--vp-c-green-1)",
+    "$warning": "var(--vp-c-yellow-1)", "$danger": "var(--vp-c-red-1)",
+}
+
+
+def fix_mark_colours(t):
+    return re.sub(r'(<mark style="color:)([$\w]+)(;?")',
+                  lambda m: m.group(1) + MARK_COLOURS.get(m.group(2), m.group(2)) + m.group(3), t)
+
+
 def text_fixes(t):
+    t = fix_mark_colours(t)
     # autolinks <https://x> -> <a> so they also work inside raw HTML blocks
     t = re.sub(r"<(https?://[^>\s]+)>", r'<a href="\1">\1</a>', t)
     # Vue would treat {{ }} as template interpolation

@@ -9,28 +9,28 @@ To add property to an existing entity, we need to make the following HTTP reques
 
 ## Create a property in already existing entity
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-type}/{id}/{entity-property}`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-type}/{id}/{entity-property}`
 
 #### Path Parameters
 
 | Name                                              | Type   | Description                                                  |
 | ------------------------------------------------- | ------ | ------------------------------------------------------------ |
-| entity-type<mark style="color:red;">\*</mark>     | String | Type of entity to update                                     |
-| id<mark style="color:red;">\*</mark>              | String | id of the entity to update                                   |
-| entity-property<mark style="color:red;">\*</mark> | String | entity Property which to be added in already existing entity |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | Type of entity to update                                     |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark>              | String | id of the entity to update                                   |
+| entity-property<mark style="color:var(--vp-c-red-1);">\*</mark> | String | entity Property which to be added in already existing entity |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                 |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
 | authorization                                  | String | Set to `Bearer {access-token}` if roles in Schema is not anonymous. Else token can be empty |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                   |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                   |
 
 #### Request Body
 
 | Name                                  | Type   | Description            |
 | ------------------------------------- | ------ | ---------------------- |
-| ...<mark style="color:red;">\*</mark> | Object | Property to be updated |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | Object | Property to be updated |
 
 :::: tabs
 == 200: OK

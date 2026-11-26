@@ -6,20 +6,20 @@ title: "Raise An Attestation"
 
 ## Making a Claim
 
-<mark style="color:green;">`POST`</mark> `/api/v1/send`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/send`
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                                                              |
 | ---------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                                                                |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                                                                |
 | authorization                                  | String | Set to `Bearer {access-token}` if roles in schema of which attestation is to raised does not contain `anonymous` else token can be empty |
 
 #### Request Body
 
 | Name                                  | Type   | Description            |
 | ------------------------------------- | ------ | ---------------------- |
-| ...<mark style="color:red;">\*</mark> | Object | The value of the claim |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | Object | The value of the claim |
 
 :::: tabs
 == 200: OK Success Response of attestation sent

@@ -8,26 +8,26 @@ title: "Publish A Schema"
 
 ## Publish a Schema
 
-<mark style="color:orange;">`PUT`</mark> `/api/v1/Schema/{id}`
+<mark style="color:var(--vp-c-brand-1);">`PUT`</mark> `/api/v1/Schema/{id}`
 
 #### Path Parameters
 
 | Name                                 | Type   | Description                              |
 | ------------------------------------ | ------ | ---------------------------------------- |
-| id<mark style="color:red;">\*</mark> | String | id of the schema that is to be published |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark> | String | id of the schema that is to be published |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                        |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` . The token should be a admin token |
 
 #### Request Body
 
 | Name                                     | Type | Description |
 | ---------------------------------------- | ---- | ----------- |
-| status<mark style="color:red;">\*</mark> |      | PUBLISHED   |
+| status<mark style="color:var(--vp-c-red-1);">\*</mark> |      | PUBLISHED   |
 
 :::: tabs
 == 200: OK Success Response of Published Schema

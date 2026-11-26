@@ -6,7 +6,7 @@ title: "Swagger JSON API"
 
 ## Returns all available registry apis
 
-<mark style="color:blue;">`GET`</mark> `/api/docs/swagger.json`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/docs/swagger.json`
 
 :::: tabs
 == 200: OK Success Response

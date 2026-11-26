@@ -6,21 +6,21 @@ title: "Attest A Claim"
 
 ## Attest a particular claim
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-type}/claims/{claimId}/attest`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-type}/claims/{claimId}/attest`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                            |
 | --------------------------------------------- | ------ | -------------------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | Type of entity to which claim was sent |
-| claimId<mark style="color:red;">\*</mark>     | String | ID of claim that is to be attested     |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Type of entity to which claim was sent |
+| claimId<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | ID of claim that is to be attested     |
 
 #### Headers
 
 | Name                                            | Type   | Description                                                                                |
 | ----------------------------------------------- | ------ | ------------------------------------------------------------------------------------------ |
-| authorization<mark style="color:red;">\*</mark> | String | Set to `Bearer {access-token}`. `access-token` should have a role with name as entity-type |
-| content-type<mark style="color:red;">\*</mark>  | String | Set to `application/json`                                                                  |
+| authorization<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `Bearer {access-token}`. `access-token` should have a role with name as entity-type |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark>  | String | Set to `application/json`                                                                  |
 
 #### Request Body
 

@@ -31,22 +31,22 @@ To authenticate as an entity, we need to make the following request:
 
 ## Generate token API &#x20;
 
-<mark style="color:green;">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
 
 #### Headers
 
 | Name                                           | Type   | Description                                |
 | ---------------------------------------------- | ------ | ------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/x-www-form-urlencoded` |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/x-www-form-urlencoded` |
 
 #### Request Body
 
 | Name                                          | Type   | Description                                                                                       |
 | --------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------- |
-| grant\_type<mark style="color:red;">\*</mark> | String | Set to `password`                                                                                 |
-| client\_id<mark style="color:red;">\*</mark>  | String | Set to `registry-frontend`                                                                        |
-| username<mark style="color:red;">\*</mark>    | String | The `_osConfig.ownershipAttributes.userId` of the entity according to the schema                  |
-| password<mark style="color:red;">\*</mark>    | String | Set to `abcd@123` (default password, specified in registry's application.yml/docker compose file) |
+| grant\_type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `password`                                                                                 |
+| client\_id<mark style="color:var(--vp-c-red-1);">\*</mark>  | String | Set to `registry-frontend`                                                                        |
+| username<mark style="color:var(--vp-c-red-1);">\*</mark>    | String | The `_osConfig.ownershipAttributes.userId` of the entity according to the schema                  |
+| password<mark style="color:var(--vp-c-red-1);">\*</mark>    | String | Set to `abcd@123` (default password, specified in registry's application.yml/docker compose file) |
 
 :::: tabs
 == 200: OK
@@ -119,21 +119,21 @@ http --form post \
 
 ## Generate token api
 
-<mark style="color:green;">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
 
 #### Headers
 
 | Name                                           | Type   | Description                       |
 | ---------------------------------------------- | ------ | --------------------------------- |
-| Content-Type<mark style="color:red;">\*</mark> | String | application/x-www-form-urlencoded |
+| Content-Type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | application/x-www-form-urlencoded |
 
 #### Request Body
 
 | Name                                             | Type   | Description                                                 |
 | ------------------------------------------------ | ------ | ----------------------------------------------------------- |
-| grant\_type<mark style="color:red;">\*</mark>    |        | client\_credentials                                         |
-| client\_id<mark style="color:red;">\*</mark>     | String | Use the client name that was used above                     |
-| client\_secret<mark style="color:red;">\*</mark> | String | Use the client secret that was generated in the above steps |
+| grant\_type<mark style="color:var(--vp-c-red-1);">\*</mark>    |        | client\_credentials                                         |
+| client\_id<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | Use the client name that was used above                     |
+| client\_secret<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Use the client secret that was generated in the above steps |
 
 :::: tabs
 == 200: OK

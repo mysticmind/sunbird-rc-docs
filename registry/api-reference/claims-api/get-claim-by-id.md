@@ -4,20 +4,20 @@ title: "Get Claim by ID"
 
 # Get Claim by ID
 
-<mark style="color:blue;">`GET`</mark> `/api/v1/{entity-name}/claims/{claimId}`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/{entity-name}/claims/{claimId}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                                              |
 | --------------------------------------------- | ------ | -------------------------------------------------------- |
-| entity-name<mark style="color:red;">\*</mark> | String | Name of the entity to which attestation request was sent |
-| claimId<mark style="color:red;">\*</mark>     | String | ID of the claim to be returned                           |
+| entity-name<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Name of the entity to which attestation request was sent |
+| claimId<mark style="color:var(--vp-c-red-1);">\*</mark>     | String | ID of the claim to be returned                           |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                        |
 | ---------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` if `roles` in schema config is not anonymous else this can be empty |
 
 :::: tabs

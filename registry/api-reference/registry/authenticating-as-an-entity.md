@@ -10,22 +10,22 @@ We can authenticate with the registry as a particular entity to perform operatio
 
 To authenticate as an entity, we need to make the following request:
 
-<mark style="color:green;">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `http:/keycloak-url/auth/realms/{realm}/protocol/openid-connect/token`
 
 #### Headers
 
 | Name                                           | Type   | Description                                |
 | ---------------------------------------------- | ------ | ------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/x-www-form-urlencoded` |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/x-www-form-urlencoded` |
 
 #### Request Body
 
 | Name                                          | Type   | Description                                                                                       |
 | --------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------- |
-| grant\_type<mark style="color:red;">\*</mark> | String | Set to `password`                                                                                 |
-| client\_id<mark style="color:red;">\*</mark>  | String | Set to `registry-frontend`                                                                        |
-| username<mark style="color:red;">\*</mark>    | String | The `_osConfig.ownershipAttributes.userId` of the entity according to the schema                  |
-| password<mark style="color:red;">\*</mark>    | String | Set to `abcd@123` (default password, specified in registry's application.yml/docker compose file) |
+| grant\_type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `password`                                                                                 |
+| client\_id<mark style="color:var(--vp-c-red-1);">\*</mark>  | String | Set to `registry-frontend`                                                                        |
+| username<mark style="color:var(--vp-c-red-1);">\*</mark>    | String | The `_osConfig.ownershipAttributes.userId` of the entity according to the schema                  |
+| password<mark style="color:var(--vp-c-red-1);">\*</mark>    | String | Set to `abcd@123` (default password, specified in registry's application.yml/docker compose file) |
 
 :::: tabs
 == 200: OK

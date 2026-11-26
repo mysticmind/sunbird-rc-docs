@@ -4,7 +4,7 @@ title: "Get Count"
 
 # Get Count
 
-<mark style="color:blue;">`GET`</mark> `http://localhost:8070/v1/metrics`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `http://localhost:8070/v1/metrics`
 
 Get count of events emitted for each entityType
 

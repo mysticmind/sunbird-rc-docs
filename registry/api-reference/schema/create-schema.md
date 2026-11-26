@@ -8,21 +8,21 @@ title: "Create Schema"
 
 ## Create a Schema
 
-<mark style="color:green;">`POST`</mark> `/api/v1/Schema`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/Schema`
 
 #### Headers
 
 | Name                                           | Type   | Description                                                        |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------ |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` . The token should be a admin token |
 
 #### Request Body
 
 | Name                                     | Type   | Description        |
 | ---------------------------------------- | ------ | ------------------ |
-| name<mark style="color:red;">\*</mark>   | string | schema name        |
-| schema<mark style="color:red;">\*</mark> | string | json schema        |
+| name<mark style="color:var(--vp-c-red-1);">\*</mark>   | string | schema name        |
+| schema<mark style="color:var(--vp-c-red-1);">\*</mark> | string | json schema        |
 | status                                   | String | DRAFT \| PUBLISHED |
 
 :::: tabs

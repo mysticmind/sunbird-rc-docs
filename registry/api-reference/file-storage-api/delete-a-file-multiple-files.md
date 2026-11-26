@@ -4,15 +4,15 @@ title: "Delete A File/ Multiple Files"
 
 # Delete A File/ Multiple Files
 
-<mark style="color:red;">`DELETE`</mark> `/api/v1/{entity-type}/{entity-id}/{property}/documents/{document-id}`
+<mark style="color:var(--vp-c-red-1);">`DELETE`</mark> `/api/v1/{entity-type}/{entity-id}/{property}/documents/{document-id}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                                                                                                            |
 | --------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | Entity type for which the template will be uploaded                                                                    |
-| entity-id<mark style="color:red;">\*</mark>   | String | Entity ID for mentioned Entity Type                                                                                    |
-| property<mark style="color:red;">\*</mark>    | String | any String for eg templates for uploading html template                                                                |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Entity type for which the template will be uploaded                                                                    |
+| entity-id<mark style="color:var(--vp-c-red-1);">\*</mark>   | String | Entity ID for mentioned Entity Type                                                                                    |
+| property<mark style="color:var(--vp-c-red-1);">\*</mark>    | String | any String for eg templates for uploading html template                                                                |
 | document-id                                   | String | ID of document that was uploaded. If this is not provided, entire directory that holds any no of files will be deleted |
 
 #### Headers

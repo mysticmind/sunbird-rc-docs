@@ -6,7 +6,7 @@ title: "Health API"
 
 ## Return health of all services
 
-<mark style="color:blue;">`GET`</mark> `/health`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/health`
 
 :::: tabs
 == 200: OK Success of Health API

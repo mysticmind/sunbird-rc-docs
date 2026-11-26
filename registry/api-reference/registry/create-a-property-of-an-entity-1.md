@@ -9,7 +9,7 @@ To revoke an existing VC (Verifiable Credential) or an entity, we need to make t
 
 ## This revokes an existing  verifiable credential
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-type}/{id}/revoke`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-type}/{id}/revoke`
 
 The API revokes a verifiable credential by updating the signature data attached to it. This is done by updating the *\_osSignedData* field in the corresponding entity table to an *Empty String*. and storing the signedData in the **RevokedCredential** Registry.
 
@@ -17,15 +17,15 @@ The API revokes a verifiable credential by updating the signature data attached 
 
 | Name                                          | Type   | Description                |
 | --------------------------------------------- | ------ | -------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | Type of entity to update   |
-| id<mark style="color:red;">\*</mark>          | String | id of the entity to revoke |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Type of entity to update   |
+| id<mark style="color:var(--vp-c-red-1);">\*</mark>          | String | id of the entity to revoke |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                 |
 | ---------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
 | authorization                                  | String | Set to `Bearer {access-token}` if roles in Schema is not anonymous. Else token can be empty |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                   |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                   |
 
 #### Request Body
 

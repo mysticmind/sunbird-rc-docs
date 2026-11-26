@@ -4,19 +4,19 @@ title: "Verify API"
 
 # Verify API
 
-<mark style="color:green;">`POST`</mark> `/api/v1/verify`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/verify`
 
 #### Headers
 
 | Name                                            | Type   | Description                    |
 | ----------------------------------------------- | ------ | ------------------------------ |
-| authorization<mark style="color:red;">\*</mark> | String | Set to `Bearer {access-token}` |
+| authorization<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `Bearer {access-token}` |
 
 #### Request Body
 
 | Name                                  | Type   | Description        |
 | ------------------------------------- | ------ | ------------------ |
-| ...<mark style="color:red;">\*</mark> | String | Signed Credentials |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Signed Credentials |
 
 :::: tabs
 == 200: OK Verified Signature Response

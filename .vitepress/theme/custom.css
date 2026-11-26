@@ -139,7 +139,7 @@
 
 .vp-doc figure { margin: 16px 0; }
 .vp-doc figure img { border-radius: 6px; }
-.vp-doc mark { background: transparent; }
+.vp-doc mark { background: transparent; color: inherit; } /* GitBook coloured text; never the browser's black highlight */
 
 .vp-doc .rc-banner { margin: 8px 0 32px; }
 

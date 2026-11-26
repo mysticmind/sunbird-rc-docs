@@ -6,19 +6,19 @@ title: "Sign API"
 
 ## Sign the Payload without storing
 
-<mark style="color:green;">`POST`</mark> `/utils/sign`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/utils/sign`
 
 #### Headers
 
 | Name                                            | Type   | Description                    |
 | ----------------------------------------------- | ------ | ------------------------------ |
-| authorization<mark style="color:red;">\*</mark> | String | Set to `Bearer {access-token}` |
+| authorization<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `Bearer {access-token}` |
 
 #### Request Body
 
 | Name                                  | Type   | Description                                                                                                            |
 | ------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| ...<mark style="color:red;">\*</mark> | Object | Json Object with data key and its value representing what needs to be signed and its credentialTemplate as another key |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | Object | Json Object with data key and its value representing what needs to be signed and its credentialTemplate as another key |
 
 :::: tabs
 == 200: OK Successfully generated signed credentials

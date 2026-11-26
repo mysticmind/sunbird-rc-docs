@@ -9,20 +9,20 @@ To soft delete an entity, we need to make the following HTTP request
 
 ## Deleting an Entity
 
-<mark style="color:red;">`DELETE`</mark> `/api/v1/{entity-type}/{id}`
+<mark style="color:var(--vp-c-red-1);">`DELETE`</mark> `/api/v1/{entity-type}/{id}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                  |
 | --------------------------------------------- | ------ | ---------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | The type of entity to modify |
-| entity-id<mark style="color:red;">\*</mark>   | String | The ID of entity to modify   |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The type of entity to modify |
+| entity-id<mark style="color:var(--vp-c-red-1);">\*</mark>   | String | The ID of entity to modify   |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                               |
 | ---------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                 |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                 |
 | authorization                                  | String | Set to Bearer {access-token} if roles in Schema is not anonymous. Else token can be empty |
 
 :::: tabs

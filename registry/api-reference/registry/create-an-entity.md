@@ -11,13 +11,13 @@ To create an entity, we need to make the following HTTP request
 
 ## Create a record for entity-type
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-type}`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-type}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                  |
 | --------------------------------------------- | ------ | ---------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | The type of entity to create |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The type of entity to create |
 
 #### Query Parameters
 
@@ -30,14 +30,14 @@ To create an entity, we need to make the following HTTP request
 
 | Name                                           | Type   | Description                                                                                        |
 | ---------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                          |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                          |
 | authorization                                  | String | Set to `Bearer {access-token}` if `roles` in schema config is not anonymous else this can be empty |
 
 #### Request Body
 
 | Name                                  | Type | Description       |
 | ------------------------------------- | ---- | ----------------- |
-| ...<mark style="color:red;">\*</mark> |      | The entity's data |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> |      | The entity's data |
 
 :::: tabs
 == 200: OK Success Response of entity Created

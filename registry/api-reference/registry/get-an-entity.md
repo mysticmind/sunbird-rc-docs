@@ -7,13 +7,13 @@ description: "To get an entity created by the owner, we need to make the followi
 
 To get an entity created by the owner, we need to make the following HTTP request
 
-<mark style="color:blue;">`GET`</mark> `/api/v1/{entity-type}`
+<mark style="color:var(--vp-c-indigo-1);">`GET`</mark> `/api/v1/{entity-type}`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                    |
 | --------------------------------------------- | ------ | ------------------------------ |
-| entity-type<mark style="color:red;">\*</mark> | String | The type of entity to retrieve |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The type of entity to retrieve |
 
 #### Query Parameters
 
@@ -27,7 +27,7 @@ Use search query parameter for pagination and filters
 
 | Name                                            | Type   | Description                                                           |
 | ----------------------------------------------- | ------ | --------------------------------------------------------------------- |
-| authorization<mark style="color:red;">\*</mark> | String | Set to `Bearer {access-token}` A valid token of the owner is required |
+| authorization<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `Bearer {access-token}` A valid token of the owner is required |
 | viewTemplateId                                  | String | File name of view templates configured                                |
 
 ::::: tabs

@@ -9,26 +9,26 @@ To invite an entity, we need to make the following HTTP request
 
 ## Invite an Entity
 
-<mark style="color:green;">`POST`</mark> `/api/v1/{entity-type}/invite`
+<mark style="color:var(--vp-c-green-1);">`POST`</mark> `/api/v1/{entity-type}/invite`
 
 #### Path Parameters
 
 | Name                                          | Type   | Description                  |
 | --------------------------------------------- | ------ | ---------------------------- |
-| entity-type<mark style="color:red;">\*</mark> | String | The type of entity to create |
+| entity-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | The type of entity to create |
 
 #### Headers
 
 | Name                                           | Type   | Description                                                                                              |
 | ---------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------- |
-| content-type<mark style="color:red;">\*</mark> | String | Set to `application/json`                                                                                |
+| content-type<mark style="color:var(--vp-c-red-1);">\*</mark> | String | Set to `application/json`                                                                                |
 | authorization                                  | String | Set to `Bearer {access-token}` if `inviteRoles` in schema config is not anonymous else this can be empty |
 
 #### Request Body
 
 | Name                                  | Type   | Description       |
 | ------------------------------------- | ------ | ----------------- |
-| ...<mark style="color:red;">\*</mark> | Object | The entity's data |
+| ...<mark style="color:var(--vp-c-red-1);">\*</mark> | Object | The entity's data |
 
 :::: tabs
 == 200: OK Success response of entity invited
