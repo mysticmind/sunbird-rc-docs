@@ -44,7 +44,8 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.png',
+    logo: { src: '/logo.png', alt: 'Sunbird' },
+    siteTitle: 'RC',
     nav: [
       { text: 'Knowledge Base', link: '/learn/welcome-aboard', activeMatch: '^/(learn|use|engage|help)/' },
       { text: 'Registry', link: '/registry/', activeMatch: '^/registry/' },

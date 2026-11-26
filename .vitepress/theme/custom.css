@@ -11,6 +11,11 @@
   --vp-c-brand-3: #fb7600;
 }
 
+/* Sunbird wordmark: larger in the nav bar, sized for the home page hero */
+.VPNavBarTitle .logo { height: 30px; }
+.VPNavBarTitle .title { gap: 6px; font-size: 18px; }
+.VPHero .image-src { max-width: 360px; max-height: none; }
+
 /* GitBook stepper -> numbered steps */
 .rc-steps {
   counter-reset: rc-step;
