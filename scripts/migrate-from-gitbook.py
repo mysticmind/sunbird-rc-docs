@@ -256,6 +256,8 @@ def text_fixes(t):
     return t
 
 
+PAGE_COVERS = {"learn/welcome-aboard": "<RcBanner />"}
+
 CLIENT_TOOLS = {"curl", "httpie", "wget", "postman", "python", "javascript", "node.js", "java", "go"}
 RUN = re.compile(r"(?:^#{2,6} [^\n]+\n\n```[^\n]*\n(?:.*?\n)?```\n\n?){2,}", re.M | re.S)
 PAIR = re.compile(r"^#{2,6} ([^\n]+)\n\n```([^\n]*)\n(.*?\n)?```", re.M | re.S)
@@ -286,6 +288,9 @@ def convert(raw, page):
     body = outside_code(body, text_fixes)
     body = fix_links(body)
     body = re.sub(r"\n{3,}", "\n\n", body)
+    # GitBook page covers are not in the Markdown export; add the ones we rebuilt as components
+    if page["path"] in PAGE_COVERS:
+        body = PAGE_COVERS[page["path"]] + "\n\n" + body
     fm = {"title": page["title"]}
     if page["desc"]:
         fm["description"] = page["desc"]

@@ -2,6 +2,7 @@ import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import ApiOperation from './components/ApiOperation.vue'
+import RcBanner from './components/RcBanner.vue'
 import './custom.css'
 
 export default {
@@ -9,5 +10,6 @@ export default {
   enhanceApp({ app }) {
     enhanceAppWithTabs(app)
     app.component('ApiOperation', ApiOperation)
+    app.component('RcBanner', RcBanner)
   },
 } satisfies Theme

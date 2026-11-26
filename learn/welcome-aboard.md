@@ -2,6 +2,8 @@
 title: "Welcome Aboard!"
 ---
 
+<RcBanner />
+
 # Welcome Aboard!
 
 Sunbird RC is a best-in-class open-source framework for building electronic registries and issuing verifiable credentials. It enables governments and organisations to build trusted registries of people, institutions and assets, from teachers and health workers to schools, and keep that data accurate, verified and ready to use. Sunbird RC is part of Sunbird, a Digital Public Good, and gives every adopter a proven foundation for digital trust, so no one has to build it from scratch.
