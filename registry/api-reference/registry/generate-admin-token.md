@@ -76,9 +76,8 @@ Important variables in the response body:
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
 	--request POST \
 	--header 'content-type: application/x-www-form-urlencoded' \
@@ -88,10 +87,7 @@ curl --location \
 	--data 'grant_type=password' \
 	'{keycloak-url}/auth/realms/{realm}/protocol/openid-connect/token'
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 http --form post \
 	'{keycloak-url}/auth/realms/{realm}/protocol/openid-connect/token' \
 	'content-type: application/x-www-form-urlencoded' \
@@ -100,6 +96,7 @@ http --form post \
 	'password=test' \
 	'grant_type=password'
 ```
+:::
 
 > `{keycloak-url}` is usually <a href="http://localhost:8080">http://localhost:8080</a>, and `{realm}` is usually `sunbird-rc`.
 >

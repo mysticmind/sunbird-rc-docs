@@ -30,9 +30,8 @@ title: "Attest A Claim"
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request POST '{registry-url}/api/v1/{entity-type}/claims/a52708f8-c06f-4df7-a078-d567ec769637/attest' \
 --header 'Authorization: Bearer {access-token}' \
 --header 'Content-Type: application/json' \
@@ -40,15 +39,13 @@ curl --location --request POST '{registry-url}/api/v1/{entity-type}/claims/a5270
     "action":"GRANT_CLAIM"
 }'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 printf '{
     "action":"GRANT_CLAIM"
 }'| http POST '{registry-url}/api/v1/{entity-type}/claims/a52708f8-c06f-4df7-a078-d567ec769637/attest' \
  Authorization:'Bearer {access-token}' \
  Content-Type:'application/json'
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

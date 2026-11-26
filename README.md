@@ -56,6 +56,7 @@ Standard Markdown plus these VitePress blocks:
 | --- | --- |
 | Callout | `::: info`, `::: tip`, `::: warning`, `::: danger`, closed with `:::` |
 | Tabs | `::: tabs`, then `== Tab title` before each tab |
+| Same request in several clients (cURL, HTTPie) | `::: code-group` around fenced blocks titled like ` ```shell [cURL] ` |
 | Numbered steps | `:::: steps` wrapping one `::: step` per step |
 | Two columns | `:::: columns` wrapping two `::: column` blocks |
 | Link card | `::: card` around a single link |

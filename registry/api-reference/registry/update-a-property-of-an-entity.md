@@ -49,9 +49,8 @@ To update the property of an existing entity, we need to make the following HTTP
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
 	--request 'POST' \
 	--header 'content-type: application/json' \
@@ -61,10 +60,7 @@ curl --location \
 	}' \
 	'{registry-url}/api/v1/{entity-type}/{id}/{entity-property}/{property-id}'
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 printf '{
 		"city": "Surat"
 	}' | http POST \
@@ -72,5 +68,6 @@ printf '{
 	'content-type: application/json' \
 	'authorization: Bearer {access-token}'
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

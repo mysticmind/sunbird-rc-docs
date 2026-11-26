@@ -45,20 +45,17 @@ title: "Delete Schema"
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request DELETE '{registry-url}/api/v1/Schema/{id}' \
 --header 'Authorization: Bearer {access-token}' \
 --header 'Content-Type: application/json'
 ```
-
-#### HTTPie
-
-```
+```shell [HTTPie]
 http  DELETE '{registry-url}/api/v1/Schema/{id}' \
  Authorization:'Bearer {access-token}' \
  Content-Type:'application/json'
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

@@ -256,6 +256,22 @@ def text_fixes(t):
     return t
 
 
+CLIENT_TOOLS = {"curl", "httpie", "wget", "postman", "python", "javascript", "node.js", "java", "go"}
+RUN = re.compile(r"(?:^#{2,6} [^\n]+\n\n```[^\n]*\n(?:.*?\n)?```\n\n?){2,}", re.M | re.S)
+PAIR = re.compile(r"^#{2,6} ([^\n]+)\n\n```([^\n]*)\n(.*?\n)?```", re.M | re.S)
+
+
+def code_groups(text):
+    """Turn runs like '#### cURL' + code, '#### HTTPie' + code into one VitePress code group."""
+    def group(m):
+        pairs = PAIR.findall(m.group(0))
+        if not all(h.strip().lower() in CLIENT_TOOLS for h, _, _ in pairs):
+            return m.group(0)  # numbered walkthrough steps etc. stay as they are
+        blocks = "".join(f"```{(lang.strip() or 'shell')} [{h.strip()}]\n{code}```\n" for h, lang, code in pairs)
+        return f"::: code-group\n{blocks}:::\n\n"
+    return RUN.sub(group, text)
+
+
 def convert(raw, page):
     body = raw.split("\n---\n\n# Agent Instructions")[0]
     lines = body.splitlines()
@@ -265,6 +281,7 @@ def convert(raw, page):
     # GitBook's export sometimes puts a closing tag inside the last table row: "| {% endtab %} |   |"
     body = re.sub(r"^\|\s*(\{%\s*end[a-z-]+\s*%\})\s*\|[\s|]*$", r"\n\1", body, flags=re.M)
     body = render(parse(body))
+    body = code_groups(body)
     body = localise_images(body)
     body = outside_code(body, text_fixes)
     body = fix_links(body)

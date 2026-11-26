@@ -79,9 +79,8 @@ Important Fields in Response Body
 
 So to create a `Teacher` entity named Pranav Agate who teaches Math at UP Public School, we would make the following API call:
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location \
 	--request 'POST' \
 	--header 'content-type: application/json' \
@@ -95,10 +94,7 @@ curl --location \
 	}' \
 	'{registry-url}/api/v1/{entity-type}/'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 printf '{
             "name": "Pranav Agate",
             "school": "UP Public School",
@@ -108,5 +104,6 @@ printf '{
 	'{registry-url}/api/v1/{entity-type}' \
 	'content-type: application/json'
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

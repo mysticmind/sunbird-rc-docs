@@ -78,14 +78,12 @@ title: "Health API"
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request GET 'http://localhost:8081/health'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 http --follow --timeout 3600 GET 'http://localhost:8081/health'
 ```
+:::
+

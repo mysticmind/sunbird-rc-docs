@@ -64,9 +64,8 @@ title: "Verify API"
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request POST '{registry-url}/api/v1/verify' \
 --header 'Authorization: Bearer {access-token}' \
 --header 'Content-Type: application/json' \
@@ -96,10 +95,7 @@ curl --location --request POST '{registry-url}/api/v1/verify' \
     }
 }'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 printf '{
     "signedCredentials": {
         "@context": [
@@ -128,5 +124,6 @@ printf '{
  Authorization:'Bearer {access-token}' \
  Content-Type:'application/json'
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

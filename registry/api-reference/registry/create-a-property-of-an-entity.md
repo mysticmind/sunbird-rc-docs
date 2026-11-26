@@ -54,9 +54,8 @@ To add property to an existing entity, we need to make the following HTTP reques
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
 	--request 'POST' \
 	--header 'content-type: application/json' \
@@ -66,10 +65,7 @@ curl --location \
 	}' \
 	'{registry-url}/api/v1/{entity-type}/{id}/{entity-property}'
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 printf '{
 		"city": "Ahmedabad"
 	}' | http POST \
@@ -77,5 +73,6 @@ printf '{
 	'content-type: application/json' \
 	'authorization: Bearer {access-token}'
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

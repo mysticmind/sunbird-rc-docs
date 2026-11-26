@@ -53,9 +53,8 @@ To update an entity, we need to make the following HTTP request
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
 	--request 'PUT' \
 	--header 'content-type: application/json' \
@@ -68,10 +67,7 @@ curl --location \
 	}' \
 	'{registry-url}/api/v1/{entity-type}/{id}'
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 printf '{
 	"phoneNumber": "1234567891",
 	"school": "UP Public School",
@@ -82,5 +78,6 @@ printf '{
 	'content-type: application/json' \
 	'authorization: bearer {access-token}'
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

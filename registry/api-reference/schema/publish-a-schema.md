@@ -59,9 +59,8 @@ Sample Schema Request Payload
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request PUT '{registry-url}/api/v1/Schema/{id}' \
 --header 'Authorization: Bearer {access-token}' \
 --header 'Content-Type: application/json' \
@@ -69,15 +68,13 @@ curl --location --request PUT '{registry-url}/api/v1/Schema/{id}' \
   "status": "PUBLISHED"
 }'
 ```
-
-#### HTTPie
-
-```
+```shell [HTTPie]
 printf '{
   "status": "PUBLISHED"
 }'| http  PUT '{registry-url}/api/v1/Schema' \
  Authorization:'Bearer {access-token}' \
  Content-Type:'application/json'
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

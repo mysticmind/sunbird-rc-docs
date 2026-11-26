@@ -41,24 +41,21 @@ title: "Upload A File"
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
     --header 'Authorization: {access-token}' \
     --form 'files=@"{file-path}"'
     --request POST 
     '{registry-url}/api/v1/{entity-type}/{entity-id}/{property}/documents' \
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 http --ignore-stdin \
     --form POST \
     '{registry-url}/api/v1/{entity-type}/{entity-id}/{property}/documents' \
  'files'@{file-path} \
  Authorization:'Bearer {access-token}' \
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

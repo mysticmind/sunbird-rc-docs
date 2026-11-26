@@ -75,9 +75,8 @@ revoked response: {
 
 ## Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
 	--request POST \
 	--header 'Content-Type: application/json' \
@@ -85,15 +84,13 @@ curl --location \
 	'{registry-url}/api/v1/{entity-type}/{id}/revoke' \
 
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 http POST \
 	'{registry_url}/api/v1/{entity-type}/{id}/revoke' \
 	'content-type: application/json' \
 	'authorization: Bearer {access-token}'
 	
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

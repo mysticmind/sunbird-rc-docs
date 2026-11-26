@@ -77,9 +77,8 @@ Sample Request Body
 
 ### Usage
 
-### cURL
-
-```
+::: code-group
+```shell [cURL]
 curl --location \
     --request POST \
     --header 'Content-Type: application/json' \
@@ -94,10 +93,7 @@ curl --location \
         "offset": 0
     }'
 ```
-
-### HTTPie
-
-```
+```shell [HTTPie]
 printf '{
     "filters": {
         "school": {
@@ -109,5 +105,6 @@ printf '{
 }'| http POST '{registry-url}/api/v1/Place/search' \
  Content-Type:'application/json' \
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`.

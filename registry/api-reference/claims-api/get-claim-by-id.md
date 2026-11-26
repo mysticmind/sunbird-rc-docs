@@ -38,18 +38,15 @@ title: "Get Claim by ID"
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request GET '{registry-url}/api/v1/{entity-name}/claims/{claimId}' \
 --header 'Authorization: Bearer {access-token}'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 http GET '{registry-url}/api/v1/{entity-name}/claims/{claimId}' \
  Authorization:'Bearer {access-token}'
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

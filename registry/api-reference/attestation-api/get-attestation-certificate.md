@@ -36,22 +36,19 @@ PDF File
 
 ### Usage
 
-### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request GET '{registry-url}/api/v1/{entity-type}/{entity-id}/attestation/{attestation-name}/{attestation-id}' \
 --header 'Accept: application/pdf' \
 --header 'template: {url}' \
 --header 'Authorization: Bearer {access-token}'
 ```
-
-### HTTPie
-
-```shell
+```shell [HTTPie]
 http GET '{registry-url}/api/v1/{entity-type}/{entity-id}/attestation/{attestation-name}/{attestation-id}' \
  Accept:'application/pdf' \
  template:'{url}' \
  Authorization:'Bearer {access-token}'
 ```
+:::
 
 > `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`

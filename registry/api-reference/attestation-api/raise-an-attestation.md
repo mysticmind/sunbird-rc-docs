@@ -62,9 +62,8 @@ If you retrieve the entity by the [Retrieve Entity API Endpoint](https://github.
 
 ### Usage
 
-#### cURL
-
-```shell
+::: code-group
+```shell [cURL]
 curl --location --request POST '{registry-url}/api/v1/send' \
 --header 'Authorization: Bearer {access-token}' \
 --header 'Content-Type: application/json' \
@@ -74,10 +73,7 @@ curl --location --request POST '{registry-url}/api/v1/send' \
   "name": "schoolAffiliation"
 }'
 ```
-
-#### HTTPie
-
-```shell
+```shell [HTTPie]
 printf '{
   "entityName": "Teacher",
   "entityId": "{id}",
@@ -86,5 +82,6 @@ printf '{
  Authorization:'Bearer {access-token}' \
  Content-Type:'application/json' \
 ```
+:::
 
 `{registry-url}` is usually <a href="http://localhost:{port}">http://localhost:{port}</a>. The port can be found under the `registry` section in the `docker-compose.yml` file and is usually `8081`
