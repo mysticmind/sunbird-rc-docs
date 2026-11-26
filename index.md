@@ -8,7 +8,7 @@ hero:
   text: Registries and verifiable credentials
   tagline: Build live, reusable and trustworthy registries and verifiable credentials, with configuration, not code.
   image:
-    src: /logo.png
+    src: /logo-rc.svg
     alt: Sunbird RC
   actions:
     - theme: brand

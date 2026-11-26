@@ -12,18 +12,8 @@
 }
 
 /* Sunbird wordmark: larger in the nav bar, sized for the home page hero */
-:root { --vp-nav-logo-height: 40px; }
-/* "RC" next to the wordmark, in the colour of the logo's dots */
-.VPNavBarTitle .title { gap: 6px; }
-.VPNavBarTitle .title span {
-  color: #c88143;
-  font-size: 27px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  margin-top: 6px;
-}
-.VPHero .image-src { max-width: 440px !important; max-height: none !important; }
+:root { --vp-nav-logo-height: 36px; }
+.VPHero .image-src { max-width: 520px !important; max-height: none !important; }
 
 /* GitBook stepper -> numbered steps */
 .rc-steps {
