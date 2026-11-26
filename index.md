@@ -5,8 +5,11 @@ titleTemplate: Registries and verifiable credentials
 
 hero:
   name: Sunbird RC
-  text: Configure, don't code
-  tagline: Define a schema and get a live registry with open APIs, attestation and consent. Issue W3C verifiable credentials that holders keep in their own wallet.
+  text: '<span class="rc-hero-label rc-hero-tilt">Digital Public Good for</span><span class="rc-hero-label">Registry and Verifiable Credentialing</span>'
+  tagline: Open source Registry and Credentialing infrastructure for quickly deploying configurable Registries and for issuing, verifying and managing digital credentials.
+  image:
+    src: /logo-rc.svg
+    alt: Sunbird RC
   actions:
     - theme: brand
       text: Get started

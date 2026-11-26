@@ -1,13 +1,11 @@
 <script setup lang="ts">
 // "Digital Public Good" banner, rebuilt from the GitBook page cover so it stays sharp and readable.
 import { withBase } from 'vitepress'
-
-defineProps<{ compact?: boolean }>()
 </script>
 
 <template>
-  <section class="rc-banner" :class="{ 'rc-banner--compact': compact }" aria-label="About Sunbird RC">
-    <img v-if="!compact" class="rc-banner-logo" :src="withBase('/logo.png')" alt="Sunbird" />
+  <section class="rc-banner" aria-label="About Sunbird RC">
+    <img class="rc-banner-logo" :src="withBase('/logo.png')" alt="Sunbird" />
     <div class="rc-banner-text">
       <h2 class="rc-banner-title">
         <span class="rc-label rc-label-tilt">Digital Public Good for</span>
@@ -72,20 +70,6 @@ defineProps<{ compact?: boolean }>()
   color: #4a2414;
   font-size: clamp(15px, 1.5vw, 18px);
   line-height: 1.6;
-}
-.rc-banner--compact {
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 36px 32px;
-}
-.rc-banner--compact .rc-banner-logo {
-  max-width: 230px;
-}
-.rc-banner--compact .rc-banner-title {
-  font-size: clamp(18px, 1.9vw, 23px);
-}
-.rc-banner--compact .rc-banner-desc {
-  font-size: 16px;
 }
 @media (max-width: 720px) {
   .rc-banner {

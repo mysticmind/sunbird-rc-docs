@@ -1,4 +1,3 @@
-import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
@@ -8,11 +7,6 @@ import './custom.css'
 
 export default {
   extends: DefaultTheme,
-  Layout: () =>
-    h(DefaultTheme.Layout, null, {
-      // The "Digital Public Good" cover takes the place of the hero image on the home page
-      'home-hero-image': () => h(RcBanner, { compact: true }),
-    }),
   enhanceApp({ app }) {
     enhanceAppWithTabs(app)
     app.component('ApiOperation', ApiOperation)
