@@ -85,6 +85,11 @@
   justify-content: center;
 }
 .rc-step > :first-child { margin-top: 0; padding-top: 0; border-top: none; }
+/* VitePress puts the heading's "#" link in the left margin, where the step number sits; show it after the text instead */
+.vp-doc .rc-step .header-anchor {
+  position: static;
+  margin-left: 0.3em;
+}
 
 /* GitBook columns */
 .rc-columns {
