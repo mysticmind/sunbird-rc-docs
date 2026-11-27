@@ -22,7 +22,7 @@ One open-source package with two components. You can use either one on its own, 
 
 When both are used together, Registry's signing and DID features (Signature V2) are provided by the Credentials services.
 
-For the full picture, see [Sunbird RC Overview](/learn/readme), Why do we need Sunbird RC? and Core Capabilities.
+For the full picture, see [Sunbird RC Overview](/learn/overview), Why do we need Sunbird RC? and Core Capabilities.
 
 ::: tip
 **Works with any compliant wallet.** Through the OID4VC microservice, Sunbird RC now speaks OpenID4VCI (issuance) and OpenID4VP (presentation), so any compliant wallet — not just a Sunbird-built one — can fetch, hold and present credentials issued by the platform.

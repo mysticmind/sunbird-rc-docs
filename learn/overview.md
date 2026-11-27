@@ -51,7 +51,7 @@ A verifiable credential carries trusted data from where it is held to wherever i
 3. **Holder** — the person or organisation the credential is about keeps it in a wallet or other digital storage they control.
 4. **Verifier** — an employer, agency or service checks the credential's signature and status, without calling the issuer.
 
-Because the Credentials component does not depend on where the data lives, you can issue credentials from an existing database or registry without moving it into Sunbird RC. If you also use the Registry component, the two connect directly. See [Workflows](/learn/readme/workflows) for each step in detail.
+Because the Credentials component does not depend on where the data lives, you can issue credentials from an existing database or registry without moving it into Sunbird RC. If you also use the Registry component, the two connect directly. See [Workflows](/learn/workflows) for each step in detail.
 
 ## Watch: What is Sunbird RC?
 
@@ -66,8 +66,8 @@ Hear Dr Pramod Varma, CTO of EkStep Foundation, explain the thinking behind Sunb
 
 ## Explore further
 
-* [Why do we need Sunbird RC?](/learn/readme/why-do-we-need-sunbird-rc)
-* [Core Capabilities](/learn/readme/core-capabilities)
-* [Workflows](/learn/readme/workflows)
-* [What Sunbird RC is and what it's not](/learn/readme/what-sunbird-rc-is-and-what-its-not)
-* [Possibilities](/learn/readme/possibilities)
+* [Why do we need Sunbird RC?](/learn/why-do-we-need-sunbird-rc)
+* [Core Capabilities](/learn/core-capabilities)
+* [Workflows](/learn/workflows)
+* [What Sunbird RC is and what it's not](/learn/what-sunbird-rc-is-and-what-its-not)
+* [Possibilities](/learn/possibilities)

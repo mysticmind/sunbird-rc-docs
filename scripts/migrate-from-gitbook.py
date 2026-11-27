@@ -301,6 +301,18 @@ def outside_code(text, fn):
     return "".join(parts)
 
 
+# Pages given cleaner URLs than GitBook's (GitBook nests a section's pages under its README).
+# The old URLs keep working through small redirect pages in public/.
+PATH_MOVES = {
+    "learn/readme": "learn/overview",
+    "learn/readme/why-do-we-need-sunbird-rc": "learn/why-do-we-need-sunbird-rc",
+    "learn/readme/what-sunbird-rc-is-and-what-its-not": "learn/what-sunbird-rc-is-and-what-its-not",
+    "learn/readme/core-capabilities": "learn/core-capabilities",
+    "learn/readme/workflows": "learn/workflows",
+    "learn/readme/possibilities": "learn/possibilities",
+}
+
+
 # Links that are already broken (404) on the live GitBook site, pointing at pre-restructure paths.
 LINK_FIXES = {
     "learn/technical-overview/registry/high-level-architecture": "registry/technical-overview/high-level-architecture",
@@ -318,6 +330,7 @@ def fix_links(t):
         path, frag = m.group(1), m.group(2) or ""
         path = re.sub(r"\.md$", "", path)
         path = LINK_FIXES.get(path, path)
+        path = PATH_MOVES.get(path, path)
         return "/" + path + frag
     t = re.sub(r"https://rc\.sunbird\.org/([^\s)\"'#>]*?)(?:\.md)?(#[^\s)\"'>]*)?(?=[\s)\"'>])", site_link, t)
     return t
@@ -391,9 +404,34 @@ def convert(raw, page):
     return head + body
 
 
+# ---------------------------------------------------------------- moved pages
+for p in pages:
+    p["live_path"] = p["path"]
+    if p["path"] in PATH_MOVES:
+        p["path"] = PATH_MOVES[p["path"]]
+for old_path, new_path in PATH_MOVES.items():
+    (OUT / (old_path + ".md")).unlink(missing_ok=True)  # copies from earlier runs
+    stub = OUT / "public" / (old_path + ".html")
+    stub.parent.mkdir(parents=True, exist_ok=True)
+    stub.write_text(f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sunbird RC</title>
+  <!-- This page moved; keep old links working -->
+  <meta http-equiv="refresh" content="0; url=/{new_path}">
+  <link rel="canonical" href="https://rc.sunbird.org/{new_path}">
+</head>
+<body><p>This page moved to <a href="/{new_path}">/{new_path}</a>.</p></body>
+</html>
+""")
+for d in sorted({(OUT / o).parent for o in PATH_MOVES} | {OUT / o for o in PATH_MOVES}, reverse=True):
+    if d.is_dir() and not any(d.iterdir()):
+        d.rmdir()
+
 # ---------------------------------------------------------------- write pages
 for p in pages:
-    raw = (LIVE / "raw" / (p["path"] + ".md")).read_text()
+    raw = (LIVE / "raw" / (p["live_path"] + ".md")).read_text()
     dest = OUT / (p["path"] + ".md")
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(convert(raw, p))
@@ -457,12 +495,12 @@ def section(title, items):
 #   ("api", label, space, segment)        an API reference tree, built from the live page order
 SIDEBAR = [
     ("group", "Introduction", [
-        ("learn/readme", "Overview"),
-        ("learn/readme/why-do-we-need-sunbird-rc", "Why Sunbird RC"),
-        ("learn/readme/what-sunbird-rc-is-and-what-its-not", "What it is and isn't"),
-        ("learn/readme/core-capabilities", "Core capabilities"),
-        ("learn/readme/workflows", "How it works"),
-        ("learn/readme/possibilities", "Possibilities"),
+        ("learn/overview", "Overview"),
+        ("learn/why-do-we-need-sunbird-rc", "Why Sunbird RC"),
+        ("learn/what-sunbird-rc-is-and-what-its-not", "What it is and isn't"),
+        ("learn/core-capabilities", "Core capabilities"),
+        ("learn/workflows", "How it works"),
+        ("learn/possibilities", "Possibilities"),
         ("engage/use-case-walkthroughs", "Use case Walkthroughs"),
         ("learn/adopters", "Adopters"),
     ]),

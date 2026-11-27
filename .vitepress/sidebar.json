@@ -4,27 +4,27 @@
     "items": [
       {
         "text": "Overview",
-        "link": "/learn/readme"
+        "link": "/learn/overview"
       },
       {
         "text": "Why Sunbird RC",
-        "link": "/learn/readme/why-do-we-need-sunbird-rc"
+        "link": "/learn/why-do-we-need-sunbird-rc"
       },
       {
         "text": "What it is and isn't",
-        "link": "/learn/readme/what-sunbird-rc-is-and-what-its-not"
+        "link": "/learn/what-sunbird-rc-is-and-what-its-not"
       },
       {
         "text": "Core capabilities",
-        "link": "/learn/readme/core-capabilities"
+        "link": "/learn/core-capabilities"
       },
       {
         "text": "How it works",
-        "link": "/learn/readme/workflows"
+        "link": "/learn/workflows"
       },
       {
         "text": "Possibilities",
-        "link": "/learn/readme/possibilities"
+        "link": "/learn/possibilities"
       },
       {
         "text": "Use case Walkthroughs",

@@ -28,7 +28,7 @@ Before you start, install the [Pre-requisites](/use/getting-started/developer-se
 
 * [Creating Your Own Schemas](/use/developer-guide/schema-setup/creating-your-own-schemas)
 * [Registry API reference](/registry/api-reference/registry/using-the-apis)
-* [Core Capabilities](/learn/readme/core-capabilities)
+* [Core Capabilities](/learn/core-capabilities)
 
 == Credentials only
 

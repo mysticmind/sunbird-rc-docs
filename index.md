@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: Overview
-      link: /learn/readme
+      link: /learn/overview
     - theme: alt
       text: Get started
       link: /use/getting-started

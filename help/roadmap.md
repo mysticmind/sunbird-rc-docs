@@ -22,7 +22,7 @@ Sunbird RC is one package with two components, Registry and Credentials, which c
 
 ## Next
 
-* **Authority Service** (Registry + Credentials) — In Development. A domain-neutral administrative layer for multi-tenant access control, configuration and record review. Target release to be confirmed. See [Authority Service](/learn/readme/core-capabilities#authority-service).
+* **Authority Service** (Registry + Credentials) — In Development. A domain-neutral administrative layer for multi-tenant access control, configuration and record review. Target release to be confirmed. See [Authority Service](/learn/core-capabilities#authority-service).
 
 ::: info
 **Coming soon.** Full scope for the next release of each component will be published here.
