@@ -86,12 +86,12 @@ export default defineConfig({
       text: 'Edit this page on GitHub',
     },
     footer: {
-      // Two balanced lines: who holds the copyright, then on whose behalf and under which licence
+      message: 'Released under the <a href="https://github.com/Sunbird-RC/sunbird-rc-core/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>.',
+      // Copyright on two balanced lines: who holds it, then on whose behalf
       copyright:
         `Copyright © ${new Date().getFullYear()} `
         + '<a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore (IIITB)</a>'
-        + '<br>on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems (COSS)</a>'
-        + ' · Released under the <a href="https://github.com/Sunbird-RC/sunbird-rc-core/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>',
+        + '<br>on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems (COSS)</a>',
     },
   },
 })
