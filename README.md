@@ -44,7 +44,7 @@ Images go in `public/images/` and are referenced as `/images/<name>.png`. Use lo
 | `openapi/` | Copies of the OpenAPI specs from `sunbird-rc-core/api-documentation` |
 | `public/` | Images, video and the logo, served as-is |
 | `.vitepress/config.mts` | Site settings, navigation and plugins |
-| `.vitepress/sidebar.json` | Sidebar for each section |
+| `.vitepress/sidebar.json` | The sidebar, shared by every page (Registry and Credentials are collapsible sections at the end) |
 | `.vitepress/theme/` | Brand colours, styles and the `ApiOperation` component |
 | `scripts/` | OpenAPI sync and the one-off GitBook migration |
 

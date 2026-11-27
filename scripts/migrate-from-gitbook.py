@@ -440,7 +440,16 @@ def build(items, prefix_depth):
 kb = [p for p in pages if p["space"] == "RC Knowledge Base"]
 reg = [p for p in pages if p["space"] == "Registry"]
 cred = [p for p in pages if p["space"] == "Credentials"]
-sidebar = {"/": build(kb, 0), "/registry/": build(reg, 1), "/credentials/": build(cred, 1)}
+
+
+def section(title, items):
+    """A collapsible top-level sidebar section; VitePress opens it when the current page is inside."""
+    groups = [dict(g, collapsed=True) for g in build(items, 1)]
+    return {"text": title, "collapsed": True, "items": groups}
+
+
+# One sidebar for the whole site: the knowledge base groups, then Registry and Credentials
+sidebar = build(kb, 0) + [section("Registry", reg), section("Credentials", cred)]
 (OUT / ".vitepress").mkdir(exist_ok=True)
 (OUT / ".vitepress" / "sidebar.json").write_text(json.dumps(sidebar, indent=2, ensure_ascii=False) + "\n")
 

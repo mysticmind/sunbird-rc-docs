@@ -1,633 +1,643 @@
-{
-  "/": [
-    {
-      "text": "Learn",
-      "items": [
-        {
-          "text": "Overview",
-          "link": "/learn/readme",
-          "items": [
-            {
-              "text": "Why do we need Sunbird RC?",
-              "link": "/learn/readme/why-do-we-need-sunbird-rc"
-            },
-            {
-              "text": "What Sunbird RC is and what it's not?",
-              "link": "/learn/readme/what-sunbird-rc-is-and-what-its-not"
-            },
-            {
-              "text": "Core Capabilities",
-              "link": "/learn/readme/core-capabilities"
-            },
-            {
-              "text": "Workflows",
-              "link": "/learn/readme/workflows"
-            },
-            {
-              "text": "Possibilities",
-              "link": "/learn/readme/possibilities"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Adopters",
-          "link": "/learn/adopters"
-        }
-      ]
-    },
-    {
-      "text": "Use",
-      "items": [
-        {
-          "text": "Getting started",
-          "link": "/use/getting-started",
-          "items": [
-            {
-              "text": "Pre-requisites",
-              "link": "/use/getting-started/developer-setup"
-            },
-            {
-              "text": "Installation",
-              "link": "/use/getting-started/installation",
-              "items": [
-                {
-                  "text": "Registry CLI",
-                  "link": "/use/getting-started/installation/registry-cli"
-                },
-                {
-                  "text": "Docker Compose Setup",
-                  "link": "/use/getting-started/installation/docker-compose-setup"
-                },
-                {
-                  "text": "Helm Setup",
-                  "link": "/use/getting-started/installation/helm-setup"
-                },
-                {
-                  "text": "Credentialling Services setup (Dev / Docker / Helm)",
-                  "link": "/use/getting-started/installation/credentialling-services-setup-dev-docker-helm"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "For existing adopters",
-              "link": "/use/getting-started/for-existing-adopters"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Developer Guide",
-          "link": "/use/developer-guide",
-          "items": [
-            {
-              "text": "Working with Source Code",
-              "link": "/use/developer-guide/working-with-source-code"
-            },
-            {
-              "text": "Environment Variable Reference",
-              "link": "/use/developer-guide/environment-variable-reference"
-            },
-            {
-              "text": "Configuration Reference",
-              "link": "/use/developer-guide/configuration-reference"
-            },
-            {
-              "text": "Schema Setup",
-              "link": "/use/developer-guide/schema-setup",
-              "items": [
-                {
-                  "text": "Introduction To Schemas",
-                  "link": "/use/developer-guide/schema-setup/introduction-to-schemas"
-                },
-                {
-                  "text": "Creating Your Own Schemas",
-                  "link": "/use/developer-guide/schema-setup/creating-your-own-schemas"
-                },
-                {
-                  "text": "Schema Configuration",
-                  "link": "/use/developer-guide/schema-setup/schema-configuration"
-                },
-                {
-                  "text": "Create Schemas With Custom Password",
-                  "link": "/use/developer-guide/schema-setup/create-schemas-with-custom-password"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "Setup Backend",
-              "link": "/use/developer-guide/setup-backend"
-            },
-            {
-              "text": "Setup Frontend",
-              "link": "/use/developer-guide/setup-frontend"
-            },
-            {
-              "text": "Backup and Restore",
-              "link": "/use/developer-guide/backup-and-restore",
-              "items": [
-                {
-                  "text": "PostgreSQL",
-                  "link": "/use/developer-guide/backup-and-restore/postgresql"
-                },
-                {
-                  "text": "Cassandra",
-                  "link": "/use/developer-guide/backup-and-restore/cassandra"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "Generic IAM",
-              "link": "/use/developer-guide/generic-iam"
-            },
-            {
-              "text": "Metrics",
-              "link": "/use/developer-guide/metrics"
-            },
-            {
-              "text": "Custom Keycloak Build",
-              "link": "/use/developer-guide/custom-keycloak-build"
-            },
-            {
-              "text": "VC Verification Module",
-              "link": "/use/developer-guide/vc-verification-module"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Integrations",
-          "link": "/use/integrations",
-          "items": [
-            {
-              "text": "SSO with existing systems",
-              "link": "/use/integrations/sso-with-existing-systems"
-            },
-            {
-              "text": "Digilocker Meripehchaan SSO",
-              "link": "/use/integrations/digilocker-meripehchaan-sso"
-            },
-            {
-              "text": "Digilocker Integration",
-              "link": "/use/integrations/digilocker-integration"
-            },
-            {
-              "text": "Wallet Integration",
-              "link": "/use/integrations/wallet-integration"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Connectors",
-          "link": "/use/connectors",
-          "items": [
-            {
-              "text": "OpenID for Verifiable Credentials (OID4VCI)",
-              "link": "/use/connectors/openid-for-verifiable-credentials-oid4vci"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Releases",
-          "link": "/use/releases",
-          "items": [
-            {
-              "text": "Registry",
-              "link": "/use/releases/registry",
-              "items": [
-                {
-                  "text": "v2.0.3",
-                  "link": "/use/releases/registry/v2.0.3"
-                },
-                {
-                  "text": "v1.0.0",
-                  "link": "/use/releases/registry/v1.0.0"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "Credentialling",
-              "link": "/use/releases/credentialing",
-              "items": [
-                {
-                  "text": "v2.1.0 — Latest release",
-                  "link": "/use/releases/credentialing/v2.1.0-latest-release"
-                },
-                {
-                  "text": "v2.0.3",
-                  "link": "/use/releases/credentialing/v2.0.3"
-                },
-                {
-                  "text": "v2.0.0",
-                  "link": "/use/releases/credentialing/v2.0.0"
-                }
-              ],
-              "collapsed": true
-            }
-          ],
-          "collapsed": true
-        }
-      ]
-    },
-    {
-      "text": "Engage",
-      "items": [
-        {
-          "text": "Discussion Forum",
-          "link": "/engage/discussions"
-        },
-        {
-          "text": "Use case Walkthroughs",
-          "link": "/engage/use-case-walkthroughs"
-        },
-        {
-          "text": "Contributing",
-          "link": "/engage/contributing"
-        },
-        {
-          "text": "Contribution Guidebook",
-          "link": "/engage/contribution-guidebook"
-        },
-        {
-          "text": "Code of Conduct",
-          "link": "/engage/code-of-conduct"
-        }
-      ]
-    },
-    {
-      "text": "Help",
-      "items": [
-        {
-          "text": "Roadmap",
-          "link": "/help/roadmap"
-        },
-        {
-          "text": "FAQs",
-          "link": "/help/faqs"
-        },
-        {
-          "text": "Glossary",
-          "link": "/help/terminology"
-        },
-        {
-          "text": "Guide to Electronic Registries and Verifiable Credentials",
-          "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials",
-          "items": [
-            {
-              "text": "Verifiable Credentials",
-              "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials",
-              "items": [
-                {
-                  "text": "What issues will Verifiable Credentials address?",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-issues-will-verifiable-credentials-address"
-                },
-                {
-                  "text": "What are the key roles in Verifiable Credentials?",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-key-roles-in-verifiable-credentials"
-                },
-                {
-                  "text": "What are the components of Verifiable Credentials?",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-components-of-verifiable-credentials"
-                },
-                {
-                  "text": "What are the benefits of Verifiable Credentials?",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-benefits-of-verifiable-credentials"
-                },
-                {
-                  "text": "Digital Credentials vs Verifiable Credentials",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/digital-credentials-vs-verifiable-credentials"
-                },
-                {
-                  "text": "QR code vs Verifiable QR code",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/qr-code-vs-verifiable-qr-code"
-                },
-                {
-                  "text": "Use Cases",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/use-cases"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "Electronic Registries",
-              "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries",
-              "items": [
-                {
-                  "text": "Evolution of Electronic Registries",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/evolution-electronic-registries"
-                },
-                {
-                  "text": "What issues will Electronic Registries address?",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/what-issues-will-electronic-registries-address"
-                },
-                {
-                  "text": "Benefits of Electronic Registries",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/benefits-of-electronic-registries"
-                },
-                {
-                  "text": "Registry vs Database",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/registry-vs-database"
-                },
-                {
-                  "text": "Design Principles",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/design-principles"
-                },
-                {
-                  "text": "Use Cases",
-                  "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/use-cases"
-                }
-              ],
-              "collapsed": true
-            },
-            {
-              "text": "Leveraging Existing data stores",
-              "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/leveraging-existing-data-stores-directories"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "External Open Source Software Attributions",
-          "link": "/help/external-open-source-software-attributions"
-        }
-      ]
-    }
-  ],
-  "/registry/": [
-    {
-      "text": "Technical Overview",
-      "items": [
-        {
-          "text": "High-Level architecture",
-          "link": "/registry/technical-overview/high-level-architecture"
-        },
-        {
-          "text": "Technical Specification Draft",
-          "link": "/registry/technical-overview/technical-specification-draft"
-        },
-        {
-          "text": "Tech Stack and Requirements",
-          "link": "/registry/technical-overview/infrastructure-requirements"
-        }
-      ]
-    },
-    {
-      "text": "API Reference",
-      "items": [
-        {
-          "text": "Schema",
-          "link": "/registry/api-reference/schema",
-          "items": [
-            {
-              "text": "Create Schema",
-              "link": "/registry/api-reference/schema/create-schema"
-            },
-            {
-              "text": "Get Schema",
-              "link": "/registry/api-reference/schema/get-schema"
-            },
-            {
-              "text": "Update Schema",
-              "link": "/registry/api-reference/schema/update-schema"
-            },
-            {
-              "text": "Delete Schema",
-              "link": "/registry/api-reference/schema/delete-schema"
-            },
-            {
-              "text": "Publish A Schema",
-              "link": "/registry/api-reference/schema/publish-a-schema"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Registry",
-          "link": "/registry/api-reference/registry",
-          "items": [
-            {
-              "text": "Using The APIs",
-              "link": "/registry/api-reference/registry/using-the-apis"
-            },
-            {
-              "text": "Create An Entity",
-              "link": "/registry/api-reference/registry/create-an-entity"
-            },
-            {
-              "text": "Invite An Entity",
-              "link": "/registry/api-reference/registry/invite-an-entity"
-            },
-            {
-              "text": "Generate token",
-              "link": "/registry/api-reference/registry/authenticating-as-an-entity"
-            },
-            {
-              "text": "Generate admin token",
-              "link": "/registry/api-reference/registry/generate-admin-token"
-            },
-            {
-              "text": "Get An Entity",
-              "link": "/registry/api-reference/registry/get-an-entity"
-            },
-            {
-              "text": "Get An Entity By Id",
-              "link": "/registry/api-reference/registry/get-an-entity-by-id"
-            },
-            {
-              "text": "Update An Entity",
-              "link": "/registry/api-reference/registry/update-an-entity"
-            },
-            {
-              "text": "Create A Property Of An Entity",
-              "link": "/registry/api-reference/registry/create-a-property-of-an-entity"
-            },
-            {
-              "text": "Update A Property Of An Entity",
-              "link": "/registry/api-reference/registry/update-a-property-of-an-entity"
-            },
-            {
-              "text": "Revoke a Credential",
-              "link": "/registry/api-reference/registry/create-a-property-of-an-entity-1"
-            },
-            {
-              "text": "Delete An Entity",
-              "link": "/registry/api-reference/registry/delete-an-entity"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Attestation API",
-          "link": "/registry/api-reference/attestation-api",
-          "items": [
-            {
-              "text": "Raise An Attestation",
-              "link": "/registry/api-reference/attestation-api/raise-an-attestation"
-            },
-            {
-              "text": "Get Attestation Certificate",
-              "link": "/registry/api-reference/attestation-api/get-attestation-certificate"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Claims API",
-          "link": "/registry/api-reference/claims-api",
-          "items": [
-            {
-              "text": "Get All Claims",
-              "link": "/registry/api-reference/claims-api/get-all-claims"
-            },
-            {
-              "text": "Get Claim by ID",
-              "link": "/registry/api-reference/claims-api/get-claim-by-id"
-            },
-            {
-              "text": "Attest A Claim",
-              "link": "/registry/api-reference/claims-api/attest-a-claim"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Discovery API",
-          "link": "/registry/api-reference/discovery-api",
-          "items": [
-            {
-              "text": "Search An Entity",
-              "link": "/registry/api-reference/discovery-api/search-an-entity"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "File Storage API",
-          "link": "/registry/api-reference/file-storage-api",
-          "items": [
-            {
-              "text": "Upload A File",
-              "link": "/registry/api-reference/file-storage-api/upload-a-file"
-            },
-            {
-              "text": "Get Uploaded File",
-              "link": "/registry/api-reference/file-storage-api/get-uploaded-file"
-            },
-            {
-              "text": "Delete A File/ Multiple Files",
-              "link": "/registry/api-reference/file-storage-api/delete-a-file-multiple-files"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Metrics APIs",
-          "link": "/registry/api-reference/metrics-apis",
-          "items": [
-            {
-              "text": "Get Count",
-              "link": "/registry/api-reference/metrics-apis/get-count"
-            },
-            {
-              "text": "Get Aggregates",
-              "link": "/registry/api-reference/metrics-apis/get-aggregates"
-            }
-          ],
-          "collapsed": true
-        },
-        {
-          "text": "Other APIs",
-          "link": "/registry/api-reference/other-apis",
-          "items": [
-            {
-              "text": "Sign API",
-              "link": "/registry/api-reference/other-apis/sign-api"
-            },
-            {
-              "text": "Verify API",
-              "link": "/registry/api-reference/other-apis/verify-api"
-            },
-            {
-              "text": "Swagger JSON API",
-              "link": "/registry/api-reference/other-apis/swagger-json-api"
-            },
-            {
-              "text": "Health API",
-              "link": "/registry/api-reference/other-apis/health-api"
-            }
-          ],
-          "collapsed": true
-        }
-      ]
-    }
-  ],
-  "/credentials/": [
-    {
-      "text": "Technical Overview",
-      "items": [
-        {
-          "text": "High-Level Architecture",
-          "link": "/credentials/technical-overview/high-level-architecture"
-        },
-        {
-          "text": "Technical Specification Draft",
-          "link": "/credentials/technical-overview/technical-specification-draft"
-        },
-        {
-          "text": "Tech Stack and Requirements",
-          "link": "/credentials/technical-overview/tech-stack-and-requirements"
-        }
-      ]
-    },
-    {
-      "text": "API Reference",
-      "items": [
-        {
-          "text": "Identity Service APIs",
-          "link": "/credentials/api-reference/identity-service-apis"
-        },
-        {
-          "text": "Credential Schema APIs",
-          "link": "/credentials/api-reference/credential-schema-apis"
-        },
-        {
-          "text": "OID4VC Service API",
-          "link": "/credentials/api-reference/oid4vc-service-api"
-        },
-        {
-          "text": "Credential Issuance APIs",
-          "link": "/credentials/api-reference/credential-issuance-apis"
-        },
-        {
-          "text": "Other APIs",
-          "link": "/credentials/api-reference/other-apis",
-          "items": [
-            {
-              "text": "Sign API",
-              "link": "/credentials/api-reference/other-apis/sign-api"
-            },
-            {
-              "text": "Verify API",
-              "link": "/credentials/api-reference/other-apis/verify-api"
-            },
-            {
-              "text": "Swagger JSON API",
-              "link": "/credentials/api-reference/other-apis/swagger-json-api"
-            },
-            {
-              "text": "Health API",
-              "link": "/credentials/api-reference/other-apis/health-api"
-            }
-          ],
-          "collapsed": true
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "text": "Learn",
+    "items": [
+      {
+        "text": "Overview",
+        "link": "/learn/readme",
+        "items": [
+          {
+            "text": "Why do we need Sunbird RC?",
+            "link": "/learn/readme/why-do-we-need-sunbird-rc"
+          },
+          {
+            "text": "What Sunbird RC is and what it's not?",
+            "link": "/learn/readme/what-sunbird-rc-is-and-what-its-not"
+          },
+          {
+            "text": "Core Capabilities",
+            "link": "/learn/readme/core-capabilities"
+          },
+          {
+            "text": "Workflows",
+            "link": "/learn/readme/workflows"
+          },
+          {
+            "text": "Possibilities",
+            "link": "/learn/readme/possibilities"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Adopters",
+        "link": "/learn/adopters"
+      }
+    ]
+  },
+  {
+    "text": "Use",
+    "items": [
+      {
+        "text": "Getting started",
+        "link": "/use/getting-started",
+        "items": [
+          {
+            "text": "Pre-requisites",
+            "link": "/use/getting-started/developer-setup"
+          },
+          {
+            "text": "Installation",
+            "link": "/use/getting-started/installation",
+            "items": [
+              {
+                "text": "Registry CLI",
+                "link": "/use/getting-started/installation/registry-cli"
+              },
+              {
+                "text": "Docker Compose Setup",
+                "link": "/use/getting-started/installation/docker-compose-setup"
+              },
+              {
+                "text": "Helm Setup",
+                "link": "/use/getting-started/installation/helm-setup"
+              },
+              {
+                "text": "Credentialling Services setup (Dev / Docker / Helm)",
+                "link": "/use/getting-started/installation/credentialling-services-setup-dev-docker-helm"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "For existing adopters",
+            "link": "/use/getting-started/for-existing-adopters"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Developer Guide",
+        "link": "/use/developer-guide",
+        "items": [
+          {
+            "text": "Working with Source Code",
+            "link": "/use/developer-guide/working-with-source-code"
+          },
+          {
+            "text": "Environment Variable Reference",
+            "link": "/use/developer-guide/environment-variable-reference"
+          },
+          {
+            "text": "Configuration Reference",
+            "link": "/use/developer-guide/configuration-reference"
+          },
+          {
+            "text": "Schema Setup",
+            "link": "/use/developer-guide/schema-setup",
+            "items": [
+              {
+                "text": "Introduction To Schemas",
+                "link": "/use/developer-guide/schema-setup/introduction-to-schemas"
+              },
+              {
+                "text": "Creating Your Own Schemas",
+                "link": "/use/developer-guide/schema-setup/creating-your-own-schemas"
+              },
+              {
+                "text": "Schema Configuration",
+                "link": "/use/developer-guide/schema-setup/schema-configuration"
+              },
+              {
+                "text": "Create Schemas With Custom Password",
+                "link": "/use/developer-guide/schema-setup/create-schemas-with-custom-password"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Setup Backend",
+            "link": "/use/developer-guide/setup-backend"
+          },
+          {
+            "text": "Setup Frontend",
+            "link": "/use/developer-guide/setup-frontend"
+          },
+          {
+            "text": "Backup and Restore",
+            "link": "/use/developer-guide/backup-and-restore",
+            "items": [
+              {
+                "text": "PostgreSQL",
+                "link": "/use/developer-guide/backup-and-restore/postgresql"
+              },
+              {
+                "text": "Cassandra",
+                "link": "/use/developer-guide/backup-and-restore/cassandra"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Generic IAM",
+            "link": "/use/developer-guide/generic-iam"
+          },
+          {
+            "text": "Metrics",
+            "link": "/use/developer-guide/metrics"
+          },
+          {
+            "text": "Custom Keycloak Build",
+            "link": "/use/developer-guide/custom-keycloak-build"
+          },
+          {
+            "text": "VC Verification Module",
+            "link": "/use/developer-guide/vc-verification-module"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Integrations",
+        "link": "/use/integrations",
+        "items": [
+          {
+            "text": "SSO with existing systems",
+            "link": "/use/integrations/sso-with-existing-systems"
+          },
+          {
+            "text": "Digilocker Meripehchaan SSO",
+            "link": "/use/integrations/digilocker-meripehchaan-sso"
+          },
+          {
+            "text": "Digilocker Integration",
+            "link": "/use/integrations/digilocker-integration"
+          },
+          {
+            "text": "Wallet Integration",
+            "link": "/use/integrations/wallet-integration"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Connectors",
+        "link": "/use/connectors",
+        "items": [
+          {
+            "text": "OpenID for Verifiable Credentials (OID4VCI)",
+            "link": "/use/connectors/openid-for-verifiable-credentials-oid4vci"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Releases",
+        "link": "/use/releases",
+        "items": [
+          {
+            "text": "Registry",
+            "link": "/use/releases/registry",
+            "items": [
+              {
+                "text": "v2.0.3",
+                "link": "/use/releases/registry/v2.0.3"
+              },
+              {
+                "text": "v1.0.0",
+                "link": "/use/releases/registry/v1.0.0"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Credentialling",
+            "link": "/use/releases/credentialing",
+            "items": [
+              {
+                "text": "v2.1.0 — Latest release",
+                "link": "/use/releases/credentialing/v2.1.0-latest-release"
+              },
+              {
+                "text": "v2.0.3",
+                "link": "/use/releases/credentialing/v2.0.3"
+              },
+              {
+                "text": "v2.0.0",
+                "link": "/use/releases/credentialing/v2.0.0"
+              }
+            ],
+            "collapsed": true
+          }
+        ],
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "text": "Engage",
+    "items": [
+      {
+        "text": "Discussion Forum",
+        "link": "/engage/discussions"
+      },
+      {
+        "text": "Use case Walkthroughs",
+        "link": "/engage/use-case-walkthroughs"
+      },
+      {
+        "text": "Contributing",
+        "link": "/engage/contributing"
+      },
+      {
+        "text": "Contribution Guidebook",
+        "link": "/engage/contribution-guidebook"
+      },
+      {
+        "text": "Code of Conduct",
+        "link": "/engage/code-of-conduct"
+      }
+    ]
+  },
+  {
+    "text": "Help",
+    "items": [
+      {
+        "text": "Roadmap",
+        "link": "/help/roadmap"
+      },
+      {
+        "text": "FAQs",
+        "link": "/help/faqs"
+      },
+      {
+        "text": "Glossary",
+        "link": "/help/terminology"
+      },
+      {
+        "text": "Guide to Electronic Registries and Verifiable Credentials",
+        "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials",
+        "items": [
+          {
+            "text": "Verifiable Credentials",
+            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials",
+            "items": [
+              {
+                "text": "What issues will Verifiable Credentials address?",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-issues-will-verifiable-credentials-address"
+              },
+              {
+                "text": "What are the key roles in Verifiable Credentials?",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-key-roles-in-verifiable-credentials"
+              },
+              {
+                "text": "What are the components of Verifiable Credentials?",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-components-of-verifiable-credentials"
+              },
+              {
+                "text": "What are the benefits of Verifiable Credentials?",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-benefits-of-verifiable-credentials"
+              },
+              {
+                "text": "Digital Credentials vs Verifiable Credentials",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/digital-credentials-vs-verifiable-credentials"
+              },
+              {
+                "text": "QR code vs Verifiable QR code",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/qr-code-vs-verifiable-qr-code"
+              },
+              {
+                "text": "Use Cases",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/use-cases"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Electronic Registries",
+            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries",
+            "items": [
+              {
+                "text": "Evolution of Electronic Registries",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/evolution-electronic-registries"
+              },
+              {
+                "text": "What issues will Electronic Registries address?",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/what-issues-will-electronic-registries-address"
+              },
+              {
+                "text": "Benefits of Electronic Registries",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/benefits-of-electronic-registries"
+              },
+              {
+                "text": "Registry vs Database",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/registry-vs-database"
+              },
+              {
+                "text": "Design Principles",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/design-principles"
+              },
+              {
+                "text": "Use Cases",
+                "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/use-cases"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Leveraging Existing data stores",
+            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/leveraging-existing-data-stores-directories"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "External Open Source Software Attributions",
+        "link": "/help/external-open-source-software-attributions"
+      }
+    ]
+  },
+  {
+    "text": "Registry",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Technical Overview",
+        "items": [
+          {
+            "text": "High-Level architecture",
+            "link": "/registry/technical-overview/high-level-architecture"
+          },
+          {
+            "text": "Technical Specification Draft",
+            "link": "/registry/technical-overview/technical-specification-draft"
+          },
+          {
+            "text": "Tech Stack and Requirements",
+            "link": "/registry/technical-overview/infrastructure-requirements"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "API Reference",
+        "items": [
+          {
+            "text": "Schema",
+            "link": "/registry/api-reference/schema",
+            "items": [
+              {
+                "text": "Create Schema",
+                "link": "/registry/api-reference/schema/create-schema"
+              },
+              {
+                "text": "Get Schema",
+                "link": "/registry/api-reference/schema/get-schema"
+              },
+              {
+                "text": "Update Schema",
+                "link": "/registry/api-reference/schema/update-schema"
+              },
+              {
+                "text": "Delete Schema",
+                "link": "/registry/api-reference/schema/delete-schema"
+              },
+              {
+                "text": "Publish A Schema",
+                "link": "/registry/api-reference/schema/publish-a-schema"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Registry",
+            "link": "/registry/api-reference/registry",
+            "items": [
+              {
+                "text": "Using The APIs",
+                "link": "/registry/api-reference/registry/using-the-apis"
+              },
+              {
+                "text": "Create An Entity",
+                "link": "/registry/api-reference/registry/create-an-entity"
+              },
+              {
+                "text": "Invite An Entity",
+                "link": "/registry/api-reference/registry/invite-an-entity"
+              },
+              {
+                "text": "Generate token",
+                "link": "/registry/api-reference/registry/authenticating-as-an-entity"
+              },
+              {
+                "text": "Generate admin token",
+                "link": "/registry/api-reference/registry/generate-admin-token"
+              },
+              {
+                "text": "Get An Entity",
+                "link": "/registry/api-reference/registry/get-an-entity"
+              },
+              {
+                "text": "Get An Entity By Id",
+                "link": "/registry/api-reference/registry/get-an-entity-by-id"
+              },
+              {
+                "text": "Update An Entity",
+                "link": "/registry/api-reference/registry/update-an-entity"
+              },
+              {
+                "text": "Create A Property Of An Entity",
+                "link": "/registry/api-reference/registry/create-a-property-of-an-entity"
+              },
+              {
+                "text": "Update A Property Of An Entity",
+                "link": "/registry/api-reference/registry/update-a-property-of-an-entity"
+              },
+              {
+                "text": "Revoke a Credential",
+                "link": "/registry/api-reference/registry/create-a-property-of-an-entity-1"
+              },
+              {
+                "text": "Delete An Entity",
+                "link": "/registry/api-reference/registry/delete-an-entity"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Attestation API",
+            "link": "/registry/api-reference/attestation-api",
+            "items": [
+              {
+                "text": "Raise An Attestation",
+                "link": "/registry/api-reference/attestation-api/raise-an-attestation"
+              },
+              {
+                "text": "Get Attestation Certificate",
+                "link": "/registry/api-reference/attestation-api/get-attestation-certificate"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Claims API",
+            "link": "/registry/api-reference/claims-api",
+            "items": [
+              {
+                "text": "Get All Claims",
+                "link": "/registry/api-reference/claims-api/get-all-claims"
+              },
+              {
+                "text": "Get Claim by ID",
+                "link": "/registry/api-reference/claims-api/get-claim-by-id"
+              },
+              {
+                "text": "Attest A Claim",
+                "link": "/registry/api-reference/claims-api/attest-a-claim"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Discovery API",
+            "link": "/registry/api-reference/discovery-api",
+            "items": [
+              {
+                "text": "Search An Entity",
+                "link": "/registry/api-reference/discovery-api/search-an-entity"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "File Storage API",
+            "link": "/registry/api-reference/file-storage-api",
+            "items": [
+              {
+                "text": "Upload A File",
+                "link": "/registry/api-reference/file-storage-api/upload-a-file"
+              },
+              {
+                "text": "Get Uploaded File",
+                "link": "/registry/api-reference/file-storage-api/get-uploaded-file"
+              },
+              {
+                "text": "Delete A File/ Multiple Files",
+                "link": "/registry/api-reference/file-storage-api/delete-a-file-multiple-files"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Metrics APIs",
+            "link": "/registry/api-reference/metrics-apis",
+            "items": [
+              {
+                "text": "Get Count",
+                "link": "/registry/api-reference/metrics-apis/get-count"
+              },
+              {
+                "text": "Get Aggregates",
+                "link": "/registry/api-reference/metrics-apis/get-aggregates"
+              }
+            ],
+            "collapsed": true
+          },
+          {
+            "text": "Other APIs",
+            "link": "/registry/api-reference/other-apis",
+            "items": [
+              {
+                "text": "Sign API",
+                "link": "/registry/api-reference/other-apis/sign-api"
+              },
+              {
+                "text": "Verify API",
+                "link": "/registry/api-reference/other-apis/verify-api"
+              },
+              {
+                "text": "Swagger JSON API",
+                "link": "/registry/api-reference/other-apis/swagger-json-api"
+              },
+              {
+                "text": "Health API",
+                "link": "/registry/api-reference/other-apis/health-api"
+              }
+            ],
+            "collapsed": true
+          }
+        ],
+        "collapsed": true
+      }
+    ]
+  },
+  {
+    "text": "Credentials",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Technical Overview",
+        "items": [
+          {
+            "text": "High-Level Architecture",
+            "link": "/credentials/technical-overview/high-level-architecture"
+          },
+          {
+            "text": "Technical Specification Draft",
+            "link": "/credentials/technical-overview/technical-specification-draft"
+          },
+          {
+            "text": "Tech Stack and Requirements",
+            "link": "/credentials/technical-overview/tech-stack-and-requirements"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "API Reference",
+        "items": [
+          {
+            "text": "Identity Service APIs",
+            "link": "/credentials/api-reference/identity-service-apis"
+          },
+          {
+            "text": "Credential Schema APIs",
+            "link": "/credentials/api-reference/credential-schema-apis"
+          },
+          {
+            "text": "OID4VC Service API",
+            "link": "/credentials/api-reference/oid4vc-service-api"
+          },
+          {
+            "text": "Credential Issuance APIs",
+            "link": "/credentials/api-reference/credential-issuance-apis"
+          },
+          {
+            "text": "Other APIs",
+            "link": "/credentials/api-reference/other-apis",
+            "items": [
+              {
+                "text": "Sign API",
+                "link": "/credentials/api-reference/other-apis/sign-api"
+              },
+              {
+                "text": "Verify API",
+                "link": "/credentials/api-reference/other-apis/verify-api"
+              },
+              {
+                "text": "Swagger JSON API",
+                "link": "/credentials/api-reference/other-apis/swagger-json-api"
+              },
+              {
+                "text": "Health API",
+                "link": "/credentials/api-reference/other-apis/health-api"
+              }
+            ],
+            "collapsed": true
+          }
+        ],
+        "collapsed": true
+      }
+    ]
+  }
+]
