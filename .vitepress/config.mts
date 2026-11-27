@@ -86,7 +86,7 @@ export default defineConfig({
       text: 'Edit this page on GitHub',
     },
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Released under the <a href="https://github.com/Sunbird-RC/sunbird-rc-core/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>.',
       copyright:
         `Copyright © ${new Date().getFullYear()} ` + '<a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore (IIITB)</a>, '
         + 'on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems (COSS)</a>',
