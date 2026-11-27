@@ -523,31 +523,6 @@
     ]
   },
   {
-    "text": "Community",
-    "items": [
-      {
-        "text": "Discussion forum",
-        "link": "/community/discussions"
-      },
-      {
-        "text": "Contributing",
-        "link": "/community/contributing"
-      },
-      {
-        "text": "Contribution guidebook",
-        "link": "/community/contribution-guidebook"
-      },
-      {
-        "text": "Roadmap",
-        "link": "/help/roadmap"
-      },
-      {
-        "text": "Code of Conduct",
-        "link": "/community/code-of-conduct"
-      }
-    ]
-  },
-  {
     "text": "Reference",
     "items": [
       {
@@ -631,6 +606,31 @@
       {
         "text": "Open source attributions",
         "link": "/help/external-open-source-software-attributions"
+      }
+    ]
+  },
+  {
+    "text": "Community",
+    "items": [
+      {
+        "text": "Discussion forum",
+        "link": "/community/discussions"
+      },
+      {
+        "text": "Contributing",
+        "link": "/community/contributing"
+      },
+      {
+        "text": "Contribution guidebook",
+        "link": "/community/contribution-guidebook"
+      },
+      {
+        "text": "Roadmap",
+        "link": "/help/roadmap"
+      },
+      {
+        "text": "Code of Conduct",
+        "link": "/community/code-of-conduct"
       }
     ]
   }

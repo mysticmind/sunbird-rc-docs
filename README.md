@@ -22,8 +22,8 @@ npm run preview    # serve the production build at http://localhost:4173
 1. Click **Edit this page on GitHub** at the bottom of any page, or find the file using the URL.
 2. Make the change and open a pull request against `main`.
 3. To add a page, create the Markdown file and add it to `.vitepress/sidebar.json` (this replaces GitBook's
-   `SUMMARY.md`). The sidebar is grouped by task: Introduction, Get started, Registry, Credentials, Community and
-   Reference. Registry and Credentials are self-contained, because each can be used on its own.
+   `SUMMARY.md`). The sidebar is grouped by task: Introduction, Get started, Registry, Credentials, Reference and
+   Community. Registry and Credentials are self-contained, because each can be used on its own.
 4. Start each page with front matter. The `description` is shown in search results and in `llms.txt`:
 
    ```markdown

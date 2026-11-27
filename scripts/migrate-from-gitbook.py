@@ -774,13 +774,6 @@ SIDEBAR = [
             ("credentials/releases/v2.0.0", "v2.0.0"),
         ]),
     ]),
-    ("group", "Community", [
-        ("community/discussions", "Discussion forum"),
-        ("community/contributing", "Contributing"),
-        ("community/contribution-guidebook", "Contribution guidebook"),
-        ("help/roadmap", "Roadmap"),
-        ("community/code-of-conduct", "Code of Conduct"),
-    ]),
     ("group", "Reference", [
         ("help/faqs", "FAQs"),
         ("help/terminology", "Glossary"),
@@ -788,6 +781,13 @@ SIDEBAR = [
         ("tree", "help/electronic-registries", "Electronic registries"),
         ("help/leveraging-existing-data-stores-directories", "Leveraging existing data stores"),
         ("help/external-open-source-software-attributions", "Open source attributions"),
+    ]),
+    ("group", "Community", [
+        ("community/discussions", "Discussion forum"),
+        ("community/contributing", "Contributing"),
+        ("community/contribution-guidebook", "Contribution guidebook"),
+        ("help/roadmap", "Roadmap"),
+        ("community/code-of-conduct", "Code of Conduct"),
     ]),
 ]
 # Landing pages that only link to their sub-pages; still published, but the sidebar lists the sub-pages instead
