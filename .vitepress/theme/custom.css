@@ -234,3 +234,19 @@
 .VPFooter .container .copyright a:hover {
   text-decoration-line: underline;
 }
+
+/* Info and tip callouts in green (VitePress default: grey info, accent-coloured tip) */
+:root {
+  --vp-custom-block-info-bg: var(--vp-c-green-soft);
+  --vp-custom-block-info-code-bg: var(--vp-c-green-soft);
+  --vp-custom-block-tip-bg: var(--vp-c-green-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-green-soft);
+}
+.vp-doc .custom-block.info .custom-block-title,
+.vp-doc .custom-block.tip .custom-block-title {
+  color: var(--vp-c-green-1);
+}
+.vp-doc .custom-block.info a,
+.vp-doc .custom-block.tip a {
+  color: var(--vp-c-green-1);
+}
