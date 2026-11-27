@@ -13,9 +13,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **Where the student’s journey begins ?**
 
@@ -24,11 +23,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Fingerprint unlock can be added for faster, everyday access
 * Three registries are ready to issue: School, College, and University
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **Onde a jornada do estudante começa ?**
 
@@ -37,11 +33,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * A digital pode ser adicionada para um desbloqueio mais rápido no dia a dia
 * Três registros prontos para emitir: Escola, Faculdade e Universidade
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **¿Dónde comienza el recorrido del estudiante?**
 
@@ -50,7 +43,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Se puede agregar el desbloqueo con huella digital para un acceso más rápido en el día a día
 * Tres registros listos para emitir: Escuela, Instituto y Universidad
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column
@@ -64,9 +58,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **Credentials that belong to the student**
 
@@ -75,11 +68,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * The wallet is closed and reopened, and all three credentials are still there
 * No re-downloading, no requesting copies from each institution again
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **Credenciais que pertencem ao estudante**
 
@@ -88,11 +78,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * A carteira é fechada e reaberta, e as três credenciais continuam lá
 * Sem baixar de novo, sem pedir cópias a cada instituição
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **Credenciales que pertenecen al estudiante**
 
@@ -101,7 +88,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * La billetera se cierra y se vuelve a abrir, y las tres credenciales siguen ahí
 * Sin volver a descargar, sin pedir copias a cada institución
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column
@@ -115,9 +103,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **Verified in seconds, with the student’s consent**
 
@@ -127,11 +114,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * One approval sends all three at once
 * The credentials are verified instantly and the result appears on screen
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **Verificado em segundos, com o consentimento do estudante**
 
@@ -140,11 +124,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Uma única aprovação envia as três de uma vez
 * As credenciais são verificadas na hora e o resultado aparece na tela
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **Verificado en segundos, con el consentimiento del estudiante**
 
@@ -153,7 +134,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Una sola aprobación envía las tres a la vez
 * Las credenciales se verifican al instante y el resultado aparece en pantalla
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column
@@ -167,9 +149,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **Where the farmer’s journey begins**
 
@@ -178,11 +159,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * The farmer signs in to the Farmer Registry and reviews the card before accepting it
 * A Farmer Identity Credential, with farmer ID, district and category, lands in the wallet
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **Onde a jornada do agricultor começa**
 
@@ -191,11 +169,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * O agricultor entra no Registro de Agricultores e revisa o cartão antes de aceitá-lo
 * Uma Credencial de Identidade do Agricultor, com ID, distrito e categoria, chega à carteira
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **Dónde comienza el recorrido del agricultor**
 
@@ -204,7 +179,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * El agricultor inicia sesión en el Registro de Agricultores y revisa la tarjeta antes de aceptarla
 * Una Credencial de Identidad del Agricultor, con su ID, distrito y categoría, llega a la billetera
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column
@@ -218,9 +194,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **One consent, two cards, one loan decision**
 
@@ -229,11 +204,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Gramin Bank shows a QR code on a laptop, and the farmer’s phone answers it
 * One consent shares both cards, and the bank shows the farmer is eligible, with the maximum loan worked out
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **Um consentimento, dois cartões, uma decisão de crédito**
 
@@ -242,11 +214,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * O Gramin Bank exibe um QR code em um notebook, e o celular do agricultor responde
 * Um único consentimento compartilha os dois cartões, e o banco mostra que o agricultor é elegível, com o valor máximo do empréstimo calculado
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **Un consentimiento, dos tarjetas, una decisión de crédito**
 
@@ -255,7 +224,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Gramin Bank muestra un código QR en una computadora portátil, y el teléfono del agricultor lo responde
 * Un solo consentimiento comparte ambas tarjetas, y el banco muestra que el agricultor es elegible, con el monto máximo del préstamo calculado
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column
@@ -269,9 +239,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 :::: columns
 ::: column
-<details open>
-
-<summary>English</summary>
+<PluginTabs sharedStateKey="language">
+<PluginTabsTab label="English">
 
 **The same check, different outcomes**
 
@@ -280,11 +249,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * A second farmer passes every cryptographic check but is refused, because the land is not actively owned
 * Two genuine cards that don’t belong together are refused, even though every check passes
 
-</details>
-
-<details open>
-
-<summary>Português (Brasil)</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Português (Brasil)">
 
 **A mesma verificação, resultados diferentes**
 
@@ -293,11 +259,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Um segundo agricultor passa em todas as verificações criptográficas, mas é recusado, porque a terra não está com posse ativa
 * Dois cartões legítimos que não combinam entre si são recusados, mesmo com todas as verificações aprovadas
 
-</details>
-
-<details>
-
-<summary>Español</summary>
+</PluginTabsTab>
+<PluginTabsTab label="Español">
 
 **La misma verificación, resultados distintos**
 
@@ -306,7 +269,8 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 * Un segundo agricultor pasa todas las verificaciones criptográficas, pero es rechazado, porque la tierra no tiene propiedad activa
 * Dos tarjetas auténticas que no corresponden entre sí son rechazadas, aunque se cumplan todas las verificaciones
 
-</details>
+</PluginTabsTab>
+</PluginTabs>
 :::
 
 ::: column

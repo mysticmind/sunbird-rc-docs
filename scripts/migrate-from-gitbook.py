@@ -95,6 +95,23 @@ def fetch(url, dest_dir, kind):
 GB = r"https://(?:content\.gitbook\.com|files\.gitbook\.com|[0-9]+-files\.gitbook\.io|rc\.sunbird\.org/~gitbook/image)"
 
 
+LANGUAGES = {"English", "Português", "Português (Brasil)", "Español", "Français", "Hindi", "हिन्दी"}
+DETAILS = r"<details(?: open)?>\s*<summary>([^<]+)</summary>\s*(.*?)\s*</details>"
+
+
+def language_tabs(text):
+    """GitBook pages show the same text in several languages as stacked <details> blocks.
+    Turn each run of them into tabs; sharedStateKey keeps every group on the page on the same language."""
+    def swap(m):
+        blocks = re.findall(DETAILS, m.group(0), re.S)
+        if len(blocks) < 2 or not all(lang.strip() in LANGUAGES for lang, _ in blocks):
+            return m.group(0)
+        tabs = "".join(f'<PluginTabsTab label="{html.escape(lang.strip())}">\n\n{body}\n\n</PluginTabsTab>\n'
+                       for lang, body in blocks)
+        return f'<PluginTabs sharedStateKey="language">\n{tabs}</PluginTabs>\n'
+    return re.sub(r"(?:" + DETAILS + r"\s*){2,}", swap, text, flags=re.S)
+
+
 def gif_to_video(text):
     """Animated GIF screen recordings are 10-25 MB each. Re-encode them as H.264 MP4 at CRF 18
     (visually identical, about 80-90% smaller) and play them like a GIF: autoplay, muted, looping."""
@@ -341,6 +358,7 @@ def convert(raw, page):
     body = code_groups(body)
     body = localise_images(body)
     body = gif_to_video(body)
+    body = language_tabs(body)
     body = outside_code(body, text_fixes)
     body = fix_links(body)
     body = re.sub(r"\n{3,}", "\n\n", body)
