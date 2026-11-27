@@ -12,11 +12,11 @@ hero:
     alt: Sunbird RC
   actions:
     - theme: brand
-      text: Get started
-      link: /use/getting-started
-    - theme: alt
       text: Overview
       link: /learn/readme
+    - theme: alt
+      text: Get started
+      link: /use/getting-started
     - theme: alt
       text: Contribute
       link: /engage/contributing
