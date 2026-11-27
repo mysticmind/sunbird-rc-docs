@@ -39,7 +39,7 @@ Images go in `public/images/` and are referenced as `/images/<name>.png`. Use lo
 
 | Path | Contents |
 | --- | --- |
-| `learn/`, `use/`, `engage/`, `help/` | Knowledge base (the **Guide** tab) |
+| `learn/`, `use/`, `engage/`, `help/` | Knowledge base (the **Introduction** tab) |
 | `registry/` | Registry technical overview and API reference |
 | `credentials/` | Credentials technical overview and API reference |
 | `openapi/` | Copies of the OpenAPI specs from `sunbird-rc-core/api-documentation` |
