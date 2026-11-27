@@ -111,6 +111,11 @@ CONTENT_FIXES = {
     "learn/readme": [
         ("[What Sunbird RC is and what it's not](", "[What you get and what you build]("),
     ],
+    "use/releases/registry": [
+        # the old GitBook version this pointed to is gone (404); the release notes are on GitHub
+        ('href="https://rc.sunbird.org/v0.0.14/use/releases"',
+         'href="https://github.com/Sunbird-RC/sunbird-rc-core/releases/tag/v0.0.14"'),
+    ],
     "engage/use-case-walkthroughs": [
         # link text named a domain Sunbird does not own; the link itself goes to the real sandbox
         ("[sandbox.rc.org](https://sandbox-rc.sunbird.org/presentation/)",
@@ -477,25 +482,14 @@ for p in pages:
     p["live_path"] = p["path"]
     if p["path"] in PATH_MOVES:
         p["path"] = PATH_MOVES[p["path"]]
-for old_path, new_path in PATH_MOVES.items():
+for old_path in PATH_MOVES:
     (OUT / (old_path + ".md")).unlink(missing_ok=True)  # copies from earlier runs
-    stub = OUT / "public" / (old_path + ".html")
-    stub.parent.mkdir(parents=True, exist_ok=True)
-    stub.write_text(f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Sunbird RC</title>
-  <!-- This page moved; keep old links working -->
-  <meta http-equiv="refresh" content="0; url=/{new_path}">
-  <link rel="canonical" href="https://rc.sunbird.org/{new_path}">
-</head>
-<body><p>This page moved to <a href="/{new_path}">/{new_path}</a>.</p></body>
-</html>
-""")
-for d in sorted({(OUT / o).parent for o in PATH_MOVES} | {OUT / o for o in PATH_MOVES}, reverse=True):
-    if d.is_dir() and not any(d.iterdir()):
-        d.rmdir()
+# Old URL -> new URL. The site build (buildEnd in .vitepress/config.mts) turns these into redirect pages,
+# prefixed with the site's base path, so they work on rc.sunbird.org and under a sub-path alike.
+REDIRECTS = dict(PATH_MOVES)
+REDIRECTS.update({old: "" for old in MERGED_INTO_HOME})  # merged into the home page
+(OUT / ".vitepress").mkdir(exist_ok=True)
+(OUT / ".vitepress" / "redirects.json").write_text(json.dumps(dict(sorted(REDIRECTS.items())), indent=2) + "\n")
 
 # ---------------------------------------------------------------- write pages
 for p in pages:

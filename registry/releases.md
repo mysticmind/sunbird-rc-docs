@@ -30,7 +30,7 @@ The release that decoupled Sunbird RC from Keycloak — any OAuth2/OIDC-complian
 
 ---
 
-## v0.0.14 <a href="/v0.0.14/use/releases" class="button secondary small" data-icon="gitbook">Checkout the v0.0.14 Release Notes</a> <a href="#v0.0.14" id="v0.0.14"></a>
+## v0.0.14 <a href="https://github.com/Sunbird-RC/sunbird-rc-core/releases/tag/v0.0.14" class="button secondary small" data-icon="gitbook">Checkout the v0.0.14 Release Notes</a> <a href="#v0.0.14" id="v0.0.14"></a>
 
 <p class="update-meta">2023-06-30</p>
 

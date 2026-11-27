@@ -1,5 +1,9 @@
-# Build the docs and publish them to GitHub Pages (rc.sunbird.org) on every push to main.
+# Build the docs and publish them to GitHub Pages on every push to main.
 # One-time setup: Settings > Pages > Build and deployment > Source: "GitHub Actions".
+#
+# In the Sunbird-RC organisation the site is served at rc.sunbird.org (root path, with public/CNAME).
+# Anywhere else (a personal demo or a fork) it is served at https://<owner>.github.io/<repo>/, and the
+# CNAME file is left out so the copy never claims rc.sunbird.org.
 name: Deploy docs
 
 on:
@@ -20,6 +24,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      OFFICIAL: ${{ github.repository_owner == 'Sunbird-RC' }}
+      DOCS_BASE: ${{ github.repository_owner == 'Sunbird-RC' && '/' || format('/{0}/', github.event.repository.name) }}
+      DOCS_SITE: ${{ github.repository_owner == 'Sunbird-RC' && 'https://rc.sunbird.org' || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -30,17 +38,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - if: github.repository_owner == 'Sunbird-RC'
-        uses: actions/configure-pages@v6
-      - if: github.repository_owner == 'Sunbird-RC'
-        uses: actions/upload-pages-artifact@v5
+      - name: Leave out CNAME outside the Sunbird-RC organisation
+        if: env.OFFICIAL != 'true'
+        run: rm -f .vitepress/dist/CNAME
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: .vitepress/dist
 
   deploy:
     needs: build
-    # Only the official repo publishes to rc.sunbird.org; forks and personal copies just build
-    if: github.repository_owner == 'Sunbird-RC'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -92,6 +92,9 @@ The site is published to GitHub Pages at [rc.sunbird.org](https://rc.sunbird.org
 - **Every pull request** is built too (`.github/workflows/check.yml`). The build fails on broken links, and the
   built site can be downloaded from the run's **Artifacts** to check it locally.
 - `public/CNAME` tells GitHub Pages to serve the site at `rc.sunbird.org`.
+- Outside the Sunbird-RC organisation (a personal demo or a fork), the same workflow publishes to
+  `https://<owner>.github.io/<repo>/` and leaves `CNAME` out, so a copy never claims rc.sunbird.org. To build
+  for a sub-path locally: `DOCS_BASE=/<repo>/ npm run build`.
 
 One-time setup, once this repo is on GitHub:
 
