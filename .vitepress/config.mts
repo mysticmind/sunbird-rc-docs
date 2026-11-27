@@ -63,8 +63,8 @@ export default defineConfig({
     siteTitle: false,
     nav: [
       { text: 'Guide', link: '/learn/readme', activeMatch: '^/(learn|use|engage|help)/' },
-      { text: 'Registry', link: '/registry/', activeMatch: '^/registry/' },
-      { text: 'Credentials', link: '/credentials/', activeMatch: '^/credentials/' },
+      { text: 'Registry', link: '/registry/technical-overview/high-level-architecture', activeMatch: '^/registry/' },
+      { text: 'Credentials', link: '/credentials/technical-overview/high-level-architecture', activeMatch: '^/credentials/' },
       {
         text: 'Releases',
         items: [

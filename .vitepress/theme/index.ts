@@ -19,6 +19,22 @@ function respectReducedMotion() {
   })
 }
 
+// VitePress does not scroll the sidebar to the current page. After each navigation, if the active
+// entry is outside the visible part of the sidebar, scroll the sidebar (only) so it sits near the top third.
+function revealActiveSidebarItem(behavior: ScrollBehavior = 'smooth') {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const sidebar = document.querySelector<HTMLElement>('.VPSidebar')
+    const item = sidebar?.querySelector<HTMLElement>('.VPSidebarItem.is-active > .item')
+    if (!sidebar || !item) return
+    const box = sidebar.getBoundingClientRect()
+    const top = parseFloat(getComputedStyle(sidebar).paddingTop) || 0
+    const r = item.getBoundingClientRect()
+    if (r.top < box.top + top || r.bottom > box.bottom) {
+      sidebar.scrollTo({ top: sidebar.scrollTop + (r.top - box.top) - box.height / 3, behavior })
+    }
+  }))
+}
+
 export default {
   extends: DefaultTheme,
   // COSS and Digital Public Good badges in the bottom-right corner of every page
@@ -31,7 +47,7 @@ export default {
   },
   setup() {
     const route = useRoute()
-    onMounted(respectReducedMotion)
-    watch(() => route.path, () => nextTick(respectReducedMotion))
+    onMounted(() => { respectReducedMotion(); revealActiveSidebarItem('instant') })
+    watch(() => route.path, () => nextTick(() => { respectReducedMotion(); revealActiveSidebarItem() }))
   },
 } satisfies Theme
