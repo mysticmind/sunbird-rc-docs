@@ -14,7 +14,7 @@
 /* Sunbird wordmark: larger in the nav bar, sized for the home page hero */
 :root { --vp-nav-logo-height: 36px; }
 .VPHero .image-src {
-  max-width: 520px !important;
+  max-width: min(520px, calc(100vw - 48px)) !important; /* never wider than a phone screen */
   max-height: none !important;
   filter: drop-shadow(0 0 18px rgba(200, 129, 67, 0.35));
 }
@@ -53,7 +53,7 @@
   .VPHero .image-bg { animation: none; }
 }
 @media (max-width: 960px) {
-  .VPHero .image-bg { width: 400px !important; height: 230px !important; }
+  .VPHero .image-bg { width: min(400px, 90vw) !important; height: 230px !important; }
 }
 
 /* GitBook stepper -> numbered steps */
@@ -330,3 +330,17 @@
 .rc-swatch.aux { background: #ebe0f5; border-color: #8a63b0; }
 .rc-swatch.scale { background: #d9f2d9; border-color: #3f8f3f; }
 .rc-swatch.db { background: #fbeaa5; border-color: #b8962e; }
+
+/* Tablets and small laptops: the top menu is too wide to fit below about 1180px, so use the
+   phone-style menu button (and its full-screen menu) until there is room for every link */
+@media (min-width: 768px) and (max-width: 1179px) {
+  .VPNavBarMenu, .VPNavBarExtra { display: none !important; }
+  .VPNavBarHamburger { display: flex !important; }
+  .VPNavScreen { display: block !important; }
+}
+
+/* Small laptops: the hero is two columns but narrower, so shrink the logo and its glow to fit */
+@media (min-width: 960px) and (max-width: 1179px) {
+  .VPHero .image-src { max-width: 380px !important; }
+  .VPHero .image-bg { width: min(460px, 42vw) !important; height: 260px !important; }
+}
