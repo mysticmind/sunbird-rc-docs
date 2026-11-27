@@ -18,9 +18,6 @@ hero:
       text: Overview
       link: /learn/readme
     - theme: alt
-      text: Latest release
-      link: /use/releases/credentialing/v2.1.0-latest-release
-    - theme: alt
       text: Contribute
       link: /engage/contributing
 
