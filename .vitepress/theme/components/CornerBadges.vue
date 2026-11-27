@@ -8,15 +8,6 @@ import { withBase } from 'vitepress'
 <template>
   <div class="corner-badges">
     <a
-      class="badge coss"
-      href="https://www.coss.org.in/"
-      target="_blank"
-      rel="noopener"
-      title="Sunbird RC is developed by the Centre for Open Societal Systems (COSS)"
-    >
-      <img :src="withBase('/images/coss-mark.svg')" alt="Centre for Open Societal Systems (COSS)" width="42" height="42" />
-    </a>
-    <a
       class="badge dpg"
       href="https://www.digitalpublicgoods.net/r/sunbird-rc"
       target="_blank"
@@ -24,6 +15,15 @@ import { withBase } from 'vitepress'
       title="Sunbird RC is a recognised Digital Public Good"
     >
       <img :src="withBase('/images/dpg-badge.png')" alt="Digital Public Good: view Sunbird RC in the DPG Registry" width="88" height="42" />
+    </a>
+    <a
+      class="badge coss"
+      href="https://www.coss.org.in/"
+      target="_blank"
+      rel="noopener"
+      title="Sunbird RC is developed by the Centre for Open Societal Systems (COSS)"
+    >
+      <img :src="withBase('/images/coss-mark.svg')" alt="Centre for Open Societal Systems (COSS)" width="42" height="42" />
     </a>
   </div>
 </template>
@@ -35,8 +35,9 @@ import { withBase } from 'vitepress'
   bottom: 20px;
   z-index: 30; /* above page content, below the nav bar and search dialog */
   display: flex;
-  align-items: center; /* side by side, same height */
-  gap: 10px;
+  flex-direction: column;
+  align-items: center; /* DPG badge on top, COSS mark centred below it */
+  gap: 8px;
 }
 .badge {
   display: block;
