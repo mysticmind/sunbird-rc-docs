@@ -173,7 +173,35 @@ def gif_to_video(text):
     return re.sub(r'<img src="(/images/[^"]+\.gif)"[^>]*>', swap, text)
 
 
+MAGIC = {b"GIF8": "gif", b"\x89PNG": "png", b"\xff\xd8\xff": "jpg", b"RIFF": "webp"}
+
+
+def fetch_drive(file_id):
+    """Download a Google Drive-hosted image (lh3.googleusercontent.com/d/<id>) into the repo.
+    The URL has no file name, so the type comes from the file's first bytes."""
+    for ext in ("gif", "png", "jpg", "webp"):
+        existing = IMG_DIR / f"gdrive-{file_id[:12].lower()}.{ext}"
+        mp4 = MEDIA_DIR / f"gdrive-{file_id[:12].lower()}.mp4"
+        if existing.exists() or (ext == "gif" and mp4.exists()):
+            return f"/{IMG_DIR.name}/{existing.name}"
+    url = f"https://lh3.googleusercontent.com/d/{file_id}"
+    try:
+        data = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=180).read()
+    except Exception as e:  # noqa
+        report["unhandled"].append(f"download failed {url}: {e}")
+        return url
+    ext = next((e for magic, e in MAGIC.items() if data.startswith(magic)), "bin")
+    dest = IMG_DIR / f"gdrive-{file_id[:12].lower()}.{ext}"
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(data)
+    report["images"] += 1
+    return f"/{IMG_DIR.name}/{dest.name}"
+
+
 def localise_images(text):
+    # images linked straight from Google Drive: bring them into the repo too
+    text = re.sub(r'(src=")https://lh3\.googleusercontent\.com/d/([\w-]+)(")',
+                  lambda m: m.group(1) + fetch_drive(m.group(2)) + m.group(3), text)
     # inside src="..." anything up to the closing quote; in Markdown allow one level of (...) in the URL
     text = re.sub(r'(src=")(' + GB + r'[^"]*)(")', lambda m: m.group(1) + fetch(m.group(2), IMG_DIR, "images") + m.group(3), text)
     text = re.sub(r"(!\[[^\]]*\]\()(" + GB + r"[^\s()]*(?:\([^\s()]*\)[^\s()]*)*)(\))",
