@@ -639,8 +639,7 @@ def render_sidebar(entries, depth=0):
     return out
 
 
-# Registry and Credentials first: the two products are the main way into the docs, and collapsed they take two lines
-SIDEBAR = [e for e in SIDEBAR if e[1] in ("Registry", "Credentials")] + [e for e in SIDEBAR if e[1] not in ("Registry", "Credentials")]
+# Order: Introduction, Get started, Registry, Credentials, Community, Reference (as listed in SIDEBAR)
 sidebar = render_sidebar(SIDEBAR)
 # Any page the plan does not mention (for example, one added on GitBook later) goes in a visible group
 unsorted = [p for p in pages if p["path"] not in placed and p["path"] not in UNLISTED]

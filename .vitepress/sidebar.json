@@ -1,5 +1,67 @@
 [
   {
+    "text": "Introduction",
+    "items": [
+      {
+        "text": "Overview",
+        "link": "/learn/readme"
+      },
+      {
+        "text": "Why Sunbird RC",
+        "link": "/learn/readme/why-do-we-need-sunbird-rc"
+      },
+      {
+        "text": "What it is and isn't",
+        "link": "/learn/readme/what-sunbird-rc-is-and-what-its-not"
+      },
+      {
+        "text": "Core capabilities",
+        "link": "/learn/readme/core-capabilities"
+      },
+      {
+        "text": "How it works",
+        "link": "/learn/readme/workflows"
+      },
+      {
+        "text": "Possibilities",
+        "link": "/learn/readme/possibilities"
+      },
+      {
+        "text": "Demos",
+        "link": "/engage/use-case-walkthroughs"
+      },
+      {
+        "text": "Adopters",
+        "link": "/learn/adopters"
+      }
+    ]
+  },
+  {
+    "text": "Get started",
+    "items": [
+      {
+        "text": "Choose your path",
+        "link": "/use/getting-started"
+      },
+      {
+        "text": "Prerequisites",
+        "link": "/use/getting-started/developer-setup"
+      },
+      {
+        "text": "Installation options",
+        "link": "/use/getting-started/installation"
+      },
+      {
+        "text": "What's new",
+        "link": "/use/releases"
+      },
+      {
+        "text": "Upgrading",
+        "link": "/use/getting-started/for-existing-adopters"
+      }
+    ]
+  },
+  {
     "text": "Registry",
     "items": [
       {
@@ -461,68 +523,6 @@
       }
     ],
     "collapsed": true
-  },
-  {
-    "text": "Introduction",
-    "items": [
-      {
-        "text": "Overview",
-        "link": "/learn/readme"
-      },
-      {
-        "text": "Why Sunbird RC",
-        "link": "/learn/readme/why-do-we-need-sunbird-rc"
-      },
-      {
-        "text": "What it is and isn't",
-        "link": "/learn/readme/what-sunbird-rc-is-and-what-its-not"
-      },
-      {
-        "text": "Core capabilities",
-        "link": "/learn/readme/core-capabilities"
-      },
-      {
-        "text": "How it works",
-        "link": "/learn/readme/workflows"
-      },
-      {
-        "text": "Possibilities",
-        "link": "/learn/readme/possibilities"
-      },
-      {
-        "text": "Demos",
-        "link": "/engage/use-case-walkthroughs"
-      },
-      {
-        "text": "Adopters",
-        "link": "/learn/adopters"
-      }
-    ]
-  },
-  {
-    "text": "Get started",
-    "items": [
-      {
-        "text": "Choose your path",
-        "link": "/use/getting-started"
-      },
-      {
-        "text": "Prerequisites",
-        "link": "/use/getting-started/developer-setup"
-      },
-      {
-        "text": "Installation options",
-        "link": "/use/getting-started/installation"
-      },
-      {
-        "text": "What's new",
-        "link": "/use/releases"
-      },
-      {
-        "text": "Upgrading",
-        "link": "/use/getting-started/for-existing-adopters"
-      }
-    ]
   },
   {
     "text": "Community",
