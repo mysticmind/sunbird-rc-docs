@@ -96,7 +96,21 @@ GB = r"https://(?:content\.gitbook\.com|files\.gitbook\.com|[0-9]+-files\.gitboo
 
 
 # Corrections to mistakes in the live GitBook content: page path -> [(wrong, right)]
+# Page titles that read better than GitBook's (keyed by GitBook path); the page heading is fixed in CONTENT_FIXES
+TITLE_OVERRIDES = {
+    "learn/readme/what-sunbird-rc-is-and-what-its-not": "What you get and what you build",
+}
+
 CONTENT_FIXES = {
+    # a scope page: say plainly what it covers instead of "what it is and what it's not?"
+    "learn/readme/what-sunbird-rc-is-and-what-its-not": [
+        ("# What Sunbird RC is and what it's not?", "# What you get and what you build"),
+        ("## What Sunbird RC is not", "## What you build or bring"),
+        ("## What Sunbird RC is\n", "## What you get\n"),
+    ],
+    "learn/readme": [
+        ("[What Sunbird RC is and what it's not](", "[What you get and what you build]("),
+    ],
     "engage/use-case-walkthroughs": [
         # link text named a domain Sunbird does not own; the link itself goes to the real sandbox
         ("[sandbox.rc.org](https://sandbox-rc.sunbird.org/presentation/)",
@@ -306,7 +320,7 @@ def outside_code(text, fn):
 PATH_MOVES = {
     "learn/readme": "learn/overview",
     "learn/readme/why-do-we-need-sunbird-rc": "learn/why-do-we-need-sunbird-rc",
-    "learn/readme/what-sunbird-rc-is-and-what-its-not": "learn/what-sunbird-rc-is-and-what-its-not",
+    "learn/readme/what-sunbird-rc-is-and-what-its-not": "learn/what-you-get-and-what-you-build",
     "learn/readme/core-capabilities": "learn/core-capabilities",
     "learn/readme/workflows": "learn/workflows",
     "learn/readme/possibilities": "learn/possibilities",
@@ -443,7 +457,7 @@ def convert(raw, page):
     # GitBook page covers are not in the Markdown export; add the ones we rebuilt as components
     if page["path"] in PAGE_COVERS:
         body = PAGE_COVERS[page["path"]] + "\n\n" + body
-    fm = {"title": page["title"]}
+    fm = {"title": TITLE_OVERRIDES.get(page.get("live_path", page["path"]), page["title"])}
     if page["desc"]:
         fm["description"] = page["desc"]
     head = "---\n" + "".join(f"{k}: {json.dumps(v, ensure_ascii=False)}\n" for k, v in fm.items()) + "---\n\n"
@@ -564,7 +578,7 @@ SIDEBAR = [
     ("group", "Introduction", [
         ("learn/overview", "Overview"),
         ("learn/why-do-we-need-sunbird-rc", "Why Sunbird RC"),
-        ("learn/what-sunbird-rc-is-and-what-its-not", "What it is and isn't"),
+        ("learn/what-you-get-and-what-you-build", "What you get and what you build"),
         ("learn/core-capabilities", "Core capabilities"),
         ("learn/workflows", "How it works"),
         ("learn/possibilities", "Possibilities"),

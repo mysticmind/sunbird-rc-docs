@@ -69,5 +69,5 @@ Hear Dr Pramod Varma, CTO of EkStep Foundation, explain the thinking behind Sunb
 * [Why do we need Sunbird RC?](/learn/why-do-we-need-sunbird-rc)
 * [Core Capabilities](/learn/core-capabilities)
 * [Workflows](/learn/workflows)
-* [What Sunbird RC is and what it's not](/learn/what-sunbird-rc-is-and-what-its-not)
+* [What you get and what you build](/learn/what-you-get-and-what-you-build)
 * [Possibilities](/learn/possibilities)
