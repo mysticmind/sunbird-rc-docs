@@ -15,7 +15,7 @@ hero:
       text: Get started
       link: /use/getting-started
     - theme: alt
-      text: What is Sunbird RC?
+      text: Overview
       link: /learn/readme
     - theme: alt
       text: Latest release
