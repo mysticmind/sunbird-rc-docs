@@ -7,7 +7,48 @@ description: "The microservices that make up the Sunbird RC registry, and what e
 
 The microservices that make up the Sunbird RC registry, and what each one does.
 
-<figure><img src="/images/high-level-diagram-registry-f0e7bdd7.png" alt=""><figcaption><p>High Level Architecture Diagram</p></figcaption></figure>
+```mermaid
+flowchart LR
+    Keycloak["OIDC auth / OAuth2 authz<br/>(Keycloak)"]
+    subgraph Core["Core services"]
+        Registry[Core registry]
+        Claims[Claims service]
+    end
+    subgraph Aux["Auxiliary services"]
+        IDGen[ID Gen service]
+        Encryption[Encryption service]
+        Notification[Notification service]
+        Metrics[Metrics service]
+    end
+    subgraph Scale["Scalability"]
+        Elastic[Elasticsearch]
+        Kafka[Kafka]
+    end
+    subgraph Stores["Data stores"]
+        Database[(Database)]
+        Datastore[("Events datastore<br/>(ClickHouse)")]
+    end
+
+    Keycloak <--> Registry
+    Registry <--> Claims
+    Registry <--> IDGen
+    Registry <--> Encryption
+    Registry --> Notification
+    Registry --> Metrics
+    Registry <--> Elastic
+    Registry <--> Kafka
+    Registry <--> Database
+    Metrics --> Datastore
+
+    classDef core fill:#dbe8f6,stroke:#4a7bab,color:#1d1d1f
+    classDef aux fill:#ebe0f5,stroke:#8a63b0,color:#1d1d1f
+    classDef scale fill:#d9f2d9,stroke:#3f8f3f,color:#1d1d1f
+    classDef db fill:#fbeaa5,stroke:#b8962e,color:#1d1d1f
+    class Registry,Claims core
+    class Keycloak,IDGen,Encryption,Notification,Metrics aux
+    class Elastic,Kafka scale
+    class Database,Datastore db
+```
 
 The microservices built as part of Sunbird RC, and their purpose, are explained below.
 
