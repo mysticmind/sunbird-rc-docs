@@ -178,16 +178,36 @@
   font-size: 16px;
   line-height: 1.7;
 }
-.rc-home-meta {
+.rc-newsletter {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-top: 16px;
-  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
 }
-.rc-home-meta strong { color: var(--vp-c-text-1); }
-.rc-home-meta a { color: var(--vp-c-brand-1); text-decoration: none; font-weight: 500; }
-.rc-home-meta a:hover { text-decoration: underline; }
+.rc-newsletter strong { display: block; color: var(--vp-c-text-1); font-size: 16px; margin-bottom: 2px; }
+.rc-newsletter span { font-size: 14px; }
+/* Same look as the hero's main button (.vp-doc prefix beats VitePress's link colour and underline) */
+.vp-doc .rc-newsletter-button {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--vp-button-brand-text);
+  background: var(--vp-button-brand-bg);
+  text-decoration: none;
+  transition: background-color 0.25s;
+}
+
+.vp-doc .rc-newsletter-button:hover { background: var(--vp-button-brand-hover-bg); color: var(--vp-button-brand-hover-text); }
 
 /* Home feature card icons: orange line icons on a soft tile */
 .VPFeature .icon {

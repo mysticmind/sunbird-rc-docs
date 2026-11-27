@@ -50,12 +50,12 @@ features:
 
 Sunbird RC is a best-in-class open-source framework for building electronic registries and issuing verifiable credentials. It enables governments and organisations to build trusted registries of people, institutions and assets, from teachers and health workers to schools, and keep that data accurate, verified and ready to use. Sunbird RC is part of Sunbird, a Digital Public Good, and gives every adopter a proven foundation for digital trust, so no one has to build it from scratch.
 
-<p class="rc-home-meta">
-  <span><strong>Credentials</strong> v2.1.0</span>
-  <span><strong>Registry</strong> v2.0.3</span>
-  <span><strong>Last updated</strong> October 2026</span>
-  <a href="https://github.com/Sunbird-RC/sunbird-rc-core">View on GitHub</a>
-  <a href="https://zcmp.in/9UG8">Subscribe to the newsletter</a>
-</p>
+<div class="rc-newsletter">
+  <div>
+    <strong>Stay up to date</strong>
+    <span>Releases, events and stories from the Sunbird community, in the Sunbird newsletter.</span>
+  </div>
+  <a class="rc-newsletter-button" href="https://zcmp.in/9UG8" target="_blank" rel="noopener">Subscribe to the newsletter</a>
+</div>
 
 </div>
