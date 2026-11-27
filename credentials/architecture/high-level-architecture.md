@@ -35,7 +35,47 @@ The core issuance service. It takes a payload, transforms it into a W3C-complian
 
 ## High-level component diagram
 
-<figure><img src="/images/component-85b96f5b.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+flowchart TB
+    Ingress[Ingress]
+    subgraph Core["Core credentialling services"]
+        OID4VC[oid4vc-service]
+        Creds[Credentials service]
+        Identity[Identity service]
+        Schema[Credential schema service]
+    end
+    subgraph Aux["Auxiliary services"]
+        Vault[HashiCorp Vault]
+        Redis[Redis]
+    end
+    IssuanceDB[(Credential issuance DB)]
+    IdentityDB[(Identity service DB)]
+    SchemaDB[(Credential schema DB)]
+
+    Ingress --> OID4VC
+    Ingress --> Creds
+    Ingress --> Identity
+    Ingress --> Schema
+    OID4VC --> Creds
+    OID4VC --> Identity
+    OID4VC --> Schema
+    OID4VC --> Redis
+    Creds --> Identity
+    Creds --> IssuanceDB
+    Identity --> Schema
+    Identity --> Vault
+    Identity --> IdentityDB
+    Schema --> SchemaDB
+
+    classDef ingress fill:#fcd9d9,stroke:#c0504d,color:#1d1d1f
+    classDef core fill:#dbe8f6,stroke:#4a7bab,color:#1d1d1f
+    classDef aux fill:#d9f2d9,stroke:#3f8f3f,color:#1d1d1f
+    classDef db fill:#fbeaa5,stroke:#b8962e,color:#1d1d1f
+    class Ingress ingress
+    class OID4VC,Creds,Identity,Schema core
+    class Vault,Redis aux
+    class IssuanceDB,IdentityDB,SchemaDB db
+```
 
 ## How it works
 
