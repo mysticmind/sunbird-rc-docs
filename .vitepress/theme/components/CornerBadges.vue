@@ -2,7 +2,7 @@
 // COSS and Digital Public Good badges in the bottom-right corner of every page.
 // Desktop: fixed to the corner of the screen, so at the end of a page they rest in the footer's corner
 // with no jump. Phones: a centred row at the bottom of the page, since the footer text is full width.
-// COSS mark: coss.org.in logo, cropped to the square (the name under it is unreadable at this size).
+// COSS logo: the full coss.org.in logo (mark and name), on a white card so the name reads in dark mode.
 // DPG badge: digitalpublicgoods.net, shown unaltered as the DPGA brand guide asks.
 import { withBase } from 'vitepress'
 </script>
@@ -25,7 +25,7 @@ import { withBase } from 'vitepress'
       rel="noopener"
       title="Sunbird RC is developed by the Centre for Open Societal Systems (COSS)"
     >
-      <img :src="withBase('/images/coss-mark.svg')" alt="Centre for Open Societal Systems (COSS)" width="42" height="42" />
+      <img :src="withBase('/images/coss-logo.svg')" alt="Centre for Open Societal Systems (COSS)" width="72" height="87" />
     </a>
   </div>
 </template>
@@ -50,9 +50,13 @@ import { withBase } from 'vitepress'
   transform: translateY(-2px);
 }
 .coss img {
-  width: 42px;
-  height: 42px;
-  border-radius: 4px;
+  width: 72px;
+  height: auto;
+  padding: 5px;
+  box-sizing: content-box;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 .dpg img {
   width: 88px;
@@ -60,7 +64,7 @@ import { withBase } from 'vitepress'
 }
 @media (max-width: 640px) {
   .corner-badges { right: 12px; bottom: 12px; gap: 8px; }
-  .coss img { width: 34px; height: 34px; }
+  .coss img { width: 60px; }
   .dpg img { width: 72px; }
 }
 /* Narrow screens: the footer text is full width, so show a centred row at the bottom of the page instead */
