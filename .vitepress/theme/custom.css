@@ -1,25 +1,14 @@
-/* Sunbird brand colours, taken from sunbird.org: amber #CC8545 for highlights, rust #A95236 for text */
+/* Sunbird RC brand colours, taken from the GitBook site */
 :root {
-  --rc-amber: #cc8545;
-  --rc-rust: #a95236;
-  --vp-c-brand-1: #a95236; /* links and highlighted text: rust reads well on white */
-  --vp-c-brand-2: #b9673c; /* hover */
-  --vp-c-brand-3: #cc8545; /* buttons, step numbers, labels: amber */
-  --vp-c-brand-soft: rgba(204, 133, 69, 0.16);
+  --vp-c-brand-1: #c25a00;
+  --vp-c-brand-2: #e06a00;
+  --vp-c-brand-3: #fb7600;
+  --vp-c-brand-soft: rgba(251, 118, 0, 0.14);
 }
 .dark {
-  --vp-c-brand-1: #dda06a; /* lighter amber so links stay readable on dark */
-  --vp-c-brand-2: #d4914f;
-  --vp-c-brand-3: #cc8545;
-  --vp-c-brand-soft: rgba(204, 133, 69, 0.18);
-}
-/* Buttons: amber, turning rust on hover */
-:root {
-  --vp-button-brand-bg: var(--rc-amber);
-  --vp-button-brand-border: var(--rc-amber);
-  --vp-button-brand-hover-bg: var(--rc-rust);
-  --vp-button-brand-hover-border: var(--rc-rust);
-  --vp-button-brand-active-bg: var(--rc-rust);
+  --vp-c-brand-1: #ff9a40;
+  --vp-c-brand-2: #ff8a24;
+  --vp-c-brand-3: #fb7600;
 }
 
 /* Sunbird wordmark: larger in the nav bar, sized for the home page hero */
@@ -34,8 +23,8 @@
 :root {
   --vp-home-hero-image-background-image: radial-gradient(
     ellipse at center,
-    rgba(204, 133, 69, 0.1) 0%,
-    rgba(204, 133, 69, 0.32) 42%,
+    rgba(251, 118, 0, 0.1) 0%,
+    rgba(251, 118, 0, 0.32) 42%,
     rgba(200, 129, 67, 0.2) 58%,
     transparent 74%
   );
@@ -44,8 +33,8 @@
 .dark {
   --vp-home-hero-image-background-image: radial-gradient(
     ellipse at center,
-    rgba(204, 133, 69, 0.06) 0%,
-    rgba(204, 133, 69, 0.3) 45%,
+    rgba(251, 118, 0, 0.06) 0%,
+    rgba(251, 118, 0, 0.3) 45%,
     rgba(200, 129, 67, 0.16) 60%,
     transparent 74%
   );
@@ -165,7 +154,7 @@
   display: inline-block;
   max-width: 100%;
   padding: 2px 14px;
-  background: var(--rc-amber);
+  background: #fb7600;
   color: #fff;
   font-size: clamp(18px, 2vw, 26px);
   font-weight: 800;

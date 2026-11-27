@@ -14,8 +14,8 @@ let count = 0
 // Diagram colours that match the site theme: orange outlines, soft fill, muted lines
 const LIGHT = {
   fontSize: '14px',
-  primaryColor: '#faf1e8',
-  primaryBorderColor: '#cc8545',
+  primaryColor: '#fff4ec',
+  primaryBorderColor: '#e06a00',
   primaryTextColor: '#3c3c43',
   secondaryColor: '#f6f6f7',
   tertiaryColor: '#ffffff',
@@ -30,7 +30,7 @@ const DARK = {
   darkMode: true,
   background: '#1b1b1f',
   primaryColor: '#2a1f17',
-  primaryBorderColor: '#cc8545',
+  primaryBorderColor: '#ff8a24',
   primaryTextColor: '#dfdfd6',
   secondaryColor: '#202127',
   tertiaryColor: '#1b1b1f',
