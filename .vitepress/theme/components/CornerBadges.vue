@@ -1,34 +1,14 @@
 <script setup lang="ts">
-// COSS and Digital Public Good badges, pinned to the bottom-right corner of every page.
-// When the page footer scrolls into view they dock into the footer instead of floating over it.
+// COSS and Digital Public Good badges in the bottom-right corner of every page.
+// Desktop: fixed to the corner of the screen, so at the end of a page they rest in the footer's corner
+// with no jump. Phones: a centred row at the bottom of the page, since the footer text is full width.
 // COSS mark: coss.org.in logo, cropped to the square (the name under it is unreadable at this size).
 // DPG badge: digitalpublicgoods.net, shown unaltered as the DPGA brand guide asks.
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute, withBase } from 'vitepress'
-
-const docked = ref(false)
-const route = useRoute()
-let observer: IntersectionObserver | undefined
-
-function observeFooter() {
-  observer?.disconnect()
-  docked.value = false
-  // The footer only exists on pages without a sidebar (the home page, for example)
-  requestAnimationFrame(() => {
-    const footer = document.querySelector('.VPFooter')
-    if (!footer || getComputedStyle(footer).display === 'none') return
-    observer = new IntersectionObserver(([entry]) => (docked.value = entry.isIntersecting))
-    observer.observe(footer)
-  })
-}
-
-onMounted(observeFooter)
-watch(() => route.path, observeFooter)
-onBeforeUnmount(() => observer?.disconnect())
+import { withBase } from 'vitepress'
 </script>
 
 <template>
-  <div class="corner-badges" :class="{ docked }">
+  <div class="corner-badges">
     <a
       class="badge dpg"
       href="https://www.digitalpublicgoods.net/r/sunbird-rc"
@@ -61,10 +41,6 @@ onBeforeUnmount(() => observer?.disconnect())
   align-items: center; /* DPG badge on top, COSS mark centred below it */
   gap: 8px;
 }
-/* Footer in view: sit in the footer's bottom-right corner (the page layout is the positioning box) */
-.corner-badges.docked {
-  position: absolute;
-}
 .badge {
   display: block;
   line-height: 0;
@@ -87,9 +63,9 @@ onBeforeUnmount(() => observer?.disconnect())
   .coss img { width: 34px; height: 34px; }
   .dpg img { width: 72px; }
 }
-/* Narrow screens: the footer text is full width, so dock as a centred row under it instead */
+/* Narrow screens: the footer text is full width, so show a centred row at the bottom of the page instead */
 @media (max-width: 767px) {
-  .corner-badges.docked {
+  .corner-badges {
     position: static;
     flex-direction: row;
     justify-content: center;
