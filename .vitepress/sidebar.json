@@ -560,73 +560,73 @@
       },
       {
         "text": "Verifiable credentials",
-        "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials",
+        "link": "/help/verifiable-credentials",
+        "collapsed": true,
         "items": [
           {
             "text": "What issues will verifiable credentials address?",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-issues-will-verifiable-credentials-address"
+            "link": "/help/verifiable-credentials/what-issues-will-verifiable-credentials-address"
           },
           {
             "text": "What are the key roles in verifiable credentials?",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-key-roles-in-verifiable-credentials"
+            "link": "/help/verifiable-credentials/what-are-the-key-roles-in-verifiable-credentials"
           },
           {
             "text": "What are the components of verifiable credentials?",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-components-of-verifiable-credentials"
+            "link": "/help/verifiable-credentials/what-are-the-components-of-verifiable-credentials"
           },
           {
             "text": "What are the benefits of verifiable credentials?",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/what-are-the-benefits-of-verifiable-credentials"
+            "link": "/help/verifiable-credentials/what-are-the-benefits-of-verifiable-credentials"
           },
           {
             "text": "Digital credentials vs verifiable credentials",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/digital-credentials-vs-verifiable-credentials"
+            "link": "/help/verifiable-credentials/digital-credentials-vs-verifiable-credentials"
           },
           {
             "text": "QR code vs verifiable QR code",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/qr-code-vs-verifiable-qr-code"
+            "link": "/help/verifiable-credentials/qr-code-vs-verifiable-qr-code"
           },
           {
             "text": "Use cases",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/verifiable-credentials/use-cases"
+            "link": "/help/verifiable-credentials/use-cases"
           }
-        ],
-        "collapsed": true
+        ]
       },
       {
         "text": "Electronic registries",
-        "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries",
+        "link": "/help/electronic-registries",
+        "collapsed": true,
         "items": [
           {
             "text": "Evolution of electronic registries",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/evolution-electronic-registries"
+            "link": "/help/electronic-registries/evolution-electronic-registries"
           },
           {
             "text": "What issues will electronic registries address?",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/what-issues-will-electronic-registries-address"
+            "link": "/help/electronic-registries/what-issues-will-electronic-registries-address"
           },
           {
             "text": "Benefits of electronic registries",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/benefits-of-electronic-registries"
+            "link": "/help/electronic-registries/benefits-of-electronic-registries"
           },
           {
             "text": "Registry vs database",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/registry-vs-database"
+            "link": "/help/electronic-registries/registry-vs-database"
           },
           {
             "text": "Design principles",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/design-principles"
+            "link": "/help/electronic-registries/design-principles"
           },
           {
             "text": "Use cases",
-            "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/use-cases"
+            "link": "/help/electronic-registries/use-cases"
           }
-        ],
-        "collapsed": true
+        ]
       },
       {
         "text": "Leveraging existing data stores",
-        "link": "/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/leveraging-existing-data-stores-directories"
+        "link": "/help/leveraging-existing-data-stores-directories"
       },
       {
         "text": "Open source attributions",

@@ -325,6 +325,16 @@ PATH_MOVES = {
 }
 
 
+# Whole folders given shorter URLs: every page under the old prefix moves under the new one
+PREFIX_MOVES = {
+    "help/comprehensive-overview-electronic-registries-and-verifiable-credentials/": "help/",
+}
+# Link-only landing pages dropped entirely; their URLs redirect to the given page
+DROPPED = {
+    "help/comprehensive-overview-electronic-registries-and-verifiable-credentials": "help/verifiable-credentials",
+}
+
+
 # Links that are already broken (404) on the live GitBook site, pointing at pre-restructure paths.
 LINK_FIXES = {
     "learn/technical-overview/registry/high-level-architecture": "registry/technical-overview/high-level-architecture",
@@ -417,6 +427,14 @@ def convert(raw, page):
 
 
 # ---------------------------------------------------------------- moved pages
+for p in pages:
+    for old_prefix, new_prefix in PREFIX_MOVES.items():
+        if p["path"].startswith(old_prefix):
+            PATH_MOVES[p["path"]] = new_prefix + p["path"][len(old_prefix):]
+PATH_MOVES.update(DROPPED)  # links to a dropped page go to its replacement
+for p in [p for p in pages if p["path"] in DROPPED]:
+    (OUT / (p["path"] + ".md")).unlink(missing_ok=True)
+pages = [p for p in pages if p["path"] not in DROPPED]
 for p in pages:
     p["live_path"] = p["path"]
     if p["path"] in PATH_MOVES:
@@ -598,14 +616,14 @@ SIDEBAR = [
     ("group", "Reference", [
         ("help/faqs", "FAQs"),
         ("help/terminology", "Glossary"),
-        ("concepts",),  # the concepts guide's sections, listed directly
+        ("tree", "help/verifiable-credentials", "Verifiable credentials"),
+        ("tree", "help/electronic-registries", "Electronic registries"),
+        ("help/leveraging-existing-data-stores-directories", "Leveraging existing data stores"),
         ("help/external-open-source-software-attributions", "Open source attributions"),
     ]),
 ]
 # Landing pages that only link to their sub-pages; still published, but the sidebar lists the sub-pages instead
-UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors",
-            "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"}
-CONCEPTS = "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"
+UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors"}
 # Sections shown open; the rest start collapsed and open when the current page is inside them
 OPEN = {"Introduction", "Get started", "Registry", "Credentials", "Community", "Reference"}
 
@@ -651,16 +669,18 @@ def api_tree(space, segment):
     return tree
 
 
-def concepts_tree():
-    items = [p for p in pages if p["path"].startswith(CONCEPTS + "/")]
-    tree = build([by_path[CONCEPTS]] + items, 0)[0]["items"][0]  # the guide page, with its sub-pages
-    def mark(n):
-        placed.add(n["link"].lstrip("/"))
-        n["text"] = sentence_case(n["text"])
-        for c in n.get("items", []):
-            mark(c)
-    mark(tree)
-    return tree
+def subtree(path, label):
+    """A page with every page below it, nested by URL, labels in sentence case."""
+    node = {"text": label, "link": "/" + path, "collapsed": True, "items": []}
+    placed.add(path)
+    index = {path: node}
+    for p in pages:
+        if p["path"].startswith(path + "/"):
+            child = {"text": sentence_case(p["title"]), "link": "/" + p["path"]}
+            placed.add(p["path"])
+            index[p["path"]] = child
+            index[p["path"].rsplit("/", 1)[0]].setdefault("items", []).append(child)
+    return node
 
 
 def render_sidebar(entries, depth=0):
@@ -672,9 +692,8 @@ def render_sidebar(entries, depth=0):
                 node["collapsed"] = True
         elif e[0] == "api":
             node = {"text": e[1], "collapsed": True, "items": api_tree(e[2], e[3])}
-        elif e[0] == "concepts":
-            out.extend(concepts_tree().get("items", []))
-            continue
+        elif e[0] == "tree":
+            node = subtree(e[1], e[2])
         else:
             path, label = e[0], e[1]
             if path not in by_path:

@@ -40,7 +40,7 @@ A Sunbird RC registry is more than a store with CRUD and search APIs. It is the 
 * **Access-controlled.** Field-level privacy and consent decide who can see what.
 * **Reused, not re-collected.** Other systems read from the registry through its APIs instead of collecting and maintaining their own copies.
 
-The APIs are how systems use the registry; the trust in the data is what makes it authoritative. For more on the difference, see [Registry vs Database](/help/comprehensive-overview-electronic-registries-and-verifiable-credentials/electronic-registries/registry-vs-database).
+The APIs are how systems use the registry; the trust in the data is what makes it authoritative. For more on the difference, see [Registry vs Database](/help/electronic-registries/registry-vs-database).
 
 ## From data source to verifier
 
