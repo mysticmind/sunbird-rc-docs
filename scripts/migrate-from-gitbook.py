@@ -312,22 +312,46 @@ PATH_MOVES = {
     "learn/readme/possibilities": "learn/possibilities",
     "use/getting-started/developer-setup": "use/developer-setup",
     "use/getting-started/installation": "use/installation",
-    "use/getting-started/installation/registry-cli": "use/installation/registry-cli",
-    "use/getting-started/installation/docker-compose-setup": "use/installation/docker-compose-setup",
-    "use/getting-started/installation/helm-setup": "use/installation/helm-setup",
-    "use/getting-started/installation/credentialling-services-setup-dev-docker-helm": "use/installation/credentialling-services-setup-dev-docker-helm",
+    "use/getting-started/installation/registry-cli": "registry/install/registry-cli",
+    "use/getting-started/installation/docker-compose-setup": "registry/install/docker-compose",
+    "use/getting-started/installation/helm-setup": "registry/install/helm",
+    "use/getting-started/installation/credentialling-services-setup-dev-docker-helm": "credentials/install/services-setup",
     "use/getting-started/for-existing-adopters": "use/for-existing-adopters",
     "engage/use-case-walkthroughs": "learn/use-case-walkthroughs",
     "engage/discussions": "community/discussions",
     "engage/contributing": "community/contributing",
     "engage/contribution-guidebook": "community/contribution-guidebook",
     "engage/code-of-conduct": "community/code-of-conduct",
+    "use/developer-guide/schema-setup": "registry/schemas",
+    "use/developer-guide/environment-variable-reference": "registry/configure/environment-variables",
+    "use/developer-guide/configuration-reference": "registry/configure/configuration-files",
+    "use/developer-guide/metrics": "registry/configure/metrics",
+    "use/developer-guide/backup-and-restore": "registry/configure/backup-and-restore",
+    "use/developer-guide/generic-iam": "registry/identity/identity-providers",
+    "use/developer-guide/custom-keycloak-build": "registry/identity/custom-keycloak-build",
+    "use/integrations/sso-with-existing-systems": "registry/identity/sso-with-existing-systems",
+    "use/integrations/digilocker-meripehchaan-sso": "registry/identity/digilocker-meripehchaan-sso",
+    "use/developer-guide/working-with-source-code": "registry/develop/source-code",
+    "use/developer-guide/setup-backend": "registry/develop/backend",
+    "use/developer-guide/setup-frontend": "registry/develop/frontend",
+    "use/releases/registry": "registry/releases",
+    "use/integrations/wallet-integration": "credentials/wallets/wallet-integration",
+    "use/connectors/openid-for-verifiable-credentials-oid4vci": "credentials/wallets/openid4vci",
+    "use/developer-guide/vc-verification-module": "credentials/wallets/vc-verification-module",
+    "use/integrations/digilocker-integration": "credentials/wallets/digilocker",
+    "use/releases/credentialing": "credentials/releases",
 }
 
 
 # Whole folders given shorter URLs: every page under the old prefix moves under the new one
 PREFIX_MOVES = {
     "help/comprehensive-overview-electronic-registries-and-verifiable-credentials/": "help/",
+    "use/developer-guide/schema-setup/": "registry/schemas/",
+    "use/developer-guide/backup-and-restore/": "registry/configure/backup-and-restore/",
+    "use/releases/registry/": "registry/releases/",
+    "use/releases/credentialing/": "credentials/releases/",
+    "registry/technical-overview/": "registry/architecture/",
+    "credentials/technical-overview/": "credentials/architecture/",
 }
 # Link-only landing pages dropped entirely; their URLs redirect to the given page
 DROPPED = {
@@ -466,6 +490,19 @@ for p in pages:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(convert(raw, p))
 
+# Remove Markdown left behind by earlier runs (pages that have since moved or been dropped)
+CONTENT_DIRS = ["learn", "use", "community", "help", "registry", "credentials", "engage"]
+keep = {p["path"] + ".md" for p in pages} | {"registry/index.md", "credentials/index.md"}
+for d in CONTENT_DIRS:
+    for f in sorted((OUT / d).rglob("*.md")) if (OUT / d).exists() else []:
+        rel = f.relative_to(OUT).as_posix()
+        if rel not in keep:
+            f.unlink()
+            report.setdefault("removed_stale", []).append(rel)
+    for sub in sorted((OUT / d).rglob("*"), reverse=True) if (OUT / d).exists() else []:
+        if sub.is_dir() and not any(sub.iterdir()):
+            sub.rmdir()
+
 # openapi specs (vendored copy of sunbird-rc-core/api-documentation)
 (OUT / "openapi").mkdir(exist_ok=True)
 for f in (LIVE / "openapi").glob("*.yaml"):
@@ -543,67 +580,67 @@ SIDEBAR = [
     ]),
     ("group", "Registry", [
         ("group", "Architecture", [
-            ("registry/technical-overview/high-level-architecture", "Architecture"),
-            ("registry/technical-overview/technical-specification-draft", "Technical specification (draft)"),
-            ("registry/technical-overview/infrastructure-requirements", "Requirements"),
+            ("registry/architecture/high-level-architecture", "Architecture"),
+            ("registry/architecture/technical-specification-draft", "Technical specification (draft)"),
+            ("registry/architecture/infrastructure-requirements", "Requirements"),
         ]),
         ("group", "Install", [
-            ("use/installation/registry-cli", "Registry CLI"),
-            ("use/installation/docker-compose-setup", "Docker Compose"),
-            ("use/installation/helm-setup", "Helm (Kubernetes)"),
+            ("registry/install/registry-cli", "Registry CLI"),
+            ("registry/install/docker-compose", "Docker Compose"),
+            ("registry/install/helm", "Helm (Kubernetes)"),
         ]),
-        ("use/developer-guide/schema-setup", "Schemas", [
-            ("use/developer-guide/schema-setup/introduction-to-schemas", "Introduction"),
-            ("use/developer-guide/schema-setup/creating-your-own-schemas", "Create your own"),
-            ("use/developer-guide/schema-setup/schema-configuration", "Configuration"),
-            ("use/developer-guide/schema-setup/create-schemas-with-custom-password", "Custom passwords"),
+        ("registry/schemas", "Schemas", [
+            ("registry/schemas/introduction-to-schemas", "Introduction"),
+            ("registry/schemas/creating-your-own-schemas", "Create your own"),
+            ("registry/schemas/schema-configuration", "Configuration"),
+            ("registry/schemas/create-schemas-with-custom-password", "Custom passwords"),
         ]),
         ("group", "Configure and operate", [
-            ("use/developer-guide/environment-variable-reference", "Environment variables"),
-            ("use/developer-guide/configuration-reference", "Configuration files"),
-            ("use/developer-guide/metrics", "Metrics and events"),
-            ("use/developer-guide/backup-and-restore", "Backup and restore", [
-                ("use/developer-guide/backup-and-restore/postgresql", "PostgreSQL"),
-                ("use/developer-guide/backup-and-restore/cassandra", "Cassandra"),
+            ("registry/configure/environment-variables", "Environment variables"),
+            ("registry/configure/configuration-files", "Configuration files"),
+            ("registry/configure/metrics", "Metrics and events"),
+            ("registry/configure/backup-and-restore", "Backup and restore", [
+                ("registry/configure/backup-and-restore/postgresql", "PostgreSQL"),
+                ("registry/configure/backup-and-restore/cassandra", "Cassandra"),
             ]),
         ]),
         ("group", "Identity and access", [
-            ("use/developer-guide/generic-iam", "Identity providers (IAM)"),
-            ("use/developer-guide/custom-keycloak-build", "Custom Keycloak build"),
-            ("use/integrations/sso-with-existing-systems", "SSO with existing systems"),
-            ("use/integrations/digilocker-meripehchaan-sso", "DigiLocker MeriPehchaan SSO"),
+            ("registry/identity/identity-providers", "Identity providers (IAM)"),
+            ("registry/identity/custom-keycloak-build", "Custom Keycloak build"),
+            ("registry/identity/sso-with-existing-systems", "SSO with existing systems"),
+            ("registry/identity/digilocker-meripehchaan-sso", "DigiLocker MeriPehchaan SSO"),
         ]),
         ("group", "Develop", [
-            ("use/developer-guide/working-with-source-code", "Work with the source code"),
-            ("use/developer-guide/setup-backend", "Set up the backend"),
-            ("use/developer-guide/setup-frontend", "Set up the frontend"),
+            ("registry/develop/source-code", "Work with the source code"),
+            ("registry/develop/backend", "Set up the backend"),
+            ("registry/develop/frontend", "Set up the frontend"),
         ]),
         ("api", "API reference", "Registry", "api-reference"),
-        ("use/releases/registry", "Releases", [
-            ("use/releases/registry/v2.0.3", "v2.0.3 (latest)"),
-            ("use/releases/registry/v1.0.0", "v1.0.0"),
+        ("registry/releases", "Releases", [
+            ("registry/releases/v2.0.3", "v2.0.3 (latest)"),
+            ("registry/releases/v1.0.0", "v1.0.0"),
         ]),
     ]),
     ("group", "Credentials", [
         ("group", "Architecture", [
-            ("credentials/technical-overview/high-level-architecture", "Architecture"),
-            ("credentials/technical-overview/technical-specification-draft", "Technical specification (draft)"),
-            ("credentials/technical-overview/tech-stack-and-requirements", "Requirements"),
+            ("credentials/architecture/high-level-architecture", "Architecture"),
+            ("credentials/architecture/technical-specification-draft", "Technical specification (draft)"),
+            ("credentials/architecture/tech-stack-and-requirements", "Requirements"),
         ]),
         ("group", "Install", [
-            ("use/installation/credentialling-services-setup-dev-docker-helm", "Dev, Docker Compose and Helm"),
+            ("credentials/install/services-setup", "Dev, Docker Compose and Helm"),
         ]),
         ("group", "Wallets and verification", [
-            ("use/integrations/wallet-integration", "Wallet integration (OpenID4VC)"),
-            ("use/connectors/openid-for-verifiable-credentials-oid4vci", "OpenID4VCI connector"),
-            ("use/developer-guide/vc-verification-module", "VC verification module"),
-            ("use/integrations/digilocker-integration", "DigiLocker wallet"),
+            ("credentials/wallets/wallet-integration", "Wallet integration (OpenID4VC)"),
+            ("credentials/wallets/openid4vci", "OpenID4VCI connector"),
+            ("credentials/wallets/vc-verification-module", "VC verification module"),
+            ("credentials/wallets/digilocker", "DigiLocker wallet"),
         ]),
         ("api", "API reference", "Credentials", "api-reference"),
-        ("use/releases/credentialing", "Releases", [
-            ("use/releases/credentialing/v2.1.0-latest-release", "v2.1.0 (latest)"),
-            ("use/releases/credentialing/v2.0.3", "v2.0.3"),
-            ("use/releases/credentialing/v2.0.0", "v2.0.0"),
+        ("credentials/releases", "Releases", [
+            ("credentials/releases/v2.1.0-latest-release", "v2.1.0 (latest)"),
+            ("credentials/releases/v2.0.3", "v2.0.3"),
+            ("credentials/releases/v2.0.0", "v2.0.0"),
         ]),
     ]),
     ("group", "Community", [

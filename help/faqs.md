@@ -151,9 +151,9 @@ We should understand the Sunbird registry and credentials first before jumping d
 1. Introduction - [link](/)
 2. Read about services and high level architecture -
    * [registry and other services](broken://pages/hISnjaCAjhkamOE1VHN3)
-   * [credentialling services architecture](/credentials/technical-overview/high-level-architecture)
+   * [credentialling services architecture](/credentials/architecture/high-level-architecture)
 3. Write down your requirements and the feature you can leverage to using sunbird-rc
-4. Understand how to configure a schema, micro level details are here - [link](/use/developer-guide/schema-setup/schema-configuration)
+4. Understand how to configure a schema, micro level details are here - [link](/registry/schemas/schema-configuration)
 5. Check the Api references for registry - [link](/registry/)
 6. Try out deployments with default configurations to understand more, installation guides are there
    * If your requirement is only credentialing, you can checkout this - [link](https://github.com/Sunbird-RC/devops/tree/main/deploy-as-code/docker/v2/credentialling) , Also checkout this demo project -&#x20;
@@ -174,7 +174,7 @@ We should understand the Sunbird registry and credentials first before jumping d
 **Registry Schema** - It is a JsonSchema of draft - \`<http://json-schema.org/draft-07/schema\\`>. It is used in registry service. It is responsible for -
 
 1. Creating APIs for an entity to be managed in the registry.
-2. Schema Configurations used in registry - is configured with key `_osConfig` , more details \[here]\(<a href="/use/developer-guide/schema-setup/schema-configuration">/use/developers-guide/functional-registry/schema-setup/schema-configuration</a>)
+2. Schema Configurations used in registry - is configured with key `_osConfig` , more details \[here]\(<a href="/registry/schemas/schema-configuration">/use/developers-guide/functional-registry/schema-setup/schema-configuration</a>)
 
 </details>
 

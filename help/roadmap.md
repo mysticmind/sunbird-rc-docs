@@ -17,8 +17,8 @@ Sunbird RC is one package with two components, Registry and Credentials, which c
 
 ## Current
 
-* **Credentials v2.1.0** — Released. See the [v2.1.0 release notes](/use/releases/credentialing/v2.1.0-latest-release).
-* **Registry v2.0.3** — Released. See the [v2.0.3 release notes](/use/releases/registry/v2.0.3).
+* **Credentials v2.1.0** — Released. See the [v2.1.0 release notes](/credentials/releases/v2.1.0-latest-release).
+* **Registry v2.0.3** — Released. See the [v2.0.3 release notes](/registry/releases/v2.0.3).
 
 ## Next
 

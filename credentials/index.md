@@ -1,1 +1,1 @@
-<!--@include: ./technical-overview/high-level-architecture.md-->
+<!--@include: ./architecture/high-level-architecture.md-->

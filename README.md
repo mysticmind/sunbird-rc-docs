@@ -40,8 +40,8 @@ Images go in `public/images/` and are referenced as `/images/<name>.png`. Use lo
 | Path | Contents |
 | --- | --- |
 | `learn/`, `use/`, `community/`, `help/` | Introduction, Get started, Community and Reference pages |
-| `registry/` | Registry technical overview and API reference |
-| `credentials/` | Credentials technical overview and API reference |
+| `registry/` | Everything for the Registry: `architecture/`, `install/`, `schemas/`, `configure/`, `identity/`, `develop/`, `api-reference/`, `releases/` |
+| `credentials/` | Everything for Credentials: `architecture/`, `install/`, `wallets/`, `api-reference/`, `releases/` |
 | `openapi/` | Copies of the OpenAPI specs from `sunbird-rc-core/api-documentation` |
 | `public/` | Images, video and the logo, served as-is |
 | `.vitepress/config.mts` | Site settings, navigation and plugins |

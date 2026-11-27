@@ -19,8 +19,8 @@ Already running Sunbird RC? This page brings together what you need before movin
 
 The release also updates the runtime and dependencies of every service in the repository.
 
-* [v2.1.0 release notes](/use/releases/credentialing/v2.1.0-latest-release)
-* [Wallet Integration](/use/integrations/wallet-integration) — how the OID4VC service works with wallets
+* [v2.1.0 release notes](/credentials/releases/v2.1.0-latest-release)
+* [Wallet Integration](/credentials/wallets/wallet-integration) — how the OID4VC service works with wallets
 
 ## What changed from v1 to v2
 
@@ -34,7 +34,7 @@ The biggest change between major versions is how the Registry signs credentials.
 | **Services needed**  | certificate-signer, certificate-api                                             | identity, credential-schema, credentials, Vault                                                                                 |
 | **Setting**          | `signature_provider=dev.sunbirdrc.registry.service.impl.SignatureV1ServiceImpl` | `signature_provider=dev.sunbirdrc.registry.service.impl.SignatureV2ServiceImpl`, plus the `did_*` and `signature_v2_*` settings |
 
-For more on each option, see [Signature V1 or V2](/use/developer-guide/working-with-source-code#signature-v1-or-v2).
+For more on each option, see [Signature V1 or V2](/registry/develop/source-code#signature-v1-or-v2).
 
 ## Compatibility
 
@@ -60,7 +60,7 @@ Check the release notes for every version between yours and the one you're movin
 ::: step
 ### Back up your data
 
-Back up your databases before upgrading. See [Backup and Restore](/use/developer-guide/backup-and-restore).
+Back up your databases before upgrading. See [Backup and Restore](/registry/configure/backup-and-restore).
 :::
 
 ::: step
@@ -81,7 +81,7 @@ docker compose up -d
 docker compose --profile oid4vc up -d oid4vc-service
 ```
 
-See [Wallet Integration](/use/integrations/wallet-integration) for the settings it needs.
+See [Wallet Integration](/credentials/wallets/wallet-integration) for the settings it needs.
 :::
 
 :::: step
@@ -109,13 +109,13 @@ Switching changes how new credentials are signed and which DIDs they use. Check 
 
 **Registry**
 
-* [v2.0.3](/use/releases/registry/v2.0.3)
-* [v1.0.0](/use/releases/registry/v1.0.0)
+* [v2.0.3](/registry/releases/v2.0.3)
+* [v1.0.0](/registry/releases/v1.0.0)
 
 **Credentials**
 
-* [v2.1.0](/use/releases/credentialing/v2.1.0-latest-release)
-* [v2.0.3](/use/releases/credentialing/v2.0.3)
-* [v2.0.0](/use/releases/credentialing/v2.0.0)
+* [v2.1.0](/credentials/releases/v2.1.0-latest-release)
+* [v2.0.3](/credentials/releases/v2.0.3)
+* [v2.0.0](/credentials/releases/v2.0.0)
 
 All releases and changelogs are also on [GitHub](https://github.com/Sunbird-RC/sunbird-rc-core/releases).

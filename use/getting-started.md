@@ -21,12 +21,12 @@ Before you start, install the [Pre-requisites](/use/developer-setup) for your pa
 
 **Quick start**
 
-* [Docker Compose Setup](/use/installation/docker-compose-setup) — the default settings leave credential signing off, so the Registry runs on its own.
-* Or the [Registry CLI](/use/installation/registry-cli) for a guided local setup.
+* [Docker Compose Setup](/registry/install/docker-compose) — the default settings leave credential signing off, so the Registry runs on its own.
+* Or the [Registry CLI](/registry/install/registry-cli) for a guided local setup.
 
 **Next steps**
 
-* [Creating Your Own Schemas](/use/developer-guide/schema-setup/creating-your-own-schemas)
+* [Creating Your Own Schemas](/registry/schemas/creating-your-own-schemas)
 * [Registry API reference](/registry/api-reference/registry/using-the-apis)
 * [Core Capabilities](/learn/core-capabilities)
 
@@ -34,29 +34,29 @@ Before you start, install the [Pre-requisites](/use/developer-setup) for your pa
 
 **Quick start**
 
-* [Credentialling Services setup](/use/installation/credentialling-services-setup-dev-docker-helm) — use the **Docker Compose** tab.
+* [Credentialling Services setup](/credentials/install/services-setup) — use the **Docker Compose** tab.
 
 **Next steps**
 
 * [Credentials API reference](/credentials/api-reference/credential-issuance-apis)
-* [Wallet Integration](/use/integrations/wallet-integration) — optional, to issue to and verify from any compliant wallet
+* [Wallet Integration](/credentials/wallets/wallet-integration) — optional, to issue to and verify from any compliant wallet
 
 == Registry + Credentials
 
 **Quick start**
 
-1. Follow [Docker Compose Setup](/use/installation/docker-compose-setup).
+1. Follow [Docker Compose Setup](/registry/install/docker-compose).
 2. From the `sunbird-rc-core` folder, run `bash enable-v2.sh`. This brings up Vault, identity, credential-schema, credentials and claim-ms, and restarts the Registry with signing, DIDs and claims turned on.
 
 **Next steps**
 
-* [Signature V1 or V2](/use/developer-guide/working-with-source-code#signature-v1-or-v2) — how the Registry signs credentials
-* [Wallet Integration](/use/integrations/wallet-integration) — optional
+* [Signature V1 or V2](/registry/develop/source-code#signature-v1-or-v2) — how the Registry signs credentials
+* [Wallet Integration](/credentials/wallets/wallet-integration) — optional
 ::::
 
 ## Going to production
 
-For a Kubernetes deployment, see [Helm Setup](/use/installation/helm-setup) and the **Helm** tab of [Credentialling Services setup](/use/installation/credentialling-services-setup-dev-docker-helm).
+For a Kubernetes deployment, see [Helm Setup](/registry/install/helm) and the **Helm** tab of [Credentialling Services setup](/credentials/install/services-setup).
 
 ::: warning
 The production deployment guides are being reviewed for v2.1.0. Check with the community on [GitHub Discussions](https://github.com/orgs/Sunbird-RC/discussions) before deploying to production.

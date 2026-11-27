@@ -69,15 +69,15 @@
         "items": [
           {
             "text": "Architecture",
-            "link": "/registry/technical-overview/high-level-architecture"
+            "link": "/registry/architecture/high-level-architecture"
           },
           {
             "text": "Technical specification (draft)",
-            "link": "/registry/technical-overview/technical-specification-draft"
+            "link": "/registry/architecture/technical-specification-draft"
           },
           {
             "text": "Requirements",
-            "link": "/registry/technical-overview/infrastructure-requirements"
+            "link": "/registry/architecture/infrastructure-requirements"
           }
         ],
         "collapsed": true
@@ -87,38 +87,38 @@
         "items": [
           {
             "text": "Registry CLI",
-            "link": "/use/installation/registry-cli"
+            "link": "/registry/install/registry-cli"
           },
           {
             "text": "Docker Compose",
-            "link": "/use/installation/docker-compose-setup"
+            "link": "/registry/install/docker-compose"
           },
           {
             "text": "Helm (Kubernetes)",
-            "link": "/use/installation/helm-setup"
+            "link": "/registry/install/helm"
           }
         ],
         "collapsed": true
       },
       {
         "text": "Schemas",
-        "link": "/use/developer-guide/schema-setup",
+        "link": "/registry/schemas",
         "items": [
           {
             "text": "Introduction",
-            "link": "/use/developer-guide/schema-setup/introduction-to-schemas"
+            "link": "/registry/schemas/introduction-to-schemas"
           },
           {
             "text": "Create your own",
-            "link": "/use/developer-guide/schema-setup/creating-your-own-schemas"
+            "link": "/registry/schemas/creating-your-own-schemas"
           },
           {
             "text": "Configuration",
-            "link": "/use/developer-guide/schema-setup/schema-configuration"
+            "link": "/registry/schemas/schema-configuration"
           },
           {
             "text": "Custom passwords",
-            "link": "/use/developer-guide/schema-setup/create-schemas-with-custom-password"
+            "link": "/registry/schemas/create-schemas-with-custom-password"
           }
         ],
         "collapsed": true
@@ -128,27 +128,27 @@
         "items": [
           {
             "text": "Environment variables",
-            "link": "/use/developer-guide/environment-variable-reference"
+            "link": "/registry/configure/environment-variables"
           },
           {
             "text": "Configuration files",
-            "link": "/use/developer-guide/configuration-reference"
+            "link": "/registry/configure/configuration-files"
           },
           {
             "text": "Metrics and events",
-            "link": "/use/developer-guide/metrics"
+            "link": "/registry/configure/metrics"
           },
           {
             "text": "Backup and restore",
-            "link": "/use/developer-guide/backup-and-restore",
+            "link": "/registry/configure/backup-and-restore",
             "items": [
               {
                 "text": "PostgreSQL",
-                "link": "/use/developer-guide/backup-and-restore/postgresql"
+                "link": "/registry/configure/backup-and-restore/postgresql"
               },
               {
                 "text": "Cassandra",
-                "link": "/use/developer-guide/backup-and-restore/cassandra"
+                "link": "/registry/configure/backup-and-restore/cassandra"
               }
             ],
             "collapsed": true
@@ -161,19 +161,19 @@
         "items": [
           {
             "text": "Identity providers (IAM)",
-            "link": "/use/developer-guide/generic-iam"
+            "link": "/registry/identity/identity-providers"
           },
           {
             "text": "Custom Keycloak build",
-            "link": "/use/developer-guide/custom-keycloak-build"
+            "link": "/registry/identity/custom-keycloak-build"
           },
           {
             "text": "SSO with existing systems",
-            "link": "/use/integrations/sso-with-existing-systems"
+            "link": "/registry/identity/sso-with-existing-systems"
           },
           {
             "text": "DigiLocker MeriPehchaan SSO",
-            "link": "/use/integrations/digilocker-meripehchaan-sso"
+            "link": "/registry/identity/digilocker-meripehchaan-sso"
           }
         ],
         "collapsed": true
@@ -183,15 +183,15 @@
         "items": [
           {
             "text": "Work with the source code",
-            "link": "/use/developer-guide/working-with-source-code"
+            "link": "/registry/develop/source-code"
           },
           {
             "text": "Set up the backend",
-            "link": "/use/developer-guide/setup-backend"
+            "link": "/registry/develop/backend"
           },
           {
             "text": "Set up the frontend",
-            "link": "/use/developer-guide/setup-frontend"
+            "link": "/registry/develop/frontend"
           }
         ],
         "collapsed": true
@@ -388,15 +388,15 @@
       },
       {
         "text": "Releases",
-        "link": "/use/releases/registry",
+        "link": "/registry/releases",
         "items": [
           {
             "text": "v2.0.3 (latest)",
-            "link": "/use/releases/registry/v2.0.3"
+            "link": "/registry/releases/v2.0.3"
           },
           {
             "text": "v1.0.0",
-            "link": "/use/releases/registry/v1.0.0"
+            "link": "/registry/releases/v1.0.0"
           }
         ],
         "collapsed": true
@@ -411,15 +411,15 @@
         "items": [
           {
             "text": "Architecture",
-            "link": "/credentials/technical-overview/high-level-architecture"
+            "link": "/credentials/architecture/high-level-architecture"
           },
           {
             "text": "Technical specification (draft)",
-            "link": "/credentials/technical-overview/technical-specification-draft"
+            "link": "/credentials/architecture/technical-specification-draft"
           },
           {
             "text": "Requirements",
-            "link": "/credentials/technical-overview/tech-stack-and-requirements"
+            "link": "/credentials/architecture/tech-stack-and-requirements"
           }
         ],
         "collapsed": true
@@ -429,7 +429,7 @@
         "items": [
           {
             "text": "Dev, Docker Compose and Helm",
-            "link": "/use/installation/credentialling-services-setup-dev-docker-helm"
+            "link": "/credentials/install/services-setup"
           }
         ],
         "collapsed": true
@@ -439,19 +439,19 @@
         "items": [
           {
             "text": "Wallet integration (OpenID4VC)",
-            "link": "/use/integrations/wallet-integration"
+            "link": "/credentials/wallets/wallet-integration"
           },
           {
             "text": "OpenID4VCI connector",
-            "link": "/use/connectors/openid-for-verifiable-credentials-oid4vci"
+            "link": "/credentials/wallets/openid4vci"
           },
           {
             "text": "VC verification module",
-            "link": "/use/developer-guide/vc-verification-module"
+            "link": "/credentials/wallets/vc-verification-module"
           },
           {
             "text": "DigiLocker wallet",
-            "link": "/use/integrations/digilocker-integration"
+            "link": "/credentials/wallets/digilocker"
           }
         ],
         "collapsed": true
@@ -503,19 +503,19 @@
       },
       {
         "text": "Releases",
-        "link": "/use/releases/credentialing",
+        "link": "/credentials/releases",
         "items": [
           {
             "text": "v2.1.0 (latest)",
-            "link": "/use/releases/credentialing/v2.1.0-latest-release"
+            "link": "/credentials/releases/v2.1.0-latest-release"
           },
           {
             "text": "v2.0.3",
-            "link": "/use/releases/credentialing/v2.0.3"
+            "link": "/credentials/releases/v2.0.3"
           },
           {
             "text": "v2.0.0",
-            "link": "/use/releases/credentialing/v2.0.0"
+            "link": "/credentials/releases/v2.0.0"
           }
         ],
         "collapsed": true

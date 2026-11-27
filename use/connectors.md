@@ -8,6 +8,6 @@ description: "Checkout the connectors here:"
 Checkout the connectors here:
 
 ::: card
-[OpenID for Verifiable Credentials (OID4VCI)](/use/connectors/openid-for-verifiable-credentials-oid4vci)
+[OpenID for Verifiable Credentials (OID4VCI)](/credentials/wallets/openid4vci)
 :::
 

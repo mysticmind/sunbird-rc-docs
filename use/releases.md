@@ -13,7 +13,7 @@ v2.1.0 is the first feature-bearing release of Sunbird RC in roughly two years �
 The headline is **OpenID Connect for Verifiable Credentials**. A new `oid4vc-service` makes the platform speak OpenID4VCI 1.0 for issuance and OpenID4VP 1.0/draft-23 for presentation, so any conformant wallet can receive a credential from a Sunbird RC deployment and present it back to a Sunbird RC verifier — with no Sunbird-specific integration on the wallet side.
 
 ::: card
-[v2.1.0 — Latest release](/use/releases/credentialing/v2.1.0-latest-release)
+[v2.1.0 — Latest release](/credentials/releases/v2.1.0-latest-release)
 :::
 
 ::: info
