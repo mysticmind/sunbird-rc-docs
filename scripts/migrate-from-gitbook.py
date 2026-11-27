@@ -557,7 +557,7 @@ UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors",
             "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"}
 CONCEPTS = "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"
 # Sections shown open; the rest start collapsed and open when the current page is inside them
-OPEN = {"Introduction", "Get started", "Community", "Reference"}
+OPEN = {"Introduction", "Get started", "Registry", "Credentials", "Community", "Reference"}
 
 API_GROUPS = {"Schema": "Schema APIs", "Registry": "Entity APIs", "Attestation API": "Attestation APIs",
               "Claims API": "Claims APIs", "Discovery API": "Discovery APIs", "File storage API": "File storage APIs"}
