@@ -97,6 +97,10 @@ python3 scripts/migrate-from-gitbook.py /tmp/rc-gitbook . --fetch
 
 Rerun it only while the GitBook site is still being edited. Once this repo is live, edit here.
 
+The GitBook **Welcome Aboard!** page was merged into the home page (`index.md`): its cards are the home page
+feature cards, and its intro, versions and newsletter link sit below them. The script skips that page, and
+`public/learn/welcome-aboard.html` redirects its old URL to the home page.
+
 ### Pages not migrated
 
 On the GitBook site, maintainers struck through the titles of these pages (`~Title~`) to mark them as

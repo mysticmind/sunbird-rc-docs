@@ -62,7 +62,7 @@ export default defineConfig({
     logo: { src: '/logo-rc.svg', alt: 'Sunbird RC' },
     siteTitle: false,
     nav: [
-      { text: 'Knowledge Base', link: '/learn/welcome-aboard', activeMatch: '^/(learn|use|engage|help)/' },
+      { text: 'Knowledge Base', link: '/learn/readme', activeMatch: '^/(learn|use|engage|help)/' },
       { text: 'Registry', link: '/registry/', activeMatch: '^/registry/' },
       { text: 'Credentials', link: '/credentials/', activeMatch: '^/credentials/' },
       {

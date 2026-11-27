@@ -52,6 +52,13 @@ for p in skipped:
     stale = OUT / (p["path"] + ".md")
     if stale.exists():
         stale.unlink()  # from an earlier run
+# Pages whose content was moved by hand into the home page (index.md); edit it there, not on GitBook.
+MERGED_INTO_HOME = {"learn/welcome-aboard"}
+for p in [p for p in pages if p["path"] in MERGED_INTO_HOME]:
+    stale = OUT / (p["path"] + ".md")
+    if stale.exists():
+        stale.unlink()
+pages = [p for p in pages if p["path"] not in MERGED_INTO_HOME]
 report["not_migrated"] = [f'{p["title"].strip("~")} ({p["path"]})' for p in skipped]
 print(len(pages), "pages,", len(skipped), "placeholder pages skipped")
 
@@ -280,7 +287,7 @@ def text_fixes(t):
     return t
 
 
-PAGE_COVERS = {"learn/welcome-aboard": "<RcBanner />"}
+PAGE_COVERS = {}  # page path -> component to place above the title (GitBook covers are not exported)
 
 CLIENT_TOOLS = {"curl", "httpie", "wget", "postman", "python", "javascript", "node.js", "java", "go"}
 RUN = re.compile(r"(?:^#{2,6} [^\n]+\n\n```[^\n]*\n(?:.*?\n)?```\n\n?){2,}", re.M | re.S)

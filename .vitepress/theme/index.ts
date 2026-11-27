@@ -3,7 +3,6 @@ import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import ApiOperation from './components/ApiOperation.vue'
-import RcBanner from './components/RcBanner.vue'
 import Mermaid from './components/Mermaid.vue'
 import CornerBadges from './components/CornerBadges.vue'
 import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
@@ -16,7 +15,6 @@ export default {
   enhanceApp({ app }) {
     enhanceAppWithTabs(app)
     app.component('ApiOperation', ApiOperation)
-    app.component('RcBanner', RcBanner)
     app.component('Mermaid', Mermaid)
     app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons)
   },

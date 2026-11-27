@@ -4,10 +4,6 @@
       "text": "Learn",
       "items": [
         {
-          "text": "Welcome Aboard!",
-          "link": "/learn/welcome-aboard"
-        },
-        {
           "text": "Overview",
           "link": "/learn/readme",
           "items": [

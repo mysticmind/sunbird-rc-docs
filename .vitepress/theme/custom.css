@@ -141,7 +141,6 @@
 .vp-doc figure img { border-radius: 6px; }
 .vp-doc mark { background: transparent; color: inherit; } /* GitBook coloured text; never the browser's black highlight */
 
-.vp-doc .rc-banner { margin: 8px 0 32px; }
 
 /* Home hero subtitle in the style of the "Digital Public Good" cover: tilted orange labels */
 .VPHero .text {
@@ -169,3 +168,23 @@
 @media (max-width: 959px) {
   .VPHero .text { align-items: center; }
 }
+
+/* Home page: intro text and release line under the feature cards (from the former Welcome Aboard page) */
+.rc-home-about {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 48px 0 64px; /* VitePress already pads the home content area, so line up with the cards */
+  color: var(--vp-c-text-2);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.rc-home-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.rc-home-meta strong { color: var(--vp-c-text-1); }
+.rc-home-meta a { color: var(--vp-c-brand-1); text-decoration: none; font-weight: 500; }
+.rc-home-meta a:hover { text-decoration: underline; }
