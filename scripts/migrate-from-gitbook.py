@@ -6,7 +6,7 @@ Usage: python3 scripts/migrate-from-gitbook.py <work_dir> <repo_root> [--fetch]
 
 Rerun it only while GitBook is still being edited; after the switch, edit the Markdown here.
 """
-import hashlib, html, json, re, shutil, sys, time, urllib.parse, urllib.request
+import hashlib, html, json, re, shutil, subprocess, sys, time, urllib.parse, urllib.request
 from pathlib import Path
 
 LIVE, OUT = Path(sys.argv[1]), Path(sys.argv[2])
@@ -93,6 +93,30 @@ def fetch(url, dest_dir, kind):
 
 
 GB = r"https://(?:content\.gitbook\.com|files\.gitbook\.com|[0-9]+-files\.gitbook\.io|rc\.sunbird\.org/~gitbook/image)"
+
+
+def gif_to_video(text):
+    """Animated GIF screen recordings are 10-25 MB each. Re-encode them as H.264 MP4 at CRF 18
+    (visually identical, about 80-90% smaller) and play them like a GIF: autoplay, muted, looping."""
+    def swap(m):
+        tag, src = m.group(0), m.group(1)
+        gif = IMG_DIR / src.rsplit("/", 1)[-1]
+        mp4 = MEDIA_DIR / (gif.stem + ".mp4")
+        if not mp4.exists():
+            if not gif.exists():
+                report["unhandled"].append(f"gif missing {gif.name}")
+                return tag
+            MEDIA_DIR.mkdir(parents=True, exist_ok=True)
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(gif), "-movflags", "+faststart",
+                            "-pix_fmt", "yuv420p", "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2",
+                            "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-an", str(mp4)], check=True)
+            report["gifs_converted"] = report.get("gifs_converted", 0) + 1
+        gif.unlink(missing_ok=True)  # the MP4 replaces it; the GIF is not kept in the repo
+        alt = re.search(r'alt="([^"]*)"', tag)
+        label = f' aria-label="{alt.group(1)}"' if alt and alt.group(1) else ""
+        return (f'<video class="gif-video" autoplay muted loop playsinline preload="auto"{label} '
+                f'src="/{MEDIA_DIR.name}/{mp4.name}"></video>')
+    return re.sub(r'<img src="(/images/[^"]+\.gif)"[^>]*>', swap, text)
 
 
 def localise_images(text):
@@ -316,6 +340,7 @@ def convert(raw, page):
     body = render(parse(body))
     body = code_groups(body)
     body = localise_images(body)
+    body = gif_to_video(body)
     body = outside_code(body, text_fixes)
     body = fix_links(body)
     body = re.sub(r"\n{3,}", "\n\n", body)

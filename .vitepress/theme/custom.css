@@ -194,3 +194,12 @@
   color: var(--vp-c-brand-1);
   background-color: var(--vp-c-brand-soft);
 }
+
+/* Demo screen recordings (converted from GIF): sized like the images they replaced */
+.vp-doc video.gif-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}

@@ -88,7 +88,8 @@ Markdown or open it in an AI assistant.
 The content was imported from the live GitBook site on 26 November 2026 with
 `scripts/migrate-from-gitbook.py`. The script downloads each page's Markdown export, converts the
 GitBook blocks (hints, tabs, steppers, columns, content refs, embeds, release updates and OpenAPI
-blocks), downloads images from GitBook's CDN, and builds the sidebar from the live page order.
+blocks), downloads images from GitBook's CDN, converts animated GIFs to much smaller MP4 videos that play
+the same way (needs `ffmpeg`), and builds the sidebar from the live page order.
 Page URLs are unchanged.
 
 ```bash

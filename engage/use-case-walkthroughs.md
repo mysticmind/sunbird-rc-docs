@@ -107,7 +107,7 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 ::: column
 &#x20;
 
-<div data-with-frame="true"><figure><img src="/images/1792048329677995-db140535.gif" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><video class="gif-video" autoplay muted loop playsinline preload="auto" src="/media/1792048329677995-db140535.mp4"></video><figcaption></figcaption></figure></div>
 :::
 ::::
 
@@ -159,7 +159,7 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 ::: column
 &#x20;
 
-<div data-with-frame="true"><figure><img src="/images/qr-presentation-7f43080d.gif" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><video class="gif-video" autoplay muted loop playsinline preload="auto" src="/media/qr-presentation-7f43080d.mp4"></video><figcaption></figcaption></figure></div>
 :::
 ::::
 
@@ -210,7 +210,7 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 ::: column
 &#x20;
 
-<div data-with-frame="true"><figure><img src="/images/farmer-intro-7ee20e53.gif" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><video class="gif-video" autoplay muted loop playsinline preload="auto" src="/media/farmer-intro-7ee20e53.mp4"></video><figcaption></figcaption></figure></div>
 :::
 ::::
 
@@ -261,7 +261,7 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 ::: column
 &#x20;
 
-<div data-with-frame="true"><figure><img src="/images/farmer-cred-17a640a7.gif" alt="Agriculture demo, part 2"><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><video class="gif-video" autoplay muted loop playsinline preload="auto" aria-label="Agriculture demo, part 2" src="/media/farmer-cred-17a640a7.mp4"></video><figcaption></figcaption></figure></div>
 :::
 ::::
 
