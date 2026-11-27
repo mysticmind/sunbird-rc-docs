@@ -448,8 +448,204 @@ def section(title, items):
     return {"text": title, "collapsed": True, "items": groups}
 
 
-# One sidebar for the whole site: the knowledge base groups, then Registry and Credentials
-sidebar = build(kb, 0) + [section("Registry", reg), section("Credentials", cred)]
+# One sidebar for the whole site, organised by what the reader is doing. Registry and Credentials can be
+# adopted on their own, so each is a self-contained section. Only the sidebar is arranged this way:
+# every page keeps its live GitBook URL. Labels here override page titles in the sidebar only.
+#   (path, label)                         a page
+#   (path, label, [children])             a page with sub-pages
+#   ("group", label, [children])          a heading without a page
+#   ("api", label, space, segment)        an API reference tree, built from the live page order
+SIDEBAR = [
+    ("group", "Introduction", [
+        ("learn/readme", "Overview"),
+        ("learn/readme/why-do-we-need-sunbird-rc", "Why Sunbird RC"),
+        ("learn/readme/what-sunbird-rc-is-and-what-its-not", "What it is and isn't"),
+        ("learn/readme/core-capabilities", "Core capabilities"),
+        ("learn/readme/workflows", "How it works"),
+        ("learn/readme/possibilities", "Possibilities"),
+        ("engage/use-case-walkthroughs", "Demos"),
+        ("learn/adopters", "Adopters"),
+    ]),
+    ("group", "Get started", [
+        ("use/getting-started", "Choose your path"),
+        ("use/getting-started/developer-setup", "Prerequisites"),
+        ("use/getting-started/installation", "Installation options"),
+        ("use/releases", "What's new"),
+        ("use/getting-started/for-existing-adopters", "Upgrading"),
+    ]),
+    ("group", "Registry", [
+        ("group", "Architecture", [
+            ("registry/technical-overview/high-level-architecture", "Architecture"),
+            ("registry/technical-overview/technical-specification-draft", "Technical specification (draft)"),
+            ("registry/technical-overview/infrastructure-requirements", "Requirements"),
+        ]),
+        ("group", "Install", [
+            ("use/getting-started/installation/registry-cli", "Registry CLI"),
+            ("use/getting-started/installation/docker-compose-setup", "Docker Compose"),
+            ("use/getting-started/installation/helm-setup", "Helm (Kubernetes)"),
+        ]),
+        ("use/developer-guide/schema-setup", "Schemas", [
+            ("use/developer-guide/schema-setup/introduction-to-schemas", "Introduction"),
+            ("use/developer-guide/schema-setup/creating-your-own-schemas", "Create your own"),
+            ("use/developer-guide/schema-setup/schema-configuration", "Configuration"),
+            ("use/developer-guide/schema-setup/create-schemas-with-custom-password", "Custom passwords"),
+        ]),
+        ("group", "Configure and operate", [
+            ("use/developer-guide/environment-variable-reference", "Environment variables"),
+            ("use/developer-guide/configuration-reference", "Configuration files"),
+            ("use/developer-guide/metrics", "Metrics and events"),
+            ("use/developer-guide/backup-and-restore", "Backup and restore", [
+                ("use/developer-guide/backup-and-restore/postgresql", "PostgreSQL"),
+                ("use/developer-guide/backup-and-restore/cassandra", "Cassandra"),
+            ]),
+        ]),
+        ("group", "Identity and access", [
+            ("use/developer-guide/generic-iam", "Identity providers (IAM)"),
+            ("use/developer-guide/custom-keycloak-build", "Custom Keycloak build"),
+            ("use/integrations/sso-with-existing-systems", "SSO with existing systems"),
+            ("use/integrations/digilocker-meripehchaan-sso", "DigiLocker MeriPehchaan SSO"),
+        ]),
+        ("group", "Develop", [
+            ("use/developer-guide/working-with-source-code", "Work with the source code"),
+            ("use/developer-guide/setup-backend", "Set up the backend"),
+            ("use/developer-guide/setup-frontend", "Set up the frontend"),
+        ]),
+        ("api", "API reference", "Registry", "api-reference"),
+        ("use/releases/registry", "Releases", [
+            ("use/releases/registry/v2.0.3", "v2.0.3 (latest)"),
+            ("use/releases/registry/v1.0.0", "v1.0.0"),
+        ]),
+    ]),
+    ("group", "Credentials", [
+        ("group", "Architecture", [
+            ("credentials/technical-overview/high-level-architecture", "Architecture"),
+            ("credentials/technical-overview/technical-specification-draft", "Technical specification (draft)"),
+            ("credentials/technical-overview/tech-stack-and-requirements", "Requirements"),
+        ]),
+        ("group", "Install", [
+            ("use/getting-started/installation/credentialling-services-setup-dev-docker-helm", "Dev, Docker Compose and Helm"),
+        ]),
+        ("group", "Wallets and verification", [
+            ("use/integrations/wallet-integration", "Wallet integration (OpenID4VC)"),
+            ("use/connectors/openid-for-verifiable-credentials-oid4vci", "OpenID4VCI connector"),
+            ("use/developer-guide/vc-verification-module", "VC verification module"),
+            ("use/integrations/digilocker-integration", "DigiLocker wallet"),
+        ]),
+        ("api", "API reference", "Credentials", "api-reference"),
+        ("use/releases/credentialing", "Releases", [
+            ("use/releases/credentialing/v2.1.0-latest-release", "v2.1.0 (latest)"),
+            ("use/releases/credentialing/v2.0.3", "v2.0.3"),
+            ("use/releases/credentialing/v2.0.0", "v2.0.0"),
+        ]),
+    ]),
+    ("group", "Community", [
+        ("engage/discussions", "Discussion forum"),
+        ("engage/contributing", "Contributing"),
+        ("engage/contribution-guidebook", "Contribution guidebook"),
+        ("help/roadmap", "Roadmap"),
+        ("engage/code-of-conduct", "Code of Conduct"),
+    ]),
+    ("group", "Reference", [
+        ("help/faqs", "FAQs"),
+        ("help/terminology", "Glossary"),
+        ("concepts", "Registries and verifiable credentials explained"),
+        ("help/external-open-source-software-attributions", "Open source attributions"),
+    ]),
+]
+# Landing pages that only link to their sub-pages; still published, but the sidebar lists the sub-pages instead
+UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors"}
+CONCEPTS = "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"
+# Sections shown open; the rest start collapsed and open when the current page is inside them
+OPEN = {"Introduction", "Get started", "Community", "Reference"}
+
+API_GROUPS = {"Schema": "Schema APIs", "Registry": "Entity APIs", "Attestation API": "Attestation APIs",
+              "Claims API": "Claims APIs", "Discovery API": "Discovery APIs", "File storage API": "File storage APIs"}
+ACRONYMS = {"id": "ID", "api": "API", "apis": "APIs", "json": "JSON", "vc": "VC", "oid4vc": "OID4VC", "qr": "QR",
+            "did": "DID", "sso": "SSO", "iam": "IAM"}
+
+
+def sentence_case(title):
+    words = title.replace("/ ", "or ").split()
+    out = []
+    for i, w in enumerate(words):
+        low = w.lower()
+        if low in ACRONYMS:
+            out.append(ACRONYMS[low])
+        elif i == 0:
+            out.append(w[:1].upper() + w[1:])
+        elif w.isupper() or any(c.isdigit() for c in w):
+            out.append(w)
+        else:
+            out.append(low)
+    return " ".join(out)
+
+
+by_path = {p["path"]: p for p in pages}
+placed = set()
+
+
+def api_tree(space, segment):
+    items = [p for p in pages if p["space"] == space and p["path"].split("/")[1] == segment]
+    tree = build(items, 1)[0]["items"]
+
+    def relabel(nodes):
+        for n in nodes:
+            placed.add(n["link"].lstrip("/"))
+            n["text"] = sentence_case(n["text"])
+            if "items" in n:
+                relabel(n["items"])
+    relabel(tree)
+    for n in tree:  # group names that say what each set of APIs is for
+        n["text"] = API_GROUPS.get(n["text"], n["text"])
+    return tree
+
+
+def concepts_tree():
+    items = [p for p in pages if p["path"].startswith(CONCEPTS + "/")]
+    tree = build([by_path[CONCEPTS]] + items, 0)[0]["items"][0]  # the guide page, with its sub-pages
+    def mark(n):
+        placed.add(n["link"].lstrip("/"))
+        n["text"] = sentence_case(n["text"])
+        for c in n.get("items", []):
+            mark(c)
+    mark(tree)
+    return tree
+
+
+def render_sidebar(entries, depth=0):
+    out = []
+    for e in entries:
+        if e[0] == "group":
+            node = {"text": e[1], "items": render_sidebar(e[2], depth + 1)}
+            if depth > 0 or e[1] not in OPEN:
+                node["collapsed"] = True
+        elif e[0] == "api":
+            node = {"text": e[1], "collapsed": True, "items": api_tree(e[2], e[3])}
+        elif e[0] == "concepts":
+            node = concepts_tree()
+            node["text"] = e[1]
+        else:
+            path, label = e[0], e[1]
+            if path not in by_path:
+                report["unhandled"].append(f"sidebar lists a page that does not exist: {path}")
+                continue
+            placed.add(path)
+            node = {"text": label, "link": "/" + path}
+            if len(e) > 2:
+                node["items"] = render_sidebar(e[2], depth + 1)
+                node["collapsed"] = True
+        out.append(node)
+    return out
+
+
+# Registry and Credentials first: the two products are the main way into the docs, and collapsed they take two lines
+SIDEBAR = [e for e in SIDEBAR if e[1] in ("Registry", "Credentials")] + [e for e in SIDEBAR if e[1] not in ("Registry", "Credentials")]
+sidebar = render_sidebar(SIDEBAR)
+# Any page the plan does not mention (for example, one added on GitBook later) goes in a visible group
+unsorted = [p for p in pages if p["path"] not in placed and p["path"] not in UNLISTED]
+if unsorted:
+    sidebar.append({"text": "Not yet sorted", "items": [{"text": p["title"], "link": "/" + p["path"]} for p in unsorted]})
+    report["unhandled"].append("pages missing from the sidebar plan: " + ", ".join(p["path"] for p in unsorted))
 (OUT / ".vitepress").mkdir(exist_ok=True)
 (OUT / ".vitepress" / "sidebar.json").write_text(json.dumps(sidebar, indent=2, ensure_ascii=False) + "\n")
 

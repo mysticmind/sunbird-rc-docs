@@ -21,8 +21,9 @@ npm run preview    # serve the production build at http://localhost:4173
 
 1. Click **Edit this page on GitHub** at the bottom of any page, or find the file using the URL.
 2. Make the change and open a pull request against `main`.
-3. To add a page, create the Markdown file and add it to `.vitepress/sidebar.json`
-   (this file replaces GitBook's `SUMMARY.md`).
+3. To add a page, create the Markdown file and add it to `.vitepress/sidebar.json` (this replaces GitBook's
+   `SUMMARY.md`). The sidebar is grouped by task: Registry, Credentials, Introduction, Get started, Community and
+   Reference. Registry and Credentials are self-contained, because each can be used on its own.
 4. Start each page with front matter. The `description` is shown in search results and in `llms.txt`:
 
    ```markdown
@@ -44,7 +45,7 @@ Images go in `public/images/` and are referenced as `/images/<name>.png`. Use lo
 | `openapi/` | Copies of the OpenAPI specs from `sunbird-rc-core/api-documentation` |
 | `public/` | Images, video and the logo, served as-is |
 | `.vitepress/config.mts` | Site settings, navigation and plugins |
-| `.vitepress/sidebar.json` | The sidebar, shared by every page (Registry and Credentials are collapsible sections at the end) |
+| `.vitepress/sidebar.json` | The sidebar, shared by every page. Generated from the `SIDEBAR` plan in `scripts/migrate-from-gitbook.py` |
 | `.vitepress/theme/` | Brand colours, styles and the `ApiOperation` component |
 | `scripts/` | OpenAPI sync and the one-off GitBook migration |
 
