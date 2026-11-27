@@ -28,7 +28,7 @@
       },
       {
         "text": "Use case Walkthroughs",
-        "link": "/engage/use-case-walkthroughs"
+        "link": "/learn/use-case-walkthroughs"
       },
       {
         "text": "Adopters",
@@ -527,15 +527,15 @@
     "items": [
       {
         "text": "Discussion forum",
-        "link": "/engage/discussions"
+        "link": "/community/discussions"
       },
       {
         "text": "Contributing",
-        "link": "/engage/contributing"
+        "link": "/community/contributing"
       },
       {
         "text": "Contribution guidebook",
-        "link": "/engage/contribution-guidebook"
+        "link": "/community/contribution-guidebook"
       },
       {
         "text": "Roadmap",
@@ -543,7 +543,7 @@
       },
       {
         "text": "Code of Conduct",
-        "link": "/engage/code-of-conduct"
+        "link": "/community/code-of-conduct"
       }
     ]
   },

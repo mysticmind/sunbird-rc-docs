@@ -19,7 +19,7 @@ hero:
       link: /use/getting-started
     - theme: alt
       text: Contribute
-      link: /engage/contributing
+      link: /community/contributing
 
 # From the former Welcome Aboard page. Icons: Lucide (lucide.dev, ISC licence)
 features:

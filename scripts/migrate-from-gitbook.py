@@ -317,6 +317,11 @@ PATH_MOVES = {
     "use/getting-started/installation/helm-setup": "use/installation/helm-setup",
     "use/getting-started/installation/credentialling-services-setup-dev-docker-helm": "use/installation/credentialling-services-setup-dev-docker-helm",
     "use/getting-started/for-existing-adopters": "use/for-existing-adopters",
+    "engage/use-case-walkthroughs": "learn/use-case-walkthroughs",
+    "engage/discussions": "community/discussions",
+    "engage/contributing": "community/contributing",
+    "engage/contribution-guidebook": "community/contribution-guidebook",
+    "engage/code-of-conduct": "community/code-of-conduct",
 }
 
 
@@ -397,7 +402,7 @@ def convert(raw, page):
     body = localise_images(body)
     body = gif_to_video(body)
     body = language_tabs(body)
-    body = content_fixes(body, page["path"])
+    body = content_fixes(body, page.get("live_path", page["path"]))  # keyed by the GitBook path
     body = outside_code(body, text_fixes)
     body = fix_links(body)
     body = re.sub(r"\n{3,}", "\n\n", body)
@@ -508,7 +513,7 @@ SIDEBAR = [
         ("learn/core-capabilities", "Core capabilities"),
         ("learn/workflows", "How it works"),
         ("learn/possibilities", "Possibilities"),
-        ("engage/use-case-walkthroughs", "Use case Walkthroughs"),
+        ("learn/use-case-walkthroughs", "Use case Walkthroughs"),
         ("learn/adopters", "Adopters"),
     ]),
     ("group", "Get started", [
@@ -584,11 +589,11 @@ SIDEBAR = [
         ]),
     ]),
     ("group", "Community", [
-        ("engage/discussions", "Discussion forum"),
-        ("engage/contributing", "Contributing"),
-        ("engage/contribution-guidebook", "Contribution guidebook"),
+        ("community/discussions", "Discussion forum"),
+        ("community/contributing", "Contributing"),
+        ("community/contribution-guidebook", "Contribution guidebook"),
         ("help/roadmap", "Roadmap"),
-        ("engage/code-of-conduct", "Code of Conduct"),
+        ("community/code-of-conduct", "Code of Conduct"),
     ]),
     ("group", "Reference", [
         ("help/faqs", "FAQs"),

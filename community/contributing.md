@@ -10,7 +10,7 @@ Thank you for your interest in contributing to Sunbird Registry and Credentials 
 
 ## Ask a question
 
-Start with this documentation site, then search the [community discussions](https://github.com/Sunbird-RC/community/discussions). If you still need help, open a new discussion. See [Discussion Forum](/engage/discussions) for all the ways to reach the community.
+Start with this documentation site, then search the [community discussions](https://github.com/Sunbird-RC/community/discussions). If you still need help, open a new discussion. See [Discussion Forum](/community/discussions) for all the ways to reach the community.
 
 ## Report bugs or request features
 
@@ -43,4 +43,4 @@ To suggest a change to this site, [open an issue](https://github.com/Sunbird-RC/
 
 ## Before you start
 
-Read the [Contribution Guidebook](/engage/contribution-guidebook) to see how we work as a community, and the [Code of Conduct](/engage/code-of-conduct) that everyone taking part is expected to follow.
+Read the [Contribution Guidebook](/community/contribution-guidebook) to see how we work as a community, and the [Code of Conduct](/community/code-of-conduct) that everyone taking part is expected to follow.
