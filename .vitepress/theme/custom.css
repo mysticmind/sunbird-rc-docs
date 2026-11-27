@@ -250,3 +250,59 @@
 .vp-doc .custom-block.tip a {
   color: var(--vp-c-green-1);
 }
+
+/* Expandable sections from GitBook (<details>): card style, matching VitePress's own collapsible blocks */
+.vp-doc details {
+  margin: 12px 0;
+  padding: 0 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  transition: border-color 0.2s;
+}
+.vp-doc details:hover,
+.vp-doc details[open] { border-color: var(--vp-c-brand-soft); }
+.vp-doc details > summary {
+  position: relative;
+  margin: 0;
+  padding: 11px 0 11px 22px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  list-style: none;
+}
+.vp-doc details > summary::-webkit-details-marker { display: none; }
+.vp-doc details > summary::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--vp-c-text-2);
+  border-bottom: 2px solid var(--vp-c-text-2);
+  transform: translateY(-35%) rotate(-45deg);
+  transition: transform 0.2s;
+}
+.vp-doc details[open] > summary::before { transform: translateY(-60%) rotate(45deg); }
+.vp-doc details > summary strong { font-weight: 600; }
+.vp-doc details[open] > summary { border-bottom: 1px solid var(--vp-c-divider); margin-bottom: 12px; }
+.vp-doc details > :last-child { margin-bottom: 14px; }
+
+/* Diagrams and screenshots: framed, on white so transparent diagrams stay readable in dark mode */
+.vp-doc figure { margin: 20px 0; }
+.vp-doc figure img,
+.vp-doc p > img {
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: #fff;
+  cursor: zoom-in;
+}
+
+/* Click an image to view it full screen (medium-zoom) */
+.medium-zoom-overlay { z-index: 100; background: rgba(0, 0, 0, 0.8) !important; }
+.medium-zoom-image--opened { z-index: 101; cursor: zoom-out; border: 0; padding: 0; }

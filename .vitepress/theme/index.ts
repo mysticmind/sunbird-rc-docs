@@ -1,6 +1,7 @@
 import { h, nextTick, onMounted, watch } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import { useRoute, type Theme } from 'vitepress'
+import mediumZoom from 'medium-zoom'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import ApiOperation from './components/ApiOperation.vue'
 import Mermaid from './components/Mermaid.vue'
@@ -35,6 +36,13 @@ function revealActiveSidebarItem(behavior: ScrollBehavior = 'smooth') {
   }))
 }
 
+// Click any image in the docs to view it full screen (logos, icons and badges are outside .vp-doc)
+let zoom: ReturnType<typeof mediumZoom> | undefined
+function enableImageZoom() {
+  zoom?.detach()
+  zoom = mediumZoom('.vp-doc img:not(a img)', { margin: 24, background: 'rgba(0, 0, 0, 0.8)' })
+}
+
 export default {
   extends: DefaultTheme,
   // COSS and Digital Public Good badges in the bottom-right corner of every page
@@ -47,7 +55,7 @@ export default {
   },
   setup() {
     const route = useRoute()
-    onMounted(() => { respectReducedMotion(); revealActiveSidebarItem('instant') })
-    watch(() => route.path, () => nextTick(() => { respectReducedMotion(); revealActiveSidebarItem() }))
+    onMounted(() => { respectReducedMotion(); revealActiveSidebarItem('instant'); enableImageZoom() })
+    watch(() => route.path, () => nextTick(() => { respectReducedMotion(); revealActiveSidebarItem(); enableImageZoom() }))
   },
 } satisfies Theme

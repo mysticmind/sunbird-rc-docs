@@ -81,6 +81,24 @@ export default defineConfig({
     plugins: [llmstxt({ domain: SITE })],
   },
 
+  // Previous/next links come from the sidebar order; keep them within one top-level section so a page
+  // never points across, say, from Registry release notes to the Credentials architecture page.
+  transformPageData(pageData) {
+    const order: { link: string; section: string }[] = []
+    const walk = (items: any[], section: string) => {
+      for (const item of items) {
+        if (item.link) order.push({ link: item.link, section })
+        if (item.items) walk(item.items, section)
+      }
+    }
+    for (const group of sidebar as any[]) walk(group.items ?? [], group.text)
+    const link = '/' + pageData.relativePath.replace(/(index)?\.md$/, '')
+    const i = order.findIndex((o) => o.link === link)
+    if (i < 0) return
+    if (i === 0 || order[i - 1].section !== order[i].section) pageData.frontmatter.prev ??= false
+    if (i === order.length - 1 || order[i + 1].section !== order[i].section) pageData.frontmatter.next ??= false
+  },
+
   // Old GitBook URLs -> new pages (list written by scripts/migrate-from-gitbook.py). GitHub Pages has no
   // server-side redirects, so write a small page for each old URL that forwards to the new one.
   buildEnd({ outDir }) {
