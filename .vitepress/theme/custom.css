@@ -188,3 +188,9 @@
 .rc-home-meta strong { color: var(--vp-c-text-1); }
 .rc-home-meta a { color: var(--vp-c-brand-1); text-decoration: none; font-weight: 500; }
 .rc-home-meta a:hover { text-decoration: underline; }
+
+/* Home feature card icons: orange line icons on a soft tile */
+.VPFeature .icon {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+}
