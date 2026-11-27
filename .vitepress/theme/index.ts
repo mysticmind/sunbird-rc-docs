@@ -45,7 +45,7 @@ function enableImageZoom() {
 
 export default {
   extends: DefaultTheme,
-  // COSS and Digital Public Good badges in the bottom-right corner of every page
+  // Digital Public Good badge in the bottom-right corner of every page
   // The home page hero logo links to the Overview, like the main call to action
   Layout: () => h(DefaultTheme.Layout, null, {
     'layout-bottom': () => h(CornerBadges),

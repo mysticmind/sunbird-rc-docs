@@ -1,8 +1,7 @@
 <script setup lang="ts">
-// COSS and Digital Public Good badges in the bottom-right corner of every page.
-// Desktop: fixed to the corner of the screen, so at the end of a page they rest in the footer's corner
-// with no jump. Phones: a centred row at the bottom of the page, since the footer text is full width.
-// COSS logo: the full coss.org.in logo (mark and name), on a white card so the name reads in dark mode.
+// Digital Public Good badge in the bottom-right corner of every page (COSS is credited in the footer).
+// Desktop: fixed to the corner of the screen, so at the end of a page it rests in the footer's corner
+// with no jump. Phones: centred at the bottom of the page, since the footer text is full width.
 // DPG badge: digitalpublicgoods.net, shown unaltered as the DPGA brand guide asks.
 import { withBase } from 'vitepress'
 </script>
@@ -18,15 +17,6 @@ import { withBase } from 'vitepress'
     >
       <img :src="withBase('/images/dpg-badge.png')" alt="Digital Public Good: view Sunbird RC in the DPG Registry" width="88" height="42" />
     </a>
-    <a
-      class="badge coss"
-      href="https://www.coss.org.in/"
-      target="_blank"
-      rel="noopener"
-      title="Sunbird RC is developed by the Centre for Open Societal Systems (COSS)"
-    >
-      <img :src="withBase('/images/coss-logo.svg')" alt="Centre for Open Societal Systems (COSS)" width="72" height="87" />
-    </a>
   </div>
 </template>
 
@@ -36,10 +26,6 @@ import { withBase } from 'vitepress'
   right: 20px;
   bottom: 20px;
   z-index: 30; /* above page content, below the nav bar and search dialog */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* DPG badge on top, COSS mark centred below it */
-  gap: 8px;
 }
 .badge {
   display: block;
@@ -49,29 +35,19 @@ import { withBase } from 'vitepress'
 .badge:hover {
   transform: translateY(-2px);
 }
-.coss img {
-  width: 72px;
-  height: auto;
-  padding: 5px;
-  box-sizing: content-box;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-}
 .dpg img {
   width: 88px;
   height: auto;
 }
 @media (max-width: 640px) {
-  .corner-badges { right: 12px; bottom: 12px; gap: 8px; }
-  .coss img { width: 60px; }
+  .corner-badges { right: 12px; bottom: 12px; }
   .dpg img { width: 72px; }
 }
-/* Narrow screens: the footer text is full width, so show a centred row at the bottom of the page instead */
+/* Narrow screens: the footer text is full width, so centre the badge at the bottom of the page instead */
 @media (max-width: 767px) {
   .corner-badges {
     position: static;
-    flex-direction: row;
+    display: flex;
     justify-content: center;
     padding: 0 0 24px;
   }
