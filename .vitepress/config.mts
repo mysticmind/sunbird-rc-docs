@@ -90,8 +90,8 @@ export default defineConfig({
       // Copyright on two balanced lines: who holds it, then on whose behalf
       copyright:
         `Copyright © ${new Date().getFullYear()} `
-        + '<a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore (IIITB)</a>'
-        + '<br>on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems (COSS)</a>',
+        + '<a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore&nbsp;(IIITB)</a>'
+        + '<br>on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems&nbsp;(COSS)</a>',
     },
   },
 })

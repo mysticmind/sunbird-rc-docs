@@ -223,3 +223,16 @@
   margin: 0 auto;
   border-radius: 6px;
 }
+
+/* The page layout is the positioning box for the corner badges when they dock into the footer */
+.Layout { position: relative; }
+
+/* Footer links: underline on hover only, so the three links read cleanly */
+.VPFooter .container .message a,
+.VPFooter .container .copyright a {
+  text-decoration-line: none;
+}
+.VPFooter .container .message a:hover,
+.VPFooter .container .copyright a:hover {
+  text-decoration-line: underline;
+}
