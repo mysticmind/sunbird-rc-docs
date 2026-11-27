@@ -1,0 +1,28 @@
+# Build every pull request. The build fails on broken internal links, so a PR that breaks one can't merge
+# once this check is required (Settings > Branches > branch protection for main).
+name: Check docs
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # Reviewers can download the built site from the run's Artifacts to look at it locally
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-preview
+          path: .vitepress/dist
+          retention-days: 7

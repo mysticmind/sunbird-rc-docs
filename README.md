@@ -84,6 +84,27 @@ Each build publishes [`/llms.txt`](https://rc.sunbird.org/llms.txt) (index of ev
 Every page also has a **Copy page** button under its title, with a menu to view or download the page as
 Markdown or open it in an AI assistant.
 
+## Publishing (GitHub Pages)
+
+The site is published to GitHub Pages at [rc.sunbird.org](https://rc.sunbird.org):
+
+- **Every merge to `main`** builds the site and publishes it (`.github/workflows/deploy.yml`).
+- **Every pull request** is built too (`.github/workflows/check.yml`). The build fails on broken links, and the
+  built site can be downloaded from the run's **Artifacts** to check it locally.
+- `public/CNAME` tells GitHub Pages to serve the site at `rc.sunbird.org`.
+
+One-time setup, once this repo is on GitHub:
+
+1. **Settings > Pages > Build and deployment > Source:** choose **GitHub Actions**.
+2. **DNS for sunbird.org:** point `rc` at `sunbird-rc.github.io` with a CNAME record. Today it points at GitBook,
+   so remove rc.sunbird.org from GitBook's custom domain settings first.
+3. **Settings > Pages:** once the certificate is issued, tick **Enforce HTTPS**.
+4. **Organisation settings > Pages:** verify `sunbird.org`, so no other repo can claim the domain.
+5. **Settings > Branches:** protect `main` and require the **Check docs** workflow to pass before merging.
+
+Old GitBook URLs keep working through small redirect pages in `public/` (GitHub Pages has no server-side
+redirects).
+
 ## Migration from GitBook
 
 The content was imported from the live GitBook site on 26 November 2026 with
