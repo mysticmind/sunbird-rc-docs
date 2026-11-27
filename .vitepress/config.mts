@@ -88,7 +88,7 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright:
-        'Copyright (c) 2023 <a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore (IIITB)</a>, '
+        `Copyright © ${new Date().getFullYear()} ` + '<a href="https://www.iiitb.ac.in/" target="_blank" rel="noopener">International Institute of Information Technology, Bangalore (IIITB)</a>, '
         + 'on behalf of the <a href="https://www.coss.org.in/" target="_blank" rel="noopener">Centre for Open Societal Systems (COSS)</a>',
     },
   },
