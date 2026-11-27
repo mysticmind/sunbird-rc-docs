@@ -50,6 +50,8 @@ flowchart LR
     class Database,Datastore db
 ```
 
+<p class="rc-legend"><span><i class="rc-swatch core"></i>Core services</span><span><i class="rc-swatch aux"></i>Auxiliary services</span><span><i class="rc-swatch scale"></i>Scalability</span><span><i class="rc-swatch db"></i>Data stores</span></p>
+
 The microservices built as part of Sunbird RC, and their purpose, are explained below.
 
 ## At a glance

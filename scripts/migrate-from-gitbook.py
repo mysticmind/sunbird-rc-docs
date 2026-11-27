@@ -154,7 +154,9 @@ flowchart TB
     class OID4VC,Creds,Identity,Schema core
     class Vault,Redis aux
     class IssuanceDB,IdentityDB,SchemaDB db
-```"""),
+```
+
+<p class=\"rc-legend\"><span><i class=\"rc-swatch ingress\"></i>Entry point</span><span><i class=\"rc-swatch core\"></i>Core credentialling services</span><span><i class=\"rc-swatch scale\"></i>Auxiliary services</span><span><i class=\"rc-swatch db\"></i>Databases</span></p>"""),
     ],
     "registry/technical-overview/high-level-architecture": [
         # the hand-drawn architecture diagram, redrawn as Mermaid; its colour legend becomes labelled groups
@@ -200,7 +202,9 @@ flowchart LR
     class Keycloak,IDGen,Encryption,Notification,Metrics aux
     class Elastic,Kafka scale
     class Database,Datastore db
-```"""),
+```
+
+<p class=\"rc-legend\"><span><i class=\"rc-swatch core\"></i>Core services</span><span><i class=\"rc-swatch aux\"></i>Auxiliary services</span><span><i class=\"rc-swatch scale\"></i>Scalability</span><span><i class=\"rc-swatch db\"></i>Data stores</span></p>"""),
     ],
     "use/releases/registry": [
         # the old GitBook version this pointed to is gone (404); the release notes are on GitHub

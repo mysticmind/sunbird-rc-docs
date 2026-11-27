@@ -77,6 +77,8 @@ flowchart TB
     class IssuanceDB,IdentityDB,SchemaDB db
 ```
 
+<p class="rc-legend"><span><i class="rc-swatch ingress"></i>Entry point</span><span><i class="rc-swatch core"></i>Core credentialling services</span><span><i class="rc-swatch scale"></i>Auxiliary services</span><span><i class="rc-swatch db"></i>Databases</span></p>
+
 ## How it works
 
 :::: tabs

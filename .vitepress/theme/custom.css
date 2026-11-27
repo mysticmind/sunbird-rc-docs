@@ -306,3 +306,27 @@
 /* Click an image to view it full screen (medium-zoom) */
 .medium-zoom-overlay { z-index: 100; background: rgba(0, 0, 0, 0.8) !important; }
 .medium-zoom-image--opened { z-index: 101; cursor: zoom-out; border: 0; padding: 0; }
+
+/* Colour key under Mermaid diagrams; swatches match the diagram's node colours */
+.vp-doc .rc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin: -4px 0 20px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+.rc-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.rc-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.rc-swatch.ingress { background: #fcd9d9; border-color: #c0504d; }
+.rc-swatch.core { background: #dbe8f6; border-color: #4a7bab; }
+.rc-swatch.aux { background: #ebe0f5; border-color: #8a63b0; }
+.rc-swatch.scale { background: #d9f2d9; border-color: #3f8f3f; }
+.rc-swatch.db { background: #fbeaa5; border-color: #b8962e; }
