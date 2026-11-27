@@ -14,15 +14,15 @@ Sunbird RC is one open-source package with two components, **Registry** and **Cr
 | **Credentials only**       | Issue and verify W3C verifiable credentials from data you already hold in another system.          |
 | **Registry + Credentials** | Build a registry and issue verifiable credentials from its records.                                |
 
-Before you start, install the [Pre-requisites](/use/getting-started/developer-setup) for your path.
+Before you start, install the [Pre-requisites](/use/developer-setup) for your path.
 
 :::: tabs
 == Registry only
 
 **Quick start**
 
-* [Docker Compose Setup](/use/getting-started/installation/docker-compose-setup) — the default settings leave credential signing off, so the Registry runs on its own.
-* Or the [Registry CLI](/use/getting-started/installation/registry-cli) for a guided local setup.
+* [Docker Compose Setup](/use/installation/docker-compose-setup) — the default settings leave credential signing off, so the Registry runs on its own.
+* Or the [Registry CLI](/use/installation/registry-cli) for a guided local setup.
 
 **Next steps**
 
@@ -34,7 +34,7 @@ Before you start, install the [Pre-requisites](/use/getting-started/developer-se
 
 **Quick start**
 
-* [Credentialling Services setup](/use/getting-started/installation/credentialling-services-setup-dev-docker-helm) — use the **Docker Compose** tab.
+* [Credentialling Services setup](/use/installation/credentialling-services-setup-dev-docker-helm) — use the **Docker Compose** tab.
 
 **Next steps**
 
@@ -45,7 +45,7 @@ Before you start, install the [Pre-requisites](/use/getting-started/developer-se
 
 **Quick start**
 
-1. Follow [Docker Compose Setup](/use/getting-started/installation/docker-compose-setup).
+1. Follow [Docker Compose Setup](/use/installation/docker-compose-setup).
 2. From the `sunbird-rc-core` folder, run `bash enable-v2.sh`. This brings up Vault, identity, credential-schema, credentials and claim-ms, and restarts the Registry with signing, DIDs and claims turned on.
 
 **Next steps**
@@ -56,7 +56,7 @@ Before you start, install the [Pre-requisites](/use/getting-started/developer-se
 
 ## Going to production
 
-For a Kubernetes deployment, see [Helm Setup](/use/getting-started/installation/helm-setup) and the **Helm** tab of [Credentialling Services setup](/use/getting-started/installation/credentialling-services-setup-dev-docker-helm).
+For a Kubernetes deployment, see [Helm Setup](/use/installation/helm-setup) and the **Helm** tab of [Credentialling Services setup](/use/installation/credentialling-services-setup-dev-docker-helm).
 
 ::: warning
 The production deployment guides are being reviewed for v2.1.0. Check with the community on [GitHub Discussions](https://github.com/orgs/Sunbird-RC/discussions) before deploying to production.
@@ -64,10 +64,10 @@ The production deployment guides are being reviewed for v2.1.0. Check with the c
 
 ## Already running Sunbird RC?
 
-See [For existing adopters](/use/getting-started/for-existing-adopters) for what's new, what changed, compatibility and upgrade steps.
+See [For existing adopters](/use/for-existing-adopters) for what's new, what changed, compatibility and upgrade steps.
 
 ## In this section
 
-* [Pre-requisites](/use/getting-started/developer-setup)
-* [Installation](/use/getting-started/installation)
-* [For existing adopters](/use/getting-started/for-existing-adopters)
+* [Pre-requisites](/use/developer-setup)
+* [Installation](/use/installation)
+* [For existing adopters](/use/for-existing-adopters)

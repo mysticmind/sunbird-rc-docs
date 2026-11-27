@@ -310,6 +310,13 @@ PATH_MOVES = {
     "learn/readme/core-capabilities": "learn/core-capabilities",
     "learn/readme/workflows": "learn/workflows",
     "learn/readme/possibilities": "learn/possibilities",
+    "use/getting-started/developer-setup": "use/developer-setup",
+    "use/getting-started/installation": "use/installation",
+    "use/getting-started/installation/registry-cli": "use/installation/registry-cli",
+    "use/getting-started/installation/docker-compose-setup": "use/installation/docker-compose-setup",
+    "use/getting-started/installation/helm-setup": "use/installation/helm-setup",
+    "use/getting-started/installation/credentialling-services-setup-dev-docker-helm": "use/installation/credentialling-services-setup-dev-docker-helm",
+    "use/getting-started/for-existing-adopters": "use/for-existing-adopters",
 }
 
 
@@ -506,10 +513,10 @@ SIDEBAR = [
     ]),
     ("group", "Get started", [
         ("use/getting-started", "Choose your path"),
-        ("use/getting-started/developer-setup", "Prerequisites"),
-        ("use/getting-started/installation", "Installation options"),
+        ("use/developer-setup", "Prerequisites"),
+        ("use/installation", "Installation options"),
         ("use/releases", "What's new"),
-        ("use/getting-started/for-existing-adopters", "Upgrading"),
+        ("use/for-existing-adopters", "Upgrading"),
     ]),
     ("group", "Registry", [
         ("group", "Architecture", [
@@ -518,9 +525,9 @@ SIDEBAR = [
             ("registry/technical-overview/infrastructure-requirements", "Requirements"),
         ]),
         ("group", "Install", [
-            ("use/getting-started/installation/registry-cli", "Registry CLI"),
-            ("use/getting-started/installation/docker-compose-setup", "Docker Compose"),
-            ("use/getting-started/installation/helm-setup", "Helm (Kubernetes)"),
+            ("use/installation/registry-cli", "Registry CLI"),
+            ("use/installation/docker-compose-setup", "Docker Compose"),
+            ("use/installation/helm-setup", "Helm (Kubernetes)"),
         ]),
         ("use/developer-guide/schema-setup", "Schemas", [
             ("use/developer-guide/schema-setup/introduction-to-schemas", "Introduction"),
@@ -561,7 +568,7 @@ SIDEBAR = [
             ("credentials/technical-overview/tech-stack-and-requirements", "Requirements"),
         ]),
         ("group", "Install", [
-            ("use/getting-started/installation/credentialling-services-setup-dev-docker-helm", "Dev, Docker Compose and Helm"),
+            ("use/installation/credentialling-services-setup-dev-docker-helm", "Dev, Docker Compose and Helm"),
         ]),
         ("group", "Wallets and verification", [
             ("use/integrations/wallet-integration", "Wallet integration (OpenID4VC)"),

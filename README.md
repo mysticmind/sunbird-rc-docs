@@ -2,7 +2,7 @@
 
 Source for [rc.sunbird.org](https://rc.sunbird.org), built with [VitePress](https://vitepress.dev).
 Every page is a Markdown file, and its path in this repo is its URL on the site:
-`use/getting-started/installation.md` is `rc.sunbird.org/use/getting-started/installation`.
+`use/installation.md` is `rc.sunbird.org/use/installation`.
 
 ## Run it locally
 

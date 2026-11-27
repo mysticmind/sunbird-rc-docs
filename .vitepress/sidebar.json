@@ -45,11 +45,11 @@
       },
       {
         "text": "Prerequisites",
-        "link": "/use/getting-started/developer-setup"
+        "link": "/use/developer-setup"
       },
       {
         "text": "Installation options",
-        "link": "/use/getting-started/installation"
+        "link": "/use/installation"
       },
       {
         "text": "What's new",
@@ -57,7 +57,7 @@
       },
       {
         "text": "Upgrading",
-        "link": "/use/getting-started/for-existing-adopters"
+        "link": "/use/for-existing-adopters"
       }
     ]
   },
@@ -87,15 +87,15 @@
         "items": [
           {
             "text": "Registry CLI",
-            "link": "/use/getting-started/installation/registry-cli"
+            "link": "/use/installation/registry-cli"
           },
           {
             "text": "Docker Compose",
-            "link": "/use/getting-started/installation/docker-compose-setup"
+            "link": "/use/installation/docker-compose-setup"
           },
           {
             "text": "Helm (Kubernetes)",
-            "link": "/use/getting-started/installation/helm-setup"
+            "link": "/use/installation/helm-setup"
           }
         ],
         "collapsed": true
@@ -429,7 +429,7 @@
         "items": [
           {
             "text": "Dev, Docker Compose and Helm",
-            "link": "/use/getting-started/installation/credentialling-services-setup-dev-docker-helm"
+            "link": "/use/installation/credentialling-services-setup-dev-docker-helm"
           }
         ],
         "collapsed": true

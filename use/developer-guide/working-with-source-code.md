@@ -12,9 +12,9 @@ This page is for building and running the **Registry** from source, for example 
 
 | You want to…                                      | Start here                                                                                                                                                      |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Try Sunbird RC quickly, without building anything | [Docker Compose Setup](/use/getting-started/installation/docker-compose-setup)                                                         |
-| Deploy to a cluster                               | [Helm Setup](/use/getting-started/installation/helm-setup)                                                                             |
-| Run only the Credentials services                 | [Credentialling Services setup (Dev / Docker / Helm)](/use/getting-started/installation/credentialling-services-setup-dev-docker-helm) |
+| Try Sunbird RC quickly, without building anything | [Docker Compose Setup](/use/installation/docker-compose-setup)                                                         |
+| Deploy to a cluster                               | [Helm Setup](/use/installation/helm-setup)                                                                             |
+| Run only the Credentials services                 | [Credentialling Services setup (Dev / Docker / Helm)](/use/installation/credentialling-services-setup-dev-docker-helm) |
 | Build and run the Registry from source            | This page                                                                                                                                                       |
 | Use Registry and Credentials together from source | This page, then enable **Credentials (Signature V2)** under [Feature services](#feature-services)                                                               |
 
