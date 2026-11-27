@@ -4,8 +4,8 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import llmstxt, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
 import sidebar from './sidebar.json'
 
-// Placeholder until the docs repo exists on GitHub.
-const REPO = 'https://github.com/Sunbird-RC/docs'
+// Showcase repo for review; change to the Sunbird-RC organisation repo when it moves there.
+const REPO = 'https://github.com/mysticmind/sunbird-rc-docs'
 const BRANCH = 'main'
 
 // Simple wrappers for the GitBook blocks that VitePress has no equivalent for.
