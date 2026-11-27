@@ -548,12 +548,13 @@ SIDEBAR = [
     ("group", "Reference", [
         ("help/faqs", "FAQs"),
         ("help/terminology", "Glossary"),
-        ("concepts", "Registries and verifiable credentials explained"),
+        ("concepts",),  # the concepts guide's sections, listed directly
         ("help/external-open-source-software-attributions", "Open source attributions"),
     ]),
 ]
 # Landing pages that only link to their sub-pages; still published, but the sidebar lists the sub-pages instead
-UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors"}
+UNLISTED = {"use/developer-guide", "use/integrations", "use/connectors",
+            "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"}
 CONCEPTS = "help/comprehensive-overview-electronic-registries-and-verifiable-credentials"
 # Sections shown open; the rest start collapsed and open when the current page is inside them
 OPEN = {"Introduction", "Get started", "Community", "Reference"}
@@ -622,8 +623,8 @@ def render_sidebar(entries, depth=0):
         elif e[0] == "api":
             node = {"text": e[1], "collapsed": True, "items": api_tree(e[2], e[3])}
         elif e[0] == "concepts":
-            node = concepts_tree()
-            node["text"] = e[1]
+            out.extend(concepts_tree().get("items", []))
+            continue
         else:
             path, label = e[0], e[1]
             if path not in by_path:
