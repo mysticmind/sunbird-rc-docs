@@ -9,7 +9,25 @@ Software versions needed to run Sunbird RC credentialling services.
 
 ## Architecture diagram
 
-<figure><img src="/images/architecture-rc-a800f0a0.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+block-beta
+    columns 5
+    Mobile["Mobile app"]
+    block:Web:4
+        columns 4
+        WebTitle["Web portal"]:4
+        CoreUI["Sunbird RC Core UI"] Overrides["UI overrides"] Keycloak["Keycloak theme"] CustomUI["Custom UI"]
+    end
+    API["REST APIs"]:5
+    RC["Sunbird RC"]:5
+    classDef title fill:none,stroke:none,font-weight:bold
+    classDef api fill:#e06a00,stroke:#e06a00,color:#fff,font-weight:bold
+    classDef rc fill:#8a3d00,stroke:#8a3d00,color:#fff,font-weight:bold
+    class WebTitle title
+    class API api
+    class RC rc
+    style Web stroke:#e06a00
+```
 
 ## Tech stack
 

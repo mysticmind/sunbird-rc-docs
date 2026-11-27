@@ -158,6 +158,52 @@ flowchart TB
 
 <p class=\"rc-legend\"><span><i class=\"rc-swatch ingress\"></i>Entry point</span><span><i class=\"rc-swatch core\"></i>Core credentialling services</span><span><i class=\"rc-swatch scale\"></i>Auxiliary services</span><span><i class=\"rc-swatch db\"></i>Databases</span></p>"""),
     ],
+    "credentials/technical-overview/tech-stack-and-requirements": [
+        # the layered architecture image, redrawn as a Mermaid block diagram: sharp, themed, editable
+        ('<figure><img src="/images/architecture-rc-a800f0a0.png" alt=""><figcaption></figcaption></figure>',
+         """```mermaid
+block-beta
+    columns 5
+    Mobile["Mobile app"]
+    block:Web:4
+        columns 4
+        WebTitle["Web portal"]:4
+        CoreUI["Sunbird RC Core UI"] Overrides["UI overrides"] Keycloak["Keycloak theme"] CustomUI["Custom UI"]
+    end
+    API["REST APIs"]:5
+    RC["Sunbird RC"]:5
+    classDef title fill:none,stroke:none,font-weight:bold
+    classDef api fill:#e06a00,stroke:#e06a00,color:#fff,font-weight:bold
+    classDef rc fill:#8a3d00,stroke:#8a3d00,color:#fff,font-weight:bold
+    class WebTitle title
+    class API api
+    class RC rc
+    style Web stroke:#e06a00
+```"""),
+    ],
+    "registry/technical-overview/infrastructure-requirements": [
+        # the same layered architecture image as the credentials page, redrawn as the same Mermaid block diagram
+        ('<figure><img src="/images/architecture-rc-8bbf6d56.png" alt=""><figcaption></figcaption></figure>',
+         """```mermaid
+block-beta
+    columns 5
+    Mobile["Mobile app"]
+    block:Web:4
+        columns 4
+        WebTitle["Web portal"]:4
+        CoreUI["Sunbird RC Core UI"] Overrides["UI overrides"] Keycloak["Keycloak theme"] CustomUI["Custom UI"]
+    end
+    API["REST APIs"]:5
+    RC["Sunbird RC"]:5
+    classDef title fill:none,stroke:none,font-weight:bold
+    classDef api fill:#e06a00,stroke:#e06a00,color:#fff,font-weight:bold
+    classDef rc fill:#8a3d00,stroke:#8a3d00,color:#fff,font-weight:bold
+    class WebTitle title
+    class API api
+    class RC rc
+    style Web stroke:#e06a00
+```"""),
+    ],
     "registry/technical-overview/high-level-architecture": [
         # the hand-drawn architecture diagram, redrawn as Mermaid; its colour legend becomes labelled groups
         ('<figure><img src="/images/high-level-diagram-registry-f0e7bdd7.png" alt=""><figcaption><p>High Level Architecture Diagram</p></figcaption></figure>',
