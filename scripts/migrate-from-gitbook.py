@@ -95,6 +95,24 @@ def fetch(url, dest_dir, kind):
 GB = r"https://(?:content\.gitbook\.com|files\.gitbook\.com|[0-9]+-files\.gitbook\.io|rc\.sunbird\.org/~gitbook/image)"
 
 
+# Corrections to mistakes in the live GitBook content: page path -> [(wrong, right)]
+CONTENT_FIXES = {
+    "engage/use-case-walkthroughs": [
+        # link text named a domain Sunbird does not own; the link itself goes to the real sandbox
+        ("[sandbox.rc.org](https://sandbox-rc.sunbird.org/presentation/)",
+         "[sandbox-rc.sunbird.org/presentation](https://sandbox-rc.sunbird.org/presentation/)"),
+    ],
+}
+
+
+def content_fixes(text, path):
+    for wrong, right in CONTENT_FIXES.get(path, []):
+        if wrong not in text:
+            report["unhandled"].append(f"content fix no longer matches in {path}: {wrong[:50]}")
+        text = text.replace(wrong, right)
+    return text
+
+
 LANGUAGES = {"English", "Português", "Português (Brasil)", "Español", "Français", "Hindi", "हिन्दी"}
 DETAILS = r"<details(?: open)?>\s*<summary>([^<]+)</summary>\s*(.*?)\s*</details>"
 
@@ -359,6 +377,7 @@ def convert(raw, page):
     body = localise_images(body)
     body = gif_to_video(body)
     body = language_tabs(body)
+    body = content_fixes(body, page["path"])
     body = outside_code(body, text_fixes)
     body = fix_links(body)
     body = re.sub(r"\n{3,}", "\n\n", body)

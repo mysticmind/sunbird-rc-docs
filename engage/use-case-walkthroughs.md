@@ -320,7 +320,7 @@ These videos walk through how Sunbird RC's Registry and Credentials components c
 
 To get the demo credentials into your wallet, you'll need the sandbox and the demo wallet app.
 
-* **Presentation Sandbox:** [sandbox.rc.org](https://sandbox-rc.sunbird.org/presentation/)
+* **Presentation Sandbox:** [sandbox-rc.sunbird.org/presentation](https://sandbox-rc.sunbird.org/presentation/)
 * **Sunbird Demo Wallet:** [Download the Android APK](https://drive.google.com/file/d/1BeEciu6uTfZCkVzqRx09FJvarUSBYhRT/view?usp=sharing)
 
 Use one of these test accounts to get the credentials in the wallet:
