@@ -463,7 +463,7 @@ SIDEBAR = [
         ("learn/readme/core-capabilities", "Core capabilities"),
         ("learn/readme/workflows", "How it works"),
         ("learn/readme/possibilities", "Possibilities"),
-        ("engage/use-case-walkthroughs", "Demos"),
+        ("engage/use-case-walkthroughs", "Use case Walkthroughs"),
         ("learn/adopters", "Adopters"),
     ]),
     ("group", "Get started", [
