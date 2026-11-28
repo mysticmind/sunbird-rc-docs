@@ -310,9 +310,9 @@
 /* Group frames in Mermaid block diagrams (e.g. "Web portal"): Mermaid draws them like ordinary nodes,
    with the orange node outline. Match the flowchart group frames (clusterBkg / clusterBorder) instead. */
 .mermaid-diagram rect.composite,
-.mermaid-zoom rect.composite { fill: #fafafa !important; stroke: #b4b4b8 !important; }
+.mermaid-zoom rect.composite { fill: #eef0ff !important; stroke: #5b5fc7 !important; }
 .dark .mermaid-diagram rect.composite,
-.dark .mermaid-zoom rect.composite { fill: #202127 !important; stroke: #5c5f66 !important; }
+.dark .mermaid-zoom rect.composite { fill: #262a4a !important; stroke: #9fa3ff !important; }
 
 /* Colour key under Mermaid diagrams; swatches match the diagram's node colours */
 .vp-doc .rc-legend {

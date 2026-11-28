@@ -21,8 +21,8 @@ const LIGHT = {
   tertiaryColor: '#ffffff',
   lineColor: '#8e8e93',
   textColor: '#3c3c43',
-  clusterBkg: '#fafafa',
-  clusterBorder: '#e2e2e3',
+  clusterBkg: '#eef0ff',     // group frames get their own indigo tint, not a shade of the page
+  clusterBorder: '#5b5fc7', // 5.4:1 on white (WCAG 3:1 for shapes)
   edgeLabelBackground: '#ffffff',
   // Sequence diagrams, set explicitly because Mermaid's derived colours are too faint on white.
   // Follows WCAG 2.2: text at least 4.5:1, lines and shapes at least 3:1 against what they sit on.
@@ -56,8 +56,8 @@ const DARK = {
   tertiaryColor: '#1b1b1f',
   lineColor: '#8e8e93',
   textColor: '#dfdfd6',
-  clusterBkg: '#202127',
-  clusterBorder: '#3c3f44',
+  clusterBkg: '#262a4a',     // group frames get their own indigo tint, not a shade of the page
+  clusterBorder: '#9fa3ff', // 7.5:1 on the #1b1b1f page
   edgeLabelBackground: '#1b1b1f',
   // Sequence diagrams: same approach as LIGHT. All pairs are measured against the #1b1b1f page.
   // Structure is neutral grey so the light arrows stand out; orange stays on the participant boxes.
