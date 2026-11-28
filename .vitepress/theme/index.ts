@@ -37,10 +37,23 @@ function revealActiveSidebarItem(behavior: ScrollBehavior = 'smooth') {
 }
 
 // Click any image in the docs to view it full screen (logos, icons and badges are outside .vp-doc)
+const ZOOMABLE = '.vp-doc img:not(a img)'
 let zoom: ReturnType<typeof mediumZoom> | undefined
+let observer: MutationObserver | undefined
 function enableImageZoom() {
   zoom?.detach()
-  zoom = mediumZoom('.vp-doc img:not(a img)', { margin: 24, background: 'rgba(0, 0, 0, 0.8)' })
+  zoom = mediumZoom(ZOOMABLE, { margin: 24, background: 'rgba(0, 0, 0, 0.8)' })
+  // Tabs and other components add images after the page loads (a tab's panel is created when it
+  // is selected), so attach those too. medium-zoom skips images it already has.
+  if (!observer) {
+    let queued = false
+    observer = new MutationObserver(() => {
+      if (queued) return
+      queued = true
+      requestAnimationFrame(() => { queued = false; zoom?.attach(ZOOMABLE) })
+    })
+    observer.observe(document.body, { childList: true, subtree: true })
+  }
 }
 
 export default {
