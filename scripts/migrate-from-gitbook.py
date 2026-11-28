@@ -405,6 +405,23 @@ flowchart LR
 
 <p class=\"rc-legend\"><span><i class=\"rc-swatch core\"></i>Core services</span><span><i class=\"rc-swatch aux\"></i>Auxiliary services</span><span><i class=\"rc-swatch scale\"></i>Scalability</span><span><i class=\"rc-swatch db\"></i>Data stores</span></p>"""),
     ],
+    "registry/technical-overview/technical-specification-draft": [
+        # the workflow diagram (a screenshot), redrawn as Mermaid with the same boxes, labels and arrows
+        ('![](/images/screenshot-2021-09-09-at-3-46-52-pm-289047bf.png)',
+         """```mermaid
+flowchart LR
+    Register(Register) --> Draft(Draft)
+    Draft --> Claim(Claim)
+    Claim --> Attest(Attest)
+    Attest --> Attest2(Attest)
+    Attest2 --> Draft
+    Attest --> Artefact(Digitally<br/>Verifiable<br/>Artefact)
+    Artefact --> Retired(Retired /<br/>expired)
+
+    classDef step fill:#dbe8f6,stroke:#4a7bab,color:#1d1d1f
+    class Register,Draft,Claim,Attest,Attest2,Artefact,Retired step
+```"""),
+    ],
     "use/releases/registry": [
         # the old GitBook version this pointed to is gone (404); the release notes are on GitHub
         ('href="https://rc.sunbird.org/v0.0.14/use/releases"',

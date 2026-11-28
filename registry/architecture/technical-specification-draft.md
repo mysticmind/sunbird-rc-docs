@@ -13,7 +13,19 @@ Terminology, schemas, configuration, attestation, enrolment, discovery and conse
 
 ## Workflow
 
-![](/images/screenshot-2021-09-09-at-3-46-52-pm-289047bf.png)
+```mermaid
+flowchart LR
+    Register(Register) --> Draft(Draft)
+    Draft --> Claim(Claim)
+    Claim --> Attest(Attest)
+    Attest --> Attest2(Attest)
+    Attest2 --> Draft
+    Attest --> Artefact(Digitally<br/>Verifiable<br/>Artefact)
+    Artefact --> Retired(Retired /<br/>expired)
+
+    classDef step fill:#dbe8f6,stroke:#4a7bab,color:#1d1d1f
+    class Register,Draft,Claim,Attest,Attest2,Artefact,Retired step
+```
 
 ## Schema
 
