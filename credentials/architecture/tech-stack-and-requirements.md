@@ -21,12 +21,13 @@ block-beta
     API["REST APIs"]:5
     RC["Sunbird RC"]:5
     classDef title fill:none,stroke:none,font-weight:bold
-    classDef api fill:#e06a00,stroke:#e06a00,color:#fff,font-weight:bold
-    classDef rc fill:#8a3d00,stroke:#8a3d00,color:#fff,font-weight:bold
+    classDef box fill:#dbe8f6,stroke:#4a7bab,color:#1d1d1f
+    classDef api fill:#fcd9d9,stroke:#c0504d,color:#1d1d1f,font-weight:bold
+    classDef rc fill:#d9f2d9,stroke:#3f8f3f,color:#1d1d1f,font-weight:bold
     class WebTitle title
+    class Mobile,CoreUI,Overrides,Keycloak,CustomUI box
     class API api
     class RC rc
-    style Web stroke:#e06a00
 ```
 
 ## Tech stack

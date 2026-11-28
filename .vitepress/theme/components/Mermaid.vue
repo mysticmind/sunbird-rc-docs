@@ -24,6 +24,26 @@ const LIGHT = {
   clusterBkg: '#fafafa',
   clusterBorder: '#e2e2e3',
   edgeLabelBackground: '#ffffff',
+  // Sequence diagrams, set explicitly because Mermaid's derived colours are too faint on white.
+  // Follows WCAG 2.2: text at least 4.5:1, lines and shapes at least 3:1 against what they sit on.
+  // Structure (lifelines, loop frames, activation bars) is neutral grey so the messages stand out;
+  // the site orange is kept as an accent on the participant boxes only.
+  actorBkg: '#fff4ec',
+  actorBorder: '#c25700',        // 4.2:1 on the box fill, 4.5:1 on white
+  actorTextColor: '#1d1d1f',
+  actorLineColor: '#767680',     // lifelines, 4.5:1
+  signalColor: '#3c3c43',        // arrows, 10.9:1
+  signalTextColor: '#1d1d1f',
+  labelBoxBkgColor: '#f6f6f7',   // the "loop" tab
+  labelBoxBorderColor: '#767680', // loop frames, 4.5:1
+  labelTextColor: '#1d1d1f',
+  loopTextColor: '#1d1d1f',
+  sequenceNumberColor: '#ffffff', // on the dark arrow-coloured circle, 10.9:1
+  activationBkgColor: '#f6f6f7',
+  activationBorderColor: '#767680', // 4.5:1
+  noteBkgColor: '#fff5ad',
+  noteBorderColor: '#8a7428',    // 4.6:1
+  noteTextColor: '#1d1d1f',
 }
 const DARK = {
   fontSize: '14px',
@@ -39,6 +59,19 @@ const DARK = {
   clusterBkg: '#202127',
   clusterBorder: '#3c3f44',
   edgeLabelBackground: '#1b1b1f',
+  // Sequence diagrams: same approach as LIGHT. All pairs are measured against the #1b1b1f page.
+  // Structure is neutral grey so the light arrows stand out; orange stays on the participant boxes.
+  actorLineColor: '#8e8e93',     // lifelines, 5.3:1
+  labelBoxBkgColor: '#202127',   // the "loop" tab
+  labelBoxBorderColor: '#8e8e93', // loop frames, 5.3:1
+  labelTextColor: '#dfdfd6',     // 12.0:1 on the tab
+  loopTextColor: '#dfdfd6',      // 12.8:1
+  sequenceNumberColor: '#1b1b1f', // on the light arrow-coloured circle, 12.8:1
+  activationBkgColor: '#2a2b31',
+  activationBorderColor: '#8e8e93',
+  noteBkgColor: '#3a3320',
+  noteBorderColor: '#a08a3c',
+  noteTextColor: '#dfdfd6',
 }
 
 async function draw() {
